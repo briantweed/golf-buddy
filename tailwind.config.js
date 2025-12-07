@@ -32,24 +32,28 @@ module.exports = {
                 DEFAULT: "#808285",
                 1: "#56585A",
                 2: "#CDCDCD",
-                3: "#E1E1E1",
+                3: "#b4b4b4",
                 4: "#E9E9E9",
                 5: "#EFEFEF",
                 6: "#F6F6F6",
-                7: "#FAFAFA",
+                7: "#2d3d32",
                 8: "#F9F9F9"
             },
             pastel: {
                 yellow: "#FFEDBA",
-                green: "#C1EDC3",
+                green: {
+                    default: "#a8dba5",
+                    1: "#a8dba5",
+                    2: "#86cd81",
+                },
                 blue: {
                     1: "#DBE6FF",
                     2: "#ECF4FB",
                     3: "#E0EAF3"
                 },
                 red: {
-                    1: "#f7c8cd",
-                    2: "#d59ba1"
+                    1: "#dba7ad",
+                    2: "#f2939f"
                 },
                 orange: "#FFD5B7",
             },
