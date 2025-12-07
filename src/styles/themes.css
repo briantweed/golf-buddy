@@ -1,0 +1,48 @@
+:root {
+    --default-min-height: 100vh;
+    --default-min-width: 345px;
+    --default-font-size: 100%;
+
+    --default-color: #222222;
+    --default-bg: #F9F9F9;
+
+    --dark-theme-color: #F0F0F0;
+    --dark-theme-bg: #111111;
+
+    --transition: 0.3s color ease-in-out,
+        0.3s background-color ease-in-out,
+        0.3s border-color ease-in-out;
+
+    font-variant-ligatures: no-common-ligatures;
+}
+
+html {
+    min-height: var(--default-min-height);
+    min-width: var(--default-min-width);
+}
+
+html, body {
+    font-size: var(--default-font-size);
+    color: var(--default-color);
+    background: var(--default-bg);
+    transition: var(--transition);
+    font-variant-ligatures: no-common-ligatures;
+    font-family: "Poppins", serif;
+}
+
+html.dark, html.dark body {
+    color: var(--dark-theme-color);
+    background: var(--dark-theme-bg);
+    transition: var(--transition);
+}
+
+.root {
+    isolation: isolate;
+}
+
+[data-lastpass-icon-root] {
+    display: none !important;
+    visibility: hidden;
+    height: 0;
+    width: 0;
+}

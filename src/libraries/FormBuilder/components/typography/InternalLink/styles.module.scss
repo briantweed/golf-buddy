@@ -1,0 +1,19 @@
+.contents {
+    @apply inline-block rounded-md;
+
+    &:focus-visible {
+        @apply outline outline-amber outline-3 outline-offset-2;
+    }
+
+
+    // ----- Variants -----
+    &.link {
+        @apply hover:underline;
+
+        &.selected {
+            @apply font-medium text-blue;
+        }
+
+    }
+
+}

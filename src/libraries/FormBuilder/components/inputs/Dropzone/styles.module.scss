@@ -1,0 +1,10 @@
+.contents {
+    @apply flex items-center justify-center;
+    @apply h-32 mb-8;
+    @apply text-blue hover:text-darkBlue italic;
+    @apply border-2 border-blue hover:border-darkBlue border-dotted rounded-md;
+    @apply bg-pastel-blue-2;
+    @apply transition duration-300 ease-in-out;
+    @apply hover:shadow-sm;
+    @apply cursor-pointer;
+}

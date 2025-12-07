@@ -1,0 +1,19 @@
+.contents {
+
+    .bar {
+        @apply my-2 overflow-hidden w-full rounded-full border border-grey-1 h-6;
+        @apply transition-all duration-500 ease-in-out;
+
+        .progress {
+            @apply bg-lightBlue overflow-hidden h-full rounded-full;
+            @apply transition-all duration-500 ease-in-out flex items-center justify-center;
+
+            span {
+                @apply text-white text-center text-xs w-full inline-block;
+            }
+
+        }
+
+    }
+
+}

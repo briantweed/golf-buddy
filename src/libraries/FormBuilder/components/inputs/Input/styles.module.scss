@@ -1,0 +1,12 @@
+.contents {
+    @apply w-full p-3;
+    @apply text-default text-xs;
+    @apply border border-grey-3 hover:border-darkBlue rounded-md;
+    @apply transition duration-300 ease-in-out;
+    @apply hover:transition hover:duration-300 hover:ease-in-out;
+
+    &:focus-visible {
+        @apply outline outline-amber outline-3;
+    }
+
+}

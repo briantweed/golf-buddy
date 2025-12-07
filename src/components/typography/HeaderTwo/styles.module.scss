@@ -1,0 +1,8 @@
+.contents {
+    @apply text-2xl font-medium;
+
+    &.large {
+        @apply text-3xl;
+    }
+
+}

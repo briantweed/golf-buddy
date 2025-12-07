@@ -1,0 +1,23 @@
+.contents {
+    @apply text-sm;
+    @apply block;
+    @apply mb-1 pl-1;
+    @apply font-medium;
+
+
+    // ----- Variants -----
+    &.no-margin {
+        @apply mb-0;
+    }
+
+    &.large {
+        @apply text-lg;
+    }
+
+
+    // ----- Themes -----
+    &.dark {
+        @apply text-white;
+    }
+
+}

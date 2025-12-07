@@ -1,0 +1,8 @@
+.contents {
+    @apply text-base;
+
+    &.small {
+        @apply text-xs;
+    }
+
+}

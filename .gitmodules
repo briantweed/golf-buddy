@@ -1,0 +1,3 @@
+[submodule "ioa-simply-code-quality"]
+	path = ioa-simply-code-quality
+	url = https://InsuranceOfficeofAmerica@dev.azure.com/InsuranceOfficeofAmerica/Simply/_git/ioa-simply-code-quality

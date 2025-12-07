@@ -1,0 +1,37 @@
+.contents {
+
+    @apply mb-16;
+
+    table {
+
+        @apply ml-1 mt-4 w-full;
+
+        thead, tbody {
+
+            tr {
+
+                th {
+                    @apply text-left;
+                    @apply p-4;
+                    @apply bg-darkBlue text-white;
+                }
+
+                td {
+                    @apply text-left;
+                    @apply p-4;
+                    @apply border-b border-grey;
+
+                    &:first-child {
+                        width: 200px;
+                        word-break: break-word;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}

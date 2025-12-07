@@ -1,0 +1,163 @@
+.contents {
+    @apply w-full text-default text-xs;
+
+    div[class*="react-select__control"] {
+        @apply border border-grey-3 hover:border-darkBlue rounded;
+        @apply transition duration-300 ease-in-out;
+        @apply hover:transition hover:duration-300 hover:ease-in-out;
+        box-shadow: none !important;
+    }
+
+    div[class*="react-select__control"]:has([class*="react-select__input"]:focus) {
+        @apply shadow-select;
+        outline: 3px solid #E89A5A !important;
+    }
+
+    div[class*="react-select__placeholder"] {
+        @apply text-grey-1;
+    }
+
+    div[class*="react-select__clear-indicator"] {
+        @apply p-0;
+        @apply border border-grey-3 rounded-full mr-2 cursor-pointer;
+        @apply flex items-center justify-center;
+        width: 23px;
+        height: 23px;
+
+        &:hover {
+            filter: brightness(0.8);
+        }
+
+        &:has(svg:focus) {
+            @apply outline outline-amber outline-offset-2;
+        }
+
+        svg {
+            width: 12px;
+            height: 12px;
+
+            &:focus {
+                @apply outline-none;
+            }
+        }
+
+    }
+
+    div[class*="react-select__menu"] {
+        @apply m-0 border-none relative;
+    }
+
+    div[class*="react-select__menu-list"] {
+        @apply border border-t-0 m-0 mx-3 mt-2 py-3 relative;
+    }
+
+    div[class*="react-select__value-container"] {
+        @apply my-0 p-3 pr-0 border-none overflow-hidden;
+    }
+
+    div[class*="react-select__input"] {
+        @apply m-0 p-0;
+    }
+
+    div[class*="react-select__value-container--is-multi"] {
+        div[class*="react-select__input-container"] {
+            flex: 1 0 100%;
+            min-height: 21px;
+        }
+    }
+
+    div[class*="react-select__multi-value"] {
+        @apply bg-pastel-blue-2;
+        @apply py-1 px-2 rounded-md;
+    }
+
+    div[class*="react-select__multi-value__label"], div[class*="react-select__multi-value__remove"] {
+        @apply p-0 flex items-center;
+        @apply font-medium;
+        @apply rounded-md;
+    }
+
+    div[class*="react-select__multi-value__remove"] {
+        @apply ml-1;
+
+        &:hover {
+
+            svg {
+                @apply stroke-black;
+            }
+
+        }
+
+        svg:focus {
+            @apply outline-1 outline-amber outline-offset-2;
+        }
+
+    }
+
+    div[class*="react-select__option"] {
+        @apply p-3 rounded-md hover:bg-grey-6 overflow-hidden;
+    }
+
+    div[class*="react-select__dropdown-indicator"] {
+        @apply pl-0;
+    }
+
+    div[class*="react-select__option--is-selected"], div[class*="react-select__option--is-focused"] {
+        @apply bg-grey-6 rounded-md text-default;
+    }
+
+    .arrow {
+        top: calc(50% - 4px);
+        right: 6px;
+        @apply absolute;
+        @apply h-7px w-7px;
+        @apply border-t-2 border-r-2 border-b-0 border-l-0;
+        @apply border-t-default border-r-default border-b-transparent border-l-transparent;
+        @apply pointer-events-none;
+        @apply rotate-135;
+    }
+
+
+    // ----- Variants -----
+    &.small {
+        @apply w-60;
+    }
+
+
+    // ----- Themes -----
+    &.dark {
+
+        .arrow {
+            @apply border-t-white border-r-white border-b-transparent border-l-transparent;
+        }
+
+        div[class*="react-select__control"] {
+            @apply bg-black;
+        }
+
+        div[class*="react-select__placeholder"] {
+            @apply text-white;
+        }
+
+        div[class*="react-select__single-value"] {
+            @apply text-white w-fit;
+        }
+
+        div[class*="react-select__menu-list"],
+        div[class*="react-select__option--is-focused"] {
+            @apply bg-black;
+        }
+
+        div[class*="react-select__option--is-focused"] {
+            @apply hover:bg-default hover:text-white;
+        }
+
+        div[class*="react-select__option--is-selected"] {
+            @apply bg-default;
+            @apply text-black;
+            @apply hover:bg-default hover:text-black;
+        }
+
+    }
+
+}

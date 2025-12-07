@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./",
+        "paths": {
+            "@api/*": ["src/api/*"],
+            "@components/*": ["src/components/*"],
+            "@files/*": ["src/files/*"],
+            "@hoc/*": ["src/hoc/*"],
+            "@hooks/*": ["src/hooks/*"],
+            "@libraries/*": ["src/libraries/*"],
+            "@public/*": ["public/*"],
+            "@storage/*": ["src/storage/*"],
+            "@methods/*": ["src/methods/*"]
+        }
+    },
+    "exclude": ["node_modules"]
+}

@@ -1,0 +1,94 @@
+.contents {
+    @apply flex justify-center;
+
+    .modal {
+        @apply fixed top-12;
+        @apply flex justify-center items-center;
+        @apply w-modal max-w-modal h-fit max-h-modal;
+        @apply p-15 mx-8;
+        @apply bg-white;
+        @apply rounded-md;
+        @apply z-modal shadow-inverse;
+
+        .close {
+            @apply absolute top-2.5 right-2.5;
+
+            button {
+                @apply cursor-pointer border border-grey-3 p-3 rounded-full;
+
+                &:focus-visible {
+                    @apply outline-amber outline-3;
+                }
+
+            }
+
+            &:hover {
+                filter: brightness(0.75);
+            }
+
+        }
+
+        .modalBody {
+            @apply w-full mt-1;
+
+            h3 {
+                @apply mb-8;
+            }
+
+            a:focus, button:focus {
+                @apply outline outline-amber outline-3;
+            }
+
+        }
+
+
+    }
+
+    &.medium {
+
+        .modal {
+            @apply max-w-[600px];
+        }
+
+    }
+
+     &.confirm {
+
+        .modal {
+            @apply max-w-lg;
+        }
+
+    }
+
+    &.form {
+
+        .modal {
+            @apply fixed top-0;
+            @apply flex justify-center items-center;
+            @apply w-full h-screen max-w-none max-h-full;
+            @apply p-0;
+            @apply bg-grey-8;
+            @apply rounded-md;
+            @apply z-modal;
+
+            .close {
+                @apply right-6;
+            }
+
+        }
+
+    }
+
+
+    // ----- Themes -----
+
+    &.dark {
+
+        .modal {
+            @apply bg-black border border-default;
+        }
+
+    }
+
+}
+

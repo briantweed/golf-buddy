@@ -1,0 +1,10 @@
+.contents {
+    //@apply fixed bottom-0 left-0 w-full bg-white shadow-xl;
+    @apply z-settings pt-6;
+
+    .buttons {
+        @apply flex flex-grow justify-end w-full py-5;
+        @apply w-[920px] mx-auto;
+    }
+
+}

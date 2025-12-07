@@ -1,0 +1,12 @@
+.contents {
+    @apply flex gap-2 justify-start items-center;
+    @apply w-fit p-3 mt-2;
+    @apply text-xs;
+    @apply rounded-md;
+
+    &.warning {
+        @apply bg-pastel-red;
+        @apply text-default;
+    }
+
+}

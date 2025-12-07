@@ -1,0 +1,25 @@
+.contents {
+
+    table {
+        @apply table-auto;
+
+        thead th, tbody td {
+            @apply px-4 py-2;
+        }
+
+        td {
+            @apply border-t border-b border-grey;
+        }
+
+    }
+
+    a {
+        @apply no-underline hover:underline;
+    }
+
+    ul {
+        @apply list-disc;
+        @apply ml-6;
+    }
+
+}

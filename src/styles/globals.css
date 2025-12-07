@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+main {
+    min-height: calc(100vh - 161px);
+}
+
+img {
+    max-width: unset;
+}
+
+button:focus-visible {
+    @apply outline outline-amber outline-3 outline-offset-2;
+}
+
+b {
+    @apply font-semibold;
+}
+
+div[data-lastpass-icon-root] {
+    display: none !important;
+    z-index: -10 !important;
+}
+
+.tox-toolbar__primary {
+    justify-content: flex-end
+}

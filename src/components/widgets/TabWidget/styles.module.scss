@@ -1,0 +1,142 @@
+.contents {
+    @apply w-full;
+
+    .list {
+        @apply flex justify-start mb-6;
+        @apply relative;
+
+        .tab {
+            @apply relative flex items-center justify-center;
+            @apply font-medium text-sm;
+            @apply p-4;
+            @apply rounded-tl-md rounded-tr-md;
+            @apply transition duration-300 ease-in-out;
+
+            &:after {
+                content: "";
+                @apply absolute left-0;
+                @apply w-full;
+                @apply bg-red;
+                animation: shrink 0.075s linear forwards;
+            }
+
+            &:hover {
+
+                &:after {
+                    animation: height 0.15s linear forwards;
+                }
+
+            }
+
+            &[data-active] {
+                @apply z-2;
+
+                &:after {
+                    content: "";
+                    @apply absolute left-0;
+                    @apply w-full;
+                    @apply bg-blue;
+                    animation: height 0.15s linear forwards;
+                }
+
+            }
+
+            &:not([data-active]) {
+
+                &:before {
+                    content: "";
+                    height: 1px;
+                    @apply bg-grey-4;
+                    @apply absolute left-0 -bottom-1;
+                    @apply w-full;
+                    @apply z-0;
+
+                }
+
+            }
+
+            &:focus-visible {
+                @apply relative;
+            }
+
+        }
+
+    }
+
+    .panel {
+         @apply relative;
+
+        &:focus-visible {
+            @apply outline outline-amber outline-3 rounded-md;
+        }
+
+        &[hidden] {
+            @apply hidden;
+        }
+
+    }
+
+
+    // ----- Variants -----
+
+    &.darkBlue {
+
+        .list {
+
+            .tab {
+                @apply text-white hover:bg-darkBlueHighlight;
+
+                &[data-active] {
+                    @apply text-white;
+
+                    &:after {
+                        @apply bg-skyBlue;
+                    }
+
+                }
+
+                &:not([data-active]) {
+
+                    &:before {
+                        @apply bg-blue;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+
+@keyframes shrink {
+
+    from {
+        height: 4px;
+        bottom: -4px;
+    }
+
+    to {
+        height: 0;
+        bottom: -4px;
+    }
+
+}
+
+@keyframes height {
+
+    from {
+        height: 0;
+        bottom: -4px;
+    }
+
+    to {
+        height: 4px;
+        bottom: -4px;
+    }
+
+}

@@ -1,0 +1,25 @@
+.scrollArea {
+
+    .viewPort {
+        @apply overscroll-contain;
+        @apply outline-amber;
+
+        .content {
+            @apply flex flex-row gap-1;
+        }
+
+        .arrow {
+            @apply hidden;
+        }
+
+    }
+
+    .scrollbar {
+
+        .thumb {
+
+        }
+
+    }
+
+}
