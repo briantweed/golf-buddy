@@ -11,10 +11,10 @@ const moduleExports = {
     devIndicators: false,
     output: "standalone",
     env: {
-        VERSION: "1.0.0",
-        TITLE: "Marketing Hub",
-        LOCALE_STRING: "en-US",
-        DEFAULT_TIMEZONE: "America/New_York"
+        VERSION: "0.0.1",
+        TITLE: "Golf Buddy",
+        LOCALE_STRING: "en-GB",
+        DEFAULT_TIMEZONE: "Europe/London"
     },
     sassOptions: {
         includePaths: [join(__dirname, "styles")],
