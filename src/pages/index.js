@@ -47,7 +47,7 @@ const Page = () => {
                             <div className={"text-center  font-semibold bg-lightBlue p-2"}>5</div>
                             <div className={"flex gap-2"}>
                                 <div className={"p-2 bg-grey-1 w-16 h-16 flex items-center justify-center text-center"}>3</div>
-                                <div className={"p-2 bg-pastel-red text-black w-16 h-16 flex items-center justify-center text-center"}>4</div>
+                                <div className={"p-2 bg-pastel-red-1 text-black w-16 h-16 flex items-center justify-center text-center"}>4</div>
                             </div>
                         </div>
                         <div>
