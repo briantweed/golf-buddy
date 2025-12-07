@@ -5,6 +5,8 @@ const Page = () => {
             <img
                 src={"/web-app-manifest-512x512.png"}
                 alt={"Golf Buddy"}
+                width={256}
+                height={256}
             />
         </div>
     );
