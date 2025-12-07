@@ -1,8 +1,12 @@
 const Page = () => {
 
-
     return (
-        <div>golf buddy</div>
+        <div>
+            <img
+                src={"/web-app-manifest-512x512.png"}
+                alt={"Golf Buddy"}
+            />
+        </div>
     );
 
 };
