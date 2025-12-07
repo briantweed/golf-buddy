@@ -1,4 +1,3 @@
-import useStyling from "@hooks/useStyling";
 import {Tabs} from "@base-ui-components/react/tabs";
 import styles from "./styles.module.scss";
 
@@ -7,16 +6,13 @@ const TabWidget = (props) => {
 
     const {
         tabs,
-        styling,
         handleChange
     } = props;
-
-    const className = useStyling(styles, styling);
 
 
     return (
         <Tabs.Root
-            className={className}
+            className={styles.contents}
             defaultValue="tab_0"
             onValueChange={handleChange}
         >
