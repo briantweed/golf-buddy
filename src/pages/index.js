@@ -14,7 +14,7 @@ const Page = () => {
 
             <section className={"flex items-center justify-center pt-8 pb-4"}>
                 <div>
-                    <div className={"flex gap-6"}>
+                    <div className={"flex gap-3"}>
                         <div>
                             <div className={"text-center font-semibold bg-lightBlue p-2"}>1</div>
                             <div className={"flex gap-2"}>
@@ -84,7 +84,7 @@ const Page = () => {
 
             <section className={"flex items-center justify-center pb-8"}>
                 <div>
-                    <div className={"flex gap-6"}>
+                    <div className={"flex gap-3"}>
                         <div>
                             <div className={"text-center font-semibold bg-lightBlue p-2"}>10</div>
                             <div className={"flex gap-2"}>
