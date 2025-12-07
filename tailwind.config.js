@@ -47,10 +47,11 @@ module.exports = {
                     2: "#ECF4FB",
                     3: "#E0EAF3"
                 },
-                red: "#FFE2E5",
+                red: {
+                    1: "#f7c8cd",
+                    2: "#d59ba1"
+                },
                 orange: "#FFD5B7",
-                purple: "#ECDDFF",
-                pink: "#FFCEE2",
             },
             highlightYellow: "#FFFCDD",
             darkYellow: "#C45C00",
