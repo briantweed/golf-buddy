@@ -56,17 +56,16 @@ const setupForm = {
                     id: "Players",
                     component: FIELD_TYPES.FIELD_ARRAY,
                     legend: {
-                        content: "Phone"
-                    },
-                    styling: {
-                        variant: ["inline", "tel"]
+                        content: "Players"
                     },
                     subfields: [
                         {
                             id: "Name",
                             component: FIELD_TYPES.INPUT_FIELD,
                             required: true,
-                            label: false,
+                            label: {
+                                content: "Name"
+                            },
                             input: {
                                 type: "text"
                             }
@@ -74,12 +73,12 @@ const setupForm = {
                         {
                             id: "Hcap",
                             component: FIELD_TYPES.INPUT_FIELD,
-                            required: true,
-                            label: false,
+                            required: false,
+                            label: {
+                                content: "Hcap"
+                            },
                             input: {
-                                type: "tel",
-                                mask: "99",
-                                maskPlaceholder: ""
+                                type: "tel"
                             }
                         }
                     ],
@@ -103,13 +102,9 @@ const setupForm = {
             {
                 id: "LoginSubmit",
                 component: BUTTON_TYPES.SUBMIT_BUTTON,
-                text: "Add Contact",
-                icon: {
-                    src: "plus",
-                    position: "before"
-                },
+                text: "Save",
                 styling: {
-                    color: "primary"
+                    color: "success"
                 }
             }
         ]
