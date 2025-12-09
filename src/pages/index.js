@@ -1,14 +1,22 @@
 import testGame, {ROUND_TYPE} from "@files/config/test-game";
 import TabWidget from "@components/widgets/TabWidget";
+import ToggleSwitch from "@components/ToggleSwitch";
+import {useState} from "react";
 
 
 const Page = () => {
+
+    const [roundLength, setRoundLength] = useState(testGame.RoundType);
+
+    const handleChange = () => {
+        setRoundLength((roundLength) => roundLength === ROUND_TYPE.FULL ? ROUND_TYPE.HALF : ROUND_TYPE.FULL );
+    };
 
 
     const tabs = testGame.Players.map((Player, index) => {
         return {
             "label": Player.Name,
-            "content": <ScoreCard key={index} id={index}/>
+            "content": <ScoreCard key={index} id={index} roundLength={roundLength}/>
         };
     });
 
@@ -26,6 +34,16 @@ const Page = () => {
                     <br/>
                     <i>Total Yards: {courseTotalYards}</i>
                 </h2>
+                <div className="flex gap-2 text-base mt-4">
+                    <span>Number of Holes: </span>
+                    <span>9</span>
+                    <ToggleSwitch
+                        id={"NumberOfHoles"}
+                        isActive={roundLength === ROUND_TYPE.FULL}
+                        handleChange={handleChange}
+                    />
+                    <span>18</span>
+                </div>
             </section>
 
             <section className={"px-16"}>
@@ -40,14 +58,19 @@ const Page = () => {
 
 const ScoreCard = (props) => {
 
-    const {id} = props;
+    const {
+        id,
+        roundLength
+    } = props;
+
+    const isFullRound = roundLength === ROUND_TYPE.FULL;
 
     const FrontNine = testGame.Players[id].Scores.slice(0, 9);
     const BackNine = testGame.Players[id].Scores.slice(9, 18);
 
     const FrontNineScore = FrontNine.reduce((sum, item) => sum + item.Stroke, 0);
     const BackNineScore = BackNine.reduce((sum, item) => sum + item.Stroke, 0);
-    const TotalPlayerScore = FrontNineScore + BackNineScore;
+    const TotalPlayerScore = FrontNineScore + (isFullRound ? BackNineScore : 0);
 
     return (
         <section className={"flex flex-col gap-2 justify-center items-start pt-8 pb-2.5"}>
@@ -86,7 +109,7 @@ const ScoreCard = (props) => {
 
             </div>
 
-            {testGame.RoundType === ROUND_TYPE.FULL && (
+            {isFullRound && (
                 <div className={"flex gap-2"}>
                     {BackNine.map((score, index) => {
                         const parValue = testGame.Holes[index].Par;

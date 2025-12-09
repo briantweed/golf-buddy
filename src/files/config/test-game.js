@@ -1,6 +1,6 @@
 export const ROUND_TYPE = {
-    HALF: "HALF",
-    FULL: "FULL",
+    HALF: 9,
+    FULL: 18,
 };
 
 const testGame = {
