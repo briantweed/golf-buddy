@@ -103,7 +103,7 @@ const ScoreCard = (props) => {
 
                     return (
                         <div key={index}>
-                            <div className={"text-center font-semibold bg-lightBlue p-2 rounded-t-lg"}>{index + 1}</div>
+                            <div className={"text-center font-semibold bg-lightBlue py-1 rounded-t-lg"}>{index + 1}</div>
                             <div className={"grid grid-cols-2 grow"}>
                                 <div className={"p-2 bg-grey-1 rounded-bl-lg flex items-center justify-center text-center"}>{parValue}</div>
                                 <div className={`p-2 ${bgColor} rounded-br-lg text-black flex items-center justify-center text-center`}>{strokeValue}</div>
@@ -139,7 +139,7 @@ const ScoreCard = (props) => {
 
                         return (
                             <div key={index}>
-                                <div className={"text-center font-semibold bg-lightBlue p-2 rounded-t-lg"}>{index + 10}</div>
+                                <div className={"text-center font-semibold bg-lightBlue py-1 rounded-t-lg"}>{index + 10}</div>
                                 <div className={"grid grid-cols-2 grow"}>
                                     <div className={"p-2 bg-grey-1 rounded-bl-lg  flex items-center justify-center text-center"}>{parValue}</div>
                                     <div className={`p-2 ${bgColor} rounded-br-lg text-black flex items-center justify-center text-center`}>{strokeValue}</div>
