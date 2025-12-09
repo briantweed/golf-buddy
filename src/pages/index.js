@@ -34,14 +34,12 @@ const Page = () => {
     const courseTotalYards = testGame.Holes.reduce((sum, item) => sum + item.Yards, 0);
 
     return (
-        <main className={"min-h-screen w-screen text-2xl text-grey-6 bg-grey-7"}>
+        <main className={"min-h-screen w-screen text-xl text-grey-6 bg-grey-7"}>
 
-            <section className={"pt-12 pb-8 px-16"}>
-                <h1 className={"text-4xl mb-2"}>{testGame.CourseName} </h1>
+            <section className={"pt-4 pb-8 px-4"}>
+                <h1 className={"text-2xl mb-2"}>{testGame.CourseName} </h1>
                 <h2 className={"text-base"}>
-                    <i>Par: <span className={"ml-2"}>{courseParScore}</span></i>
-                    <br/>
-                    <i>Total Yards:<span className={"ml-2"}> {courseTotalYards}</span></i>
+                    <i>Par: <span className={"ml-2"}>{courseParScore}</span></i> | <i>Total Yards:<span className={"ml-2"}> {courseTotalYards}</span></i>
                 </h2>
                 <div className="flex gap-1 text-base mt-4">
                     <span><i>Number of Holes:</i></span>
@@ -55,7 +53,7 @@ const Page = () => {
                 </div>
             </section>
 
-            <section className={"px-16"}>
+            <section className={"px-8"}>
                 <TabWidget tabs={tabs}/>
             </section>
 
