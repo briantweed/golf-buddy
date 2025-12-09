@@ -1,4 +1,4 @@
-import {FIELD_TYPES} from "@libraries/FormBuilder/files/config";
+import {BUTTON_TYPES, FIELD_TYPES} from "@libraries/FormBuilder/files/config";
 
 const setupForm = {
 

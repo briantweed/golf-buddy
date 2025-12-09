@@ -8,8 +8,6 @@ import styles from "./styles.module.scss";
 import Legend from "../../layout/Legend";
 import ErrorMessage from "../../layout/ErrorMessage";
 
-import TitleHover from "@components/utility/TitleHover";
-
 
 const FieldArray = (props) => {
 
@@ -123,15 +121,13 @@ const FieldArray = (props) => {
 
                                         {showDeleteButton && (
                                             <div className={styles.deleteContainer}>
-                                                <TitleHover title={"delete"}>
-                                                    <button
-                                                        type="button"
-                                                        className={styles.delete}
-                                                        onClick={() => {
-                                                            remove(index);
-                                                        }}>{deleteText}
-                                                    </button>
-                                                </TitleHover>
+                                                <button
+                                                    type="button"
+                                                    className={styles.delete}
+                                                    onClick={() => {
+                                                        remove(index);
+                                                    }}>{deleteText}
+                                                </button>
                                             </div>
 
                                         )}

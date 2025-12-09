@@ -1,7 +1,6 @@
 import useStyling from "../../../hooks/useStyling";
 import FORM_FIELDS from "../../../files/form-fields";
 import styles from "./styles.module.scss";
-import {GSAP_FORM_FOOTER} from "@files/config/gsap-data-tags";
 
 
 const FormFooter = (props) => {
@@ -17,7 +16,7 @@ const FormFooter = (props) => {
 
 
     return (
-        <div data-gsap={GSAP_FORM_FOOTER} className={className}>
+        <div className={className}>
 
             <div className={styles.buttons}>
 

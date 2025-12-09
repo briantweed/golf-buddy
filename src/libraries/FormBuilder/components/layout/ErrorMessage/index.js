@@ -1,6 +1,5 @@
 import useStyling from "../../../hooks/useStyling";
 import styles from "./styles.module.scss";
-import ErrorIcon from "@components/icons/ErrorIcon";
 
 
 const ErrorMessage = ({children}) => {
@@ -9,7 +8,7 @@ const ErrorMessage = ({children}) => {
 
     return (
         <div className="flex justify-end">
-            <span className={className}><ErrorIcon/> {children}</span>
+            <span className={className}>{children}</span>
         </div>
     );
 

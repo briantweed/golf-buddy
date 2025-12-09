@@ -4,7 +4,7 @@ import styles from "./styles.module.scss";
 
 import Label from "../../layout/Label";
 import TypeAhead from "../../inputs/TypeAhead";
-import useStyling from "@hooks/useStyling";
+import useStyling from "../../../hooks/useStyling";
 
 const ErrorMessage = dynamic(() => import("../../layout/ErrorMessage"));
 

@@ -1,9 +1,6 @@
-import useTheme from "@storage/context/theme";
-
-
 const useStyling = (styles, styling = {}) => {
 
-    const {theme} = useTheme();
+    const theme = "default";
 
     let classes = [styles.contents, styles[theme]];
 

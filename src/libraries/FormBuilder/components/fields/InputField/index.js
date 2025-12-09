@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import useStyling from "@hooks/useStyling";
+import useStyling from "../../../hooks/useStyling";
 import styles from "./styles.module.scss";
 
 import Label from "../../layout/Label";

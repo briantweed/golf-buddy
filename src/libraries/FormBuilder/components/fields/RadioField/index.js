@@ -4,7 +4,7 @@ import styles from "./styles.module.scss";
 import Label from "../../layout/Label";
 import Radio from "../../inputs/Radio";
 import Legend from "../../layout/Legend";
-import useStyling from "@hooks/useStyling";
+import useStyling from "../../../hooks/useStyling";
 
 const ErrorMessage = dynamic(() => import("../../layout/ErrorMessage"));
 

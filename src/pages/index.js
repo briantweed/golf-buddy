@@ -2,16 +2,25 @@ import testGame, {ROUND_TYPE} from "@files/config/test-game";
 import TabWidget from "@components/widgets/TabWidget";
 import ToggleSwitch from "@components/ToggleSwitch";
 import {useState} from "react";
+import form from "@files/forms/setup";
+import validationRules from "@files/validation/setup.zod";
+import useFormBuilder from "@libraries/FormBuilder/useFormBuilder";
 
 
 const Page = () => {
 
     const [roundLength, setRoundLength] = useState(testGame.RoundType);
 
+    const handleSubmit = (data) => {
+        console.log(data);
+    };
+
+
     const handleChange = () => {
         setRoundLength((roundLength) => roundLength === ROUND_TYPE.FULL ? ROUND_TYPE.HALF : ROUND_TYPE.FULL );
     };
 
+    const renderedForm = useFormBuilder(form, validationRules, handleSubmit);
 
     const tabs = testGame.Players.map((Player, index) => {
         return {
@@ -25,7 +34,7 @@ const Page = () => {
     const courseTotalYards = testGame.Holes.reduce((sum, item) => sum + item.Yards, 0);
 
     return (
-        <main className={"text-2xl text-grey-6 bg-grey-7 h-screen w-screen overflow-hidden"}>
+        <main className={"text-2xl text-grey-6 bg-grey-7"}>
 
             <section className={"pt-12 pb-8 px-16"}>
                 <h1 className={"text-4xl mb-2"}>{testGame.CourseName} </h1>
@@ -48,6 +57,10 @@ const Page = () => {
 
             <section className={"px-16"}>
                 <TabWidget tabs={tabs}/>
+            </section>
+
+            <section className={"w-3/4 mx-auto"}>
+                {renderedForm}
             </section>
 
         </main>

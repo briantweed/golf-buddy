@@ -1,7 +1,6 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkBreaks from "remark-breaks";
-import {MARKDOWN_REGEX} from "@files/config/regex";
 import styles from "./styles.module.scss";
 
 import HeaderOne from "../HeaderOne";
@@ -9,7 +8,6 @@ import HeaderTwo from "../HeaderTwo";
 import HeaderThree from "../HeaderThree";
 import Paragraph from "../Paragraph";
 import InternalLink from "../InternalLink";
-
 
 
 const Markdown = ({contents, replacements = {}, styling = {}, ...rest}) => {
@@ -76,7 +74,7 @@ const Markdown = ({contents, replacements = {}, styling = {}, ...rest}) => {
                     remarkGfm,
                     remarkBreaks
                 ]}
-            >{ contents.replace(MARKDOWN_REGEX, "[$2]($1)") }</ReactMarkdown>
+            >{ contents }</ReactMarkdown>
         </div>
     );
 

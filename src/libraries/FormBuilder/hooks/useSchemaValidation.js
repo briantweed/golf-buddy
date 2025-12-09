@@ -2,9 +2,6 @@ import {useCallback} from "react";
 import Ajv from "ajv/dist/2020";
 import addFormats from "ajv-formats";
 
-import ExternalLog from "@methods/external-log";
-
-
 const useSchemaValidation = (name) => {
 
     const testSchema = (data) => {
@@ -22,7 +19,7 @@ const useSchemaValidation = (name) => {
         const validate = ajv.compile(schema);
 
         if (!validate(data)) {
-            ExternalLog(`API Schema: ${JSON.stringify(validate.errors)}`, "error");
+            console.log(`API Schema: ${JSON.stringify(validate.errors)}`, "error");
         }
     };
 
