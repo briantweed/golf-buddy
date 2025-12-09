@@ -20,7 +20,7 @@ const Page = () => {
         setRoundLength((roundLength) => roundLength === ROUND_TYPE.FULL ? ROUND_TYPE.HALF : ROUND_TYPE.FULL );
     };
 
-    const renderedForm = useFormBuilder(form, validationRules, handleSubmit);
+    // const renderedForm = useFormBuilder(form, validationRules, handleSubmit);
 
     const tabs = testGame.Players.map((Player, index) => {
         return {
@@ -34,24 +34,24 @@ const Page = () => {
     const courseTotalYards = testGame.Holes.reduce((sum, item) => sum + item.Yards, 0);
 
     return (
-        <main className={"text-2xl text-grey-6 bg-grey-7"}>
+        <main className={"min-h-screen text-2xl text-grey-6 bg-grey-7"}>
 
             <section className={"pt-12 pb-8 px-16"}>
                 <h1 className={"text-4xl mb-2"}>{testGame.CourseName} </h1>
                 <h2 className={"text-base"}>
-                    <i>Par: {courseParScore}</i>
+                    <i>Par: <span className={"ml-2"}>{courseParScore}</span></i>
                     <br/>
-                    <i>Total Yards: {courseTotalYards}</i>
+                    <i>Total Yards:<span className={"ml-2"}> {courseTotalYards}</span></i>
                 </h2>
-                <div className="flex gap-2 text-base mt-4">
-                    <span>Number of Holes: </span>
-                    <span>9</span>
+                <div className="flex gap-1 text-base mt-4">
+                    <span><i>Number of Holes:</i></span>
+                    <span className={"text-sm ml-2"}>9</span>
                     <ToggleSwitch
                         id={"NumberOfHoles"}
                         isActive={roundLength === ROUND_TYPE.FULL}
                         handleChange={handleChange}
                     />
-                    <span>18</span>
+                    <span className={"text-sm"}>18</span>
                 </div>
             </section>
 
@@ -59,9 +59,9 @@ const Page = () => {
                 <TabWidget tabs={tabs}/>
             </section>
 
-            <section className={"w-3/4 mx-auto"}>
-                {renderedForm}
-            </section>
+            {/*<section className={"w-3/4 mx-auto"}>*/}
+            {/*    {renderedForm}*/}
+            {/*</section>*/}
 
         </main>
     );
