@@ -41,9 +41,9 @@ const Page = () => {
                 <h2 className={"text-base mt-1"}>
                     <i>Par: <span className={"ml-2"}>{courseParScore}</span></i>
                 </h2>
-                <h2 className={"text-base mt-1"}><i>Total Yards:<span className={"ml-2"}> {courseTotalYards}</span></i></h2>
+                <h2 className={"text-base mt-1"}><i>Yards:<span className={"ml-2"}> {courseTotalYards}</span></i></h2>
                 <div className="flex gap-1 text-base mt-1">
-                    <span><i>Number of Holes:</i></span>
+                    <span><i>Holes:</i></span>
                     <span className={"text-sm ml-2"}>9</span>
                     <ToggleSwitch
                         id={"NumberOfHoles"}
