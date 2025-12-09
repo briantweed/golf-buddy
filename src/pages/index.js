@@ -113,7 +113,7 @@ const ScoreCard = (props) => {
                 })}
 
                 <div>
-                    <div className={"text-center font-semibold bg-blue p-2 rounded-t-lg"}>Out</div>
+                    <div className={"text-center font-semibold bg-blue py-1 rounded-t-lg"}>Out</div>
                     <div className={"flex"}>
                         <div className={"p-2 bg-grey-2 text-black font-semibold text-xl rounded-bl-lg rounded-br-lg w-28 flex items-center justify-center text-center"}>{FrontNineScore}</div>
                     </div>
@@ -149,7 +149,7 @@ const ScoreCard = (props) => {
                     })}
 
                     <div>
-                        <div className={"text-center font-semibold bg-blue p-2 rounded-t-lg"}>In</div>
+                        <div className={"text-center font-semibold bg-blue py-1 rounded-t-lg"}>In</div>
                         <div className={"flex"}>
                             <div className={"p-2 bg-grey-2 text-black font-semibold text-xl rounded-bl-lg rounded-br-lg w-28 flex items-center justify-center text-center"}>{BackNineScore}</div>
                         </div>
