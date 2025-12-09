@@ -85,8 +85,8 @@ const ScoreCard = (props) => {
     const TotalPlayerScore = FrontNineScore + (isFullRound ? BackNineScore : 0);
 
     return (
-        <section className={"flex flex-col gap-2 justify-center items-start pb-4 mt-6"}>
-            <div className={"grid grid-cols-10 gap-2"}>
+        <section className={"flex flex-col gapy-1 justify-center items-start pb-4 mt-6"}>
+            <div className={"grid grid-cols-10 gapy-1"}>
                 {FrontNine.map((score, index) => {
                     const parValue = testGame.Holes[index].Par;
                     const strokeValue = score.Stroke;
@@ -105,8 +105,8 @@ const ScoreCard = (props) => {
                         <div key={index}>
                             <div className={"text-center font-semibold bg-lightBlue py-1 rounded-t-lg"}>{index + 1}</div>
                             <div className={"grid grid-cols-2 grow"}>
-                                <div className={"p-2 bg-grey-1 rounded-bl-lg flex items-center justify-center text-center"}>{parValue}</div>
-                                <div className={`p-2 ${bgColor} rounded-br-lg text-black flex items-center justify-center text-center`}>{strokeValue}</div>
+                                <div className={"py-1 bg-grey-1 rounded-bl-lg flex items-center justify-center text-center"}>{parValue}</div>
+                                <div className={`py-1 ${bgColor} rounded-br-lg text-black flex items-center justify-center text-center`}>{strokeValue}</div>
                             </div>
                         </div>
                     );
@@ -115,14 +115,14 @@ const ScoreCard = (props) => {
                 <div>
                     <div className={"text-center font-semibold bg-blue py-1 rounded-t-lg"}>Out</div>
                     <div className={"flex"}>
-                        <div className={"p-2 bg-grey-2 text-black font-semibold text-xl rounded-bl-lg rounded-br-lg w-28 flex items-center justify-center text-center"}>{FrontNineScore}</div>
+                        <div className={"py-1 bg-grey-2 text-black font-semibold text-xl rounded-bl-lg rounded-br-lg w-28 flex items-center justify-center text-center"}>{FrontNineScore}</div>
                     </div>
                 </div>
 
             </div>
 
             {isFullRound && (
-                <div className={"grid grid-cols-10 gap-2"}>
+                <div className={"grid grid-cols-10 gapy-1"}>
                     {BackNine.map((score, index) => {
                         const parValue = testGame.Holes[index].Par;
                         const strokeValue = score.Stroke;
@@ -141,8 +141,8 @@ const ScoreCard = (props) => {
                             <div key={index}>
                                 <div className={"text-center font-semibold bg-lightBlue py-1 rounded-t-lg"}>{index + 10}</div>
                                 <div className={"grid grid-cols-2 grow"}>
-                                    <div className={"p-2 bg-grey-1 rounded-bl-lg  flex items-center justify-center text-center"}>{parValue}</div>
-                                    <div className={`p-2 ${bgColor} rounded-br-lg text-black flex items-center justify-center text-center`}>{strokeValue}</div>
+                                    <div className={"py-1 bg-grey-1 rounded-bl-lg  flex items-center justify-center text-center"}>{parValue}</div>
+                                    <div className={`py-1 ${bgColor} rounded-br-lg text-black flex items-center justify-center text-center`}>{strokeValue}</div>
                                 </div>
                             </div>
                         );
@@ -151,7 +151,7 @@ const ScoreCard = (props) => {
                     <div>
                         <div className={"text-center font-semibold bg-blue py-1 rounded-t-lg"}>In</div>
                         <div className={"flex"}>
-                            <div className={"p-2 bg-grey-2 text-black font-semibold text-xl rounded-bl-lg rounded-br-lg w-28 flex items-center justify-center text-center"}>{BackNineScore}</div>
+                            <div className={"py-1 bg-grey-2 text-black font-semibold text-xl rounded-bl-lg rounded-br-lg w-28 flex items-center justify-center text-center"}>{BackNineScore}</div>
                         </div>
                     </div>
 
