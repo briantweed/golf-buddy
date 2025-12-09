@@ -1,0 +1,121 @@
+import {FIELD_TYPES} from "@libraries/FormBuilder/files/config";
+
+const setupForm = {
+
+    "name": "setup",
+
+    "steps": [
+        {
+            "fields": [
+
+                // CONTACT NAME
+                {
+                    id: "CourseName",
+                    component: FIELD_TYPES.INPUT_FIELD,
+                    required: true,
+                    styling: {
+                        variant: "inline"
+                    },
+                    label: {
+                        content: "Course Name"
+                    },
+                    input: {
+                        type: "text",
+                        autoComplete: "off"
+                    }
+                },
+
+
+                // TITLE
+                {
+                    id: "RoundLength",
+                    component: FIELD_TYPES.RADIO_FIELD,
+                    required: false,
+                    styling: {
+                        variant: "inline"
+                    },
+                    label: {
+                        content: "Round Length"
+                    },
+                    input: {
+                        type: "text",
+                        options: [
+                            {
+                                value: 9,
+                                label: "9"
+                            },
+                            {
+                                value: 18,
+                                label: 18
+                            }
+                        ]
+                    }
+                },
+
+                {
+                    id: "Players",
+                    component: FIELD_TYPES.FIELD_ARRAY,
+                    legend: {
+                        content: "Phone"
+                    },
+                    styling: {
+                        variant: ["inline", "tel"]
+                    },
+                    subfields: [
+                        {
+                            id: "Name",
+                            component: FIELD_TYPES.INPUT_FIELD,
+                            required: true,
+                            label: false,
+                            input: {
+                                type: "text"
+                            }
+                        },
+                        {
+                            id: "Hcap",
+                            component: FIELD_TYPES.INPUT_FIELD,
+                            required: true,
+                            label: false,
+                            input: {
+                                type: "tel",
+                                mask: "99",
+                                maskPlaceholder: ""
+                            }
+                        }
+                    ],
+
+                    appendText: "+",
+                    deleteText: "-",
+                    canDeleteInitial: true,
+                    maximumEntries: 6,
+                    incrementFields: true
+                },
+
+            ]
+        }
+    ],
+
+    footer: {
+        styling: {
+            className: "justify-end"
+        },
+        content: [
+            {
+                id: "LoginSubmit",
+                component: BUTTON_TYPES.SUBMIT_BUTTON,
+                text: "Add Contact",
+                icon: {
+                    src: "plus",
+                    position: "before"
+                },
+                styling: {
+                    color: "primary"
+                }
+            }
+        ]
+    }
+
+};
+
+
+export default setupForm;
