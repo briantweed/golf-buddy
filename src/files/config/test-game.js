@@ -271,58 +271,118 @@ const testGame = {
             Handicap: 8,
             Scores: [
                 {
-                    Stroke: 3 
+                    Stroke: 3
                 },
                 {
-                    Stroke: 5 
+                    Stroke: 5
                 },
                 {
-                    Stroke: 4 
-                },
-                {
-                    Stroke: 6 
-                },
-                {
-                    Stroke: 4 
-                },
-                {
-                    Stroke: 3 
-                },
-                {
-                    Stroke: 5 
-                },
-                {
-                    Stroke: 6 
-                },
-                {
-                    Stroke: 4 
-                },
-                {
-                    Stroke: 5 
-                },
-                {
-                    Stroke: 3 
-                },
-                {
-                    Stroke: 4 
-                },
-                {
-                    Stroke: 6 
-                },
-                {
-                    Stroke: 4 
-                },
-                {
-                    Stroke: 5 
-                },  
-                {
-                    Stroke: 3 
-                },
-                {
-                    Stroke: 5 
+                    Stroke: 4
                 },
                 {
                     Stroke: 6
+                },
+                {
+                    Stroke: 4
+                },
+                {
+                    Stroke: 3
+                },
+                {
+                    Stroke: 5
+                },
+                {
+                    Stroke: 6
+                },
+                {
+                    Stroke: 4
+                },
+                {
+                    Stroke: 5
+                },
+                {
+                    Stroke: 3
+                },
+                {
+                    Stroke: 4
+                },
+                {
+                    Stroke: 6
+                },
+                {
+                    Stroke: 4
+                },
+                {
+                    Stroke: 5
+                },
+                {
+                    Stroke: 2
+                },
+                {
+                    Stroke: 5
+                },
+                {
+                    Stroke: 6
+                }
+            ]
+        },
+        {
+            Name: "Joshua",
+            Handicap: 14,
+            Scores: [
+                {
+                    Stroke: 3
+                },
+                {
+                    Stroke: 3
+                },
+                {
+                    Stroke: 3
+                },
+                {
+                    Stroke: 3
+                },
+                {
+                    Stroke: 4
+                },
+                {
+                    Stroke: 3
+                },
+                {
+                    Stroke: 5
+                },
+                {
+                    Stroke: 4
+                },
+                {
+                    Stroke: 4
+                },
+                {
+                    Stroke: 3
+                },
+                {
+                    Stroke: 4
+                },
+                {
+                    Stroke: 6
+                },
+                {
+                    Stroke: 5
+                },
+                {
+                    Stroke: 4
+                },
+                {
+                    Stroke: 2
+                },
+                {
+                    Stroke: 3
+                },
+                {
+                    Stroke: 5
+                },
+                {
+                    Stroke: 3
                 }
             ]
         }

@@ -12,14 +12,23 @@ const Page = () => {
         };
     });
 
+
+    const courseParScore = testGame.Holes.reduce((sum, item) => sum + item.Par, 0);
+    const courseTotalYards = testGame.Holes.reduce((sum, item) => sum + item.Yards, 0);
+
     return (
         <main className={"text-2xl text-grey-6 bg-grey-7 h-screen w-screen overflow-hidden"}>
 
-            <section className={"flex items-center justify-center py-8"}>
-                <h1>{testGame.CourseName}</h1>
+            <section className={"pt-12 pb-8 px-16"}>
+                <h1 className={"text-4xl mb-2"}>{testGame.CourseName} </h1>
+                <h2 className={"text-base"}>
+                    <i>Par: {courseParScore}</i>
+                    <br/>
+                    <i>Total Yards: {courseTotalYards}</i>
+                </h2>
             </section>
 
-            <section className={"flex items-center justify-center w-3/4 mx-auto"}>
+            <section className={"px-16"}>
                 <TabWidget tabs={tabs}/>
             </section>
 
@@ -36,45 +45,85 @@ const ScoreCard = (props) => {
     const FrontNine = testGame.Players[id].Scores.slice(0, 9);
     const BackNine = testGame.Players[id].Scores.slice(9, 18);
 
+    const FrontNineScore = FrontNine.reduce((sum, item) => sum + item.Stroke, 0);
+    const BackNineScore = BackNine.reduce((sum, item) => sum + item.Stroke, 0);
+    const TotalPlayerScore = FrontNineScore + BackNineScore;
+
     return (
-        <section className={"flex flex-col gap-2 justify-center items-center pt-8 pb-2.5"}>
+        <section className={"flex flex-col gap-2 justify-center items-start pt-8 pb-2.5"}>
             <div className={"flex gap-2"}>
                 {FrontNine.map((score, index) => {
+                    const parValue = testGame.Holes[index].Par;
+                    const strokeValue = score.Stroke;
+                    let bgColor = "bg-pastel-red-2";
+                    switch (parValue - strokeValue) {
+                        case -2: bgColor = "bg-pastel-red-2"; break;
+                        case -1: bgColor = "bg-pastel-red-1"; break;
+                        case 0: bgColor = "bg-grey-2"; break;
+                        case 1: bgColor = "bg-pastel-green-1"; break;
+                        case 2: bgColor = "bg-pastel-green-2"; break;
+                        case 3: bgColor = "bg-pastel-green-2"; break;
+                        case 4: bgColor = "bg-pastel-green-2"; break;
+                    }
+
                     return (
                         <div key={index}>
-                            <div
-                                className={"text-center font-semibold bg-lightBlue p-2 rounded-t-lg"}>{index + 1}</div>
+                            <div className={"text-center font-semibold bg-lightBlue p-2 rounded-t-lg"}>{index + 1}</div>
                             <div className={"flex"}>
-                                <div
-                                    className={"p-2 bg-grey-1 rounded-bl-lg w-16 h-16 flex items-center justify-center text-center"}>
-                                    {testGame.Holes[index].Par}
-                                </div>
-                                <div
-                                    className={"p-2 bg-grey-2 rounded-br-lg text-black w-16 h-16 flex items-center justify-center text-center"}>{score.Stroke}</div>
+                                <div className={"p-2 bg-grey-1 rounded-bl-lg w-16 h-16 flex items-center justify-center text-center"}>{parValue}</div>
+                                <div className={`p-2 ${bgColor} rounded-br-lg text-black w-16 h-16 flex items-center justify-center text-center`}>{strokeValue}</div>
                             </div>
                         </div>
                     );
                 })}
+
+                <div>
+                    <div className={"text-center font-semibold bg-blue p-2 rounded-t-lg"}>Out</div>
+                    <div className={"flex"}>
+                        <div className={"p-2 bg-grey-2 text-black font-semibold text-2xl rounded-bl-lg rounded-br-lg w-28 h-16 flex items-center justify-center text-center"}>{FrontNineScore}</div>
+                    </div>
+                </div>
+
             </div>
 
             {testGame.RoundType === ROUND_TYPE.FULL && (
                 <div className={"flex gap-2"}>
                     {BackNine.map((score, index) => {
+                        const parValue = testGame.Holes[index].Par;
+                        const strokeValue = score.Stroke;
+                        let bgColor = "bg-pastel-red-2";
+                        switch (parValue - strokeValue) {
+                            case -2: bgColor = "bg-pastel-red-2"; break;
+                            case -1: bgColor = "bg-pastel-red-1"; break;
+                            case 0: bgColor = "bg-grey-2"; break;
+                            case 1: bgColor = "bg-pastel-green-1"; break;
+                            case 2: bgColor = "bg-pastel-green-2"; break;
+                            case 3: bgColor = "bg-pastel-green-2"; break;
+                            case 4: bgColor = "bg-pastel-green-2"; break;
+                        }
+
                         return (
                             <div key={index}>
                                 <div className={"text-center font-semibold bg-lightBlue p-2 rounded-t-lg"}>{index + 1}</div>
                                 <div className={"flex"}>
-                                    <div
-                                        className={"p-2 bg-grey-1 rounded-bl-lg w-16 h-16 flex items-center justify-center text-center"}>
-                                        {testGame.Holes[index].Par}
-                                    </div>
-                                    <div className={"p-2 bg-grey-2 rounded-br-lg text-black w-16 h-16 flex items-center justify-center text-center"}>{score.Stroke}</div>
+                                    <div className={"p-2 bg-grey-1 rounded-bl-lg w-16 h-16 flex items-center justify-center text-center"}>{parValue}</div>
+                                    <div className={`p-2 ${bgColor} rounded-br-lg text-black w-16 h-16 flex items-center justify-center text-center`}>{strokeValue}</div>
                                 </div>
                             </div>
                         );
                     })}
+
+                    <div>
+                        <div className={"text-center font-semibold bg-blue p-2 rounded-t-lg"}>In</div>
+                        <div className={"flex"}>
+                            <div className={"p-2 bg-grey-2 text-black font-semibold text-2xl rounded-bl-lg rounded-br-lg w-28 h-16 flex items-center justify-center text-center"}>{BackNineScore}</div>
+                        </div>
+                    </div>
+
                 </div>
             )}
+
+            <div className="flex justify-end w-full px-[118px] mt-4 text-2xl italic"><span className="mr-4">Total Score : </span><span className="font-semibold">{TotalPlayerScore}</span></div>
         </section>
     );
 
