@@ -104,7 +104,7 @@ const ScoreCard = (props) => {
 
                         return (
                             <div key={index}>
-                                <div className={"text-center font-semibold bg-lightBlue p-2 rounded-t-lg"}>{index + 1}</div>
+                                <div className={"text-center font-semibold bg-lightBlue p-2 rounded-t-lg"}>{index + 10}</div>
                                 <div className={"flex"}>
                                     <div className={"p-2 bg-grey-1 rounded-bl-lg w-16 h-16 flex items-center justify-center text-center"}>{parValue}</div>
                                     <div className={`p-2 ${bgColor} rounded-br-lg text-black w-16 h-16 flex items-center justify-center text-center`}>{strokeValue}</div>
