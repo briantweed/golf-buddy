@@ -17,7 +17,7 @@ const validationRules = z.object({
         })
         .trim()
         .min(1, {
-            message: "Course Name is required"
+            message: "Round Type is required"
         }),
 
 
@@ -31,9 +31,9 @@ const validationRules = z.object({
             }),
         "Hcap": z.coerce
             .number({
-                message: "Numbers only"
+                message: "Hcap is required"
             })
-            .optional(),
+            .optional()
     }).array()
 
 });

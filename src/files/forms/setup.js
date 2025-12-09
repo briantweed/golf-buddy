@@ -34,6 +34,7 @@ const setupForm = {
                     styling: {
                         variant: "inline"
                     },
+                    defaultValue: "18",
                     label: {
                         content: "Round Length"
                     },
@@ -41,12 +42,12 @@ const setupForm = {
                         type: "text",
                         options: [
                             {
-                                value: 9,
+                                value: "9",
                                 label: "9"
                             },
                             {
-                                value: 18,
-                                label: 18
+                                value: "18",
+                                label: "18"
                             }
                         ]
                     }
@@ -84,7 +85,7 @@ const setupForm = {
                     ],
 
                     appendText: "+",
-                    deleteText: "-",
+                    deleteText: <span className="px-3 flex items-center h-40 m-10">-</span>,
                     canDeleteInitial: true,
                     maximumEntries: 6,
                     incrementFields: true
