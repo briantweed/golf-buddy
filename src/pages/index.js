@@ -87,7 +87,7 @@ const ScoreCard = (props) => {
 
     return (
         <section className={"flex flex-col gap-2 justify-center items-start pt-8 pb-2.5"}>
-            <div className={"flex gap-2"}>
+            <div className={"grid grid-cols-10 gap-2"}>
                 {FrontNine.map((score, index) => {
                     const parValue = testGame.Holes[index].Par;
                     const strokeValue = score.Stroke;
@@ -123,7 +123,7 @@ const ScoreCard = (props) => {
             </div>
 
             {isFullRound && (
-                <div className={"flex gap-2"}>
+                <div className={"grid grid-cols-10 gap-2"}>
                     {BackNine.map((score, index) => {
                         const parValue = testGame.Holes[index].Par;
                         const strokeValue = score.Stroke;
