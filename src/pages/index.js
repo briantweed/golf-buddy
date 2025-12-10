@@ -1,7 +1,5 @@
 import testGame, {ROUND_TYPE} from "@files/config/test-game";
 import TabWidget from "@components/widgets/TabWidget";
-import ToggleSwitch from "@components/ToggleSwitch";
-import {useState} from "react";
 import form from "@files/forms/setup";
 import validationRules from "@files/validation/setup.zod";
 import useFormBuilder from "@libraries/FormBuilder/useFormBuilder";
@@ -9,15 +7,8 @@ import useFormBuilder from "@libraries/FormBuilder/useFormBuilder";
 
 const Page = () => {
 
-    const [roundLength, setRoundLength] = useState(testGame.RoundType);
-
     const handleSubmit = (data) => {
         console.log(data);
-    };
-
-
-    const handleChange = () => {
-        setRoundLength((roundLength) => roundLength === ROUND_TYPE.FULL ? ROUND_TYPE.HALF : ROUND_TYPE.FULL);
     };
 
     const renderedForm = useFormBuilder(form, validationRules, handleSubmit, {
@@ -27,7 +18,7 @@ const Page = () => {
     const tabs = testGame.Players.map((Player, index) => {
         return {
             "label": Player.Name,
-            "content": <ScoreCard key={index} id={index} roundLength={roundLength}/>
+            "content": <ScoreCard key={index} id={index}/>
         };
     });
 
@@ -43,7 +34,7 @@ const Page = () => {
                     <h1 className={"text-2xl font-medium"}>{testGame.CourseName} </h1>
                     <div className="flex justify-end gap-6 pr-4">
                         <h2 className={"text-base mt-1"}>
-                            Holes: {roundLength}
+                            Holes: {testGame.RoundType}
                         </h2>
                         <span className="text-darkGreen">|</span>
                         <h2 className={"text-base mt-1"}>
@@ -76,12 +67,9 @@ const Page = () => {
 
 const ScoreCard = (props) => {
 
-    const {
-        id,
-        roundLength
-    } = props;
+    const {id} = props;
 
-    const isFullRound = roundLength === ROUND_TYPE.FULL;
+    const isFullRound = testGame.RoundType === ROUND_TYPE.FULL;
 
     const FrontNine = testGame.Players[id].Scores.slice(0, 9);
     const BackNine = testGame.Players[id].Scores.slice(9, 18);
