@@ -84,7 +84,7 @@ const setupForm = {
                         }
                     ],
 
-                    appendText: "+",
+                    appendText: "+ Add Player",
                     deleteText: <span className="px-3 flex items-center h-40 m-10">-</span>,
                     canDeleteInitial: true,
                     maximumEntries: 6,
@@ -103,7 +103,7 @@ const setupForm = {
             {
                 id: "LoginSubmit",
                 component: BUTTON_TYPES.SUBMIT_BUTTON,
-                text: "Save",
+                text: "Save Changes",
                 styling: {
                     color: "success"
                 }

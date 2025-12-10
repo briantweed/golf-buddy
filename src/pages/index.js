@@ -60,22 +60,8 @@ const Page = () => {
             </div>
 
             <div className="landscape:hidden">
-                <h1 className={"text-2xl font-bold text-center"}>Scorecard</h1>
-                <div className="flex gap-1 text-base mt-1">
-                    <span><i>Holes:</i></span>
-                    <span className={"text-sm ml-2"}>9</span>
-                    <ToggleSwitch
-                        id={"NumberOfHoles"}
-                        isActive={roundLength === ROUND_TYPE.FULL}
-                        handleChange={handleChange}
-                    />
-                    <span className={"text-sm"}>18</span>
-                </div>
-                <br/>
-                <br/>
-                <hr/>
-                <br/>
-                <div className="p-4">{renderedForm}</div>
+                <h1 className={"text-2xl font-bold text-center pt-8"}>Scorecard</h1>
+                <div className="p-8 pt-4">{renderedForm}</div>
             </div>
 
             {/*<section className={"w-3/4 mx-auto"}>*/}
