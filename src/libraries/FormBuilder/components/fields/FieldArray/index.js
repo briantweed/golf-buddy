@@ -149,7 +149,7 @@ const FieldArray = (props) => {
 
                 </ul>
 
-                <div className={"flex justify-end"}>
+                <div className={"flex justify-start"}>
                     {showAppendButton && (
                         <button
                             type="button"
