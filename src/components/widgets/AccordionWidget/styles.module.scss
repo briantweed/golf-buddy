@@ -1,0 +1,16 @@
+.contents {
+    @apply p-8;
+
+    .item {
+        @apply my-4 border-b border-b-darkGreen pb-4;
+
+        .header {
+            @apply py-4;
+        }
+
+        .panel {
+            @apply p-8;
+        }
+    }
+
+}

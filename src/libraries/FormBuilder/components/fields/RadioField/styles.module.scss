@@ -1,9 +1,6 @@
 .formField {
-
-    &:has(.inline) {
-        @apply border-b border-grey-3;
         @apply mt-5 pb-5;
-    }
+
 
     .contents {
 

@@ -3,6 +3,7 @@ import TabWidget from "@components/widgets/TabWidget";
 import form from "@files/forms/setup";
 import validationRules from "@files/validation/setup.zod";
 import useFormBuilder from "@libraries/FormBuilder/useFormBuilder";
+import AccordionWidget from "@components/widgets/AccordionWidget";
 
 
 const Page = () => {
@@ -29,8 +30,10 @@ const Page = () => {
     return (
         <main className={"min-h-screen w-screen text-xl text-grey-6 bg-grey-7"}>
 
+            <h1 className={"text-4xl font-semibold pt-4 pb-2 text-center"}>Golf Buddy</h1>
+            <h2 className={"text-2xl italic  pt-0 text-center"}>ScoreCard</h2>
             <div className="portrait:hidden min-h-screen flex flex-col justify-between">
-                <section className={"flex justify-between p-4"}>
+                <section className={"flex justify-between px-4"}>
                     <h1 className={"text-2xl font-medium"}>{testGame.CourseName} </h1>
                     <div className="flex justify-end gap-6 pr-4">
                         <h2 className={"text-base mt-1"}>
@@ -51,13 +54,24 @@ const Page = () => {
             </div>
 
             <div className="landscape:hidden">
-                <h1 className={"text-2xl font-bold text-center pt-8"}>Scorecard</h1>
-                <div className="p-8 pt-4">{renderedForm}</div>
-            </div>
+                <AccordionWidget
+                    tabs={[
+                        {
+                            "label": "Leaderboard",
+                            "content": (
+                                <div>
+                                    Coming Soon
+                                </div>
+                            )
+                        },
+                        {
+                            "label": "Setup",
+                            "content": <div>{renderedForm}</div>
+                        }
+                    ]}
+                />
 
-            {/*<section className={"w-3/4 mx-auto"}>*/}
-            {/*    {renderedForm}*/}
-            {/*</section>*/}
+            </div>
 
         </main>
     );
