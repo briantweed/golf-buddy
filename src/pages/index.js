@@ -36,22 +36,20 @@ const Page = () => {
     return (
         <main className={"min-h-screen w-screen text-xl text-grey-6 bg-grey-7"}>
 
-            <div className="portrait:hidden">
+            <div className="portrait:hidden min-h-screen flex flex-col justify-between">
                 <section className={"flex justify-between p-4"}>
                     <h1 className={"text-2xl font-medium"}>{testGame.CourseName} </h1>
-                    <h2 className={"text-base mt-1"}>
-                        <i>Par: <span className={"ml-2"}>{courseParScore}</span></i>
-                    </h2>
-                    <h2 className={"text-base mt-1"}><i>Yards:<span className={"ml-2"}> {courseTotalYards}</span></i></h2>
-                    <div className="flex gap-1 text-base mt-1">
-                        <span><i>Holes:</i></span>
-                        <span className={"text-sm ml-2"}>9</span>
-                        <ToggleSwitch
-                            id={"NumberOfHoles"}
-                            isActive={roundLength === ROUND_TYPE.FULL}
-                            handleChange={handleChange}
-                        />
-                        <span className={"text-sm"}>18</span>
+                    <div className="flex justify-end gap-6 pr-4">
+                        <h2 className={"text-base mt-1"}>
+                            Holes: {roundLength}
+                        </h2>
+                        <span className="text-darkGreen">|</span>
+                        <h2 className={"text-base mt-1"}>
+                            <i>Par: <span className={"ml-2"}>{courseParScore}</span></i>
+                        </h2>
+                        <span className="text-darkGreen">|</span>
+                        <h2 className={"text-base mt-1"}><i>Yards:<span className={"ml-2"}> {courseTotalYards}</span></i></h2>
+
                     </div>
                 </section>
 
@@ -61,7 +59,17 @@ const Page = () => {
             </div>
 
             <div className="landscape:hidden">
-                Turn your phone
+                <h1 className={"text-2xl font-bold text-center"}>Scorecard</h1>
+                <div className="flex gap-1 text-base mt-1">
+                    <span><i>Holes:</i></span>
+                    <span className={"text-sm ml-2"}>9</span>
+                    <ToggleSwitch
+                        id={"NumberOfHoles"}
+                        isActive={roundLength === ROUND_TYPE.FULL}
+                        handleChange={handleChange}
+                    />
+                    <span className={"text-sm"}>18</span>
+                </div>
             </div>
 
             {/*<section className={"w-3/4 mx-auto"}>*/}
