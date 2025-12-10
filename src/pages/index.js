@@ -67,6 +67,14 @@ const Page = () => {
                         {
                             "label": "Setup",
                             "content": <div>{renderedForm}</div>
+                        },
+                        {
+                            "label": "Danger Zone",
+                            "content": <div className={"flex flex-col gap-2"}>
+                                <button type="button">- Wipe all Player scores</button>
+                                <button type="button">- Remove all Players</button>
+                                <button type="button">- Clear all data</button>
+                            </div>
                         }
                     ]}
                 />
