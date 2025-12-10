@@ -30,8 +30,6 @@ const Page = () => {
     return (
         <main className={"min-h-screen w-screen text-xl text-grey-6 bg-grey-7"}>
 
-            <h1 className={"text-4xl font-semibold pt-4 pb-2 text-center"}>Golf Buddy</h1>
-            <h2 className={"text-2xl italic  pt-0 text-center"}>ScoreCard</h2>
             <div className="portrait:hidden min-h-screen flex flex-col justify-between">
                 <section className={"flex justify-between px-4"}>
                     <h1 className={"text-2xl font-medium"}>{testGame.CourseName} </h1>
@@ -54,6 +52,8 @@ const Page = () => {
             </div>
 
             <div className="landscape:hidden">
+                <h1 className={"text-4xl font-semibold pt-4 pb-2 text-center"}>Golf Buddy</h1>
+                <h2 className={"text-2xl italic pt-0 text-center"}>ScoreCard</h2>
                 <AccordionWidget
                     tabs={[
                         {
@@ -70,10 +70,10 @@ const Page = () => {
                         },
                         {
                             "label": "Danger Zone",
-                            "content": <div className={"flex flex-col gap-2"}>
-                                <button type="button">- Wipe all Player scores</button>
-                                <button type="button">- Remove all Players</button>
-                                <button type="button">- Reset</button>
+                            "content": <div className={"flex flex-col items-start gap-4"}>
+                                <button type="button" className={"bg-red-2 p-2 px-4 pr-5 text-sm rounded-xl flex items-center gap-3"}><span className="text-xs">x</span> Clear Player scores</button>
+                                <button type="button" className={"bg-red-2 p-2 px-4 pr-5 text-sm rounded-xl flex items-center gap-3"}><span className="text-xs">x</span> Remove all Players</button>
+                                <button type="button" className={"bg-red-2 p-2 px-4 pr-5 text-sm rounded-xl flex items-center gap-3"}><span className="text-xs">x</span> Full Reset</button>
                             </div>
                         }
                     ]}
