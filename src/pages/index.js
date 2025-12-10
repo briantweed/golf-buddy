@@ -20,7 +20,9 @@ const Page = () => {
         setRoundLength((roundLength) => roundLength === ROUND_TYPE.FULL ? ROUND_TYPE.HALF : ROUND_TYPE.FULL);
     };
 
-    // const renderedForm = useFormBuilder(form, validationRules, handleSubmit);
+    const renderedForm = useFormBuilder(form, validationRules, handleSubmit, {
+        defaultValues: testGame
+    });
 
     const tabs = testGame.Players.map((Player, index) => {
         return {
@@ -49,7 +51,6 @@ const Page = () => {
                         </h2>
                         <span className="text-darkGreen">|</span>
                         <h2 className={"text-base mt-1"}><i>Yards:<span className={"ml-2"}> {courseTotalYards}</span></i></h2>
-
                     </div>
                 </section>
 
@@ -70,6 +71,11 @@ const Page = () => {
                     />
                     <span className={"text-sm"}>18</span>
                 </div>
+                <br/>
+                <br/>
+                <hr/>
+                <br/>
+                <div className="p-4">{renderedForm}</div>
             </div>
 
             {/*<section className={"w-3/4 mx-auto"}>*/}

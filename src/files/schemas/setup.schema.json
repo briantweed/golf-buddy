@@ -17,14 +17,14 @@
                 "type": "object",
                 "required": [
                     "Name",
-                    "Hcap"
+                    "Handicap"
                 ],
                 "additionalProperties": false,
                 "properties": {
                     "Name": {
                         "type": "string"
                     },
-                    "Hcap": {
+                    "Handicap": {
                         "type": "string"
                     }
                 }

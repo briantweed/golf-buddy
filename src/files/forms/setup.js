@@ -72,11 +72,11 @@ const setupForm = {
                             }
                         },
                         {
-                            id: "Hcap",
+                            id: "Handicap",
                             component: FIELD_TYPES.INPUT_FIELD,
                             required: false,
                             label: {
-                                content: "Hcap"
+                                content: "Handicap"
                             },
                             input: {
                                 type: "tel"

@@ -29,9 +29,9 @@ const validationRules = z.object({
             .min(1, {
                 message: "Name is required"
             }),
-        "Hcap": z.coerce
+        "Handicap": z.coerce
             .number({
-                message: "Hcap is required"
+                message: "Handicap is required"
             })
             .optional()
     }).array()
