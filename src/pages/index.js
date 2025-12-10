@@ -17,7 +17,7 @@ const Page = () => {
 
 
     const handleChange = () => {
-        setRoundLength((roundLength) => roundLength === ROUND_TYPE.FULL ? ROUND_TYPE.HALF : ROUND_TYPE.FULL );
+        setRoundLength((roundLength) => roundLength === ROUND_TYPE.FULL ? ROUND_TYPE.HALF : ROUND_TYPE.FULL);
     };
 
     // const renderedForm = useFormBuilder(form, validationRules, handleSubmit);
@@ -36,27 +36,33 @@ const Page = () => {
     return (
         <main className={"min-h-screen w-screen text-xl text-grey-6 bg-grey-7"}>
 
-            <section className={"flex justify-between p-4"}>
-                <h1 className={"text-2xl font-medium"}>{testGame.CourseName} </h1>
-                <h2 className={"text-base mt-1"}>
-                    <i>Par: <span className={"ml-2"}>{courseParScore}</span></i>
-                </h2>
-                <h2 className={"text-base mt-1"}><i>Yards:<span className={"ml-2"}> {courseTotalYards}</span></i></h2>
-                <div className="flex gap-1 text-base mt-1">
-                    <span><i>Holes:</i></span>
-                    <span className={"text-sm ml-2"}>9</span>
-                    <ToggleSwitch
-                        id={"NumberOfHoles"}
-                        isActive={roundLength === ROUND_TYPE.FULL}
-                        handleChange={handleChange}
-                    />
-                    <span className={"text-sm"}>18</span>
-                </div>
-            </section>
+            <div className="portrait:hidden">
+                <section className={"flex justify-between p-4"}>
+                    <h1 className={"text-2xl font-medium"}>{testGame.CourseName} </h1>
+                    <h2 className={"text-base mt-1"}>
+                        <i>Par: <span className={"ml-2"}>{courseParScore}</span></i>
+                    </h2>
+                    <h2 className={"text-base mt-1"}><i>Yards:<span className={"ml-2"}> {courseTotalYards}</span></i></h2>
+                    <div className="flex gap-1 text-base mt-1">
+                        <span><i>Holes:</i></span>
+                        <span className={"text-sm ml-2"}>9</span>
+                        <ToggleSwitch
+                            id={"NumberOfHoles"}
+                            isActive={roundLength === ROUND_TYPE.FULL}
+                            handleChange={handleChange}
+                        />
+                        <span className={"text-sm"}>18</span>
+                    </div>
+                </section>
 
-            <section className={"px-4"}>
-                <TabWidget tabs={tabs}/>
-            </section>
+                <section className={"px-4"}>
+                    <TabWidget tabs={tabs}/>
+                </section>
+            </div>
+
+            <div className="landscape:hidden">
+                Turn your phone
+            </div>
 
             {/*<section className={"w-3/4 mx-auto"}>*/}
             {/*    {renderedForm}*/}
@@ -85,81 +91,122 @@ const ScoreCard = (props) => {
     const TotalPlayerScore = FrontNineScore + (isFullRound ? BackNineScore : 0);
 
     return (
-        <section className={"flex flex-col gap-2 justify-center items-start pb-4 mt-6"}>
-            <div className={"grid grid-cols-10 gap-2"}>
-                {FrontNine.map((score, index) => {
-                    const parValue = testGame.Holes[index].Par;
-                    const strokeValue = score.Stroke;
-                    let bgColor = "bg-pastel-red-2";
-                    switch (parValue - strokeValue) {
-                        case -2: bgColor = "bg-pastel-red-2"; break;
-                        case -1: bgColor = "bg-pastel-red-1"; break;
-                        case 0: bgColor = "bg-grey-2"; break;
-                        case 1: bgColor = "bg-pastel-green-1"; break;
-                        case 2: bgColor = "bg-pastel-green-2"; break;
-                        case 3: bgColor = "bg-pastel-green-2"; break;
-                        case 4: bgColor = "bg-pastel-green-2"; break;
-                    }
+        <div>
 
-                    return (
-                        <div key={index}>
-                            <div className={"text-center font-semibold bg-lightBlue py-1 rounded-t-lg"}>{index + 1}</div>
-                            <div className={"grid grid-cols-2 grow"}>
-                                <div className={"py-1 bg-grey-1 rounded-bl-lg flex items-center justify-center text-center"}>{parValue}</div>
-                                <div className={`py-1 ${bgColor} rounded-br-lg text-black flex items-center justify-center text-center`}>{strokeValue}</div>
-                            </div>
-                        </div>
-                    );
-                })}
-
-                <div>
-                    <div className={"text-center font-semibold bg-blue py-1 rounded-t-lg"}>Out</div>
-                    <div className={"flex"}>
-                        <div className={"py-1 bg-grey-2 text-black font-semibold text-xl rounded-bl-lg rounded-br-lg w-28 flex items-center justify-center text-center"}>{FrontNineScore}</div>
-                    </div>
-                </div>
-
-            </div>
-
-            {isFullRound && (
+            <section className={"flex flex-col gap-2 justify-center items-start pb-4 mt-6"}>
                 <div className={"grid grid-cols-10 gap-2"}>
-                    {BackNine.map((score, index) => {
+                    {FrontNine.map((score, index) => {
                         const parValue = testGame.Holes[index].Par;
                         const strokeValue = score.Stroke;
                         let bgColor = "bg-pastel-red-2";
                         switch (parValue - strokeValue) {
-                            case -2: bgColor = "bg-pastel-red-2"; break;
-                            case -1: bgColor = "bg-pastel-red-1"; break;
-                            case 0: bgColor = "bg-grey-2"; break;
-                            case 1: bgColor = "bg-pastel-green-1"; break;
-                            case 2: bgColor = "bg-pastel-green-2"; break;
-                            case 3: bgColor = "bg-pastel-green-2"; break;
-                            case 4: bgColor = "bg-pastel-green-2"; break;
+                            case -2:
+                                bgColor = "bg-pastel-red-2";
+                                break;
+                            case -1:
+                                bgColor = "bg-pastel-red-1";
+                                break;
+                            case 0:
+                                bgColor = "bg-grey-2";
+                                break;
+                            case 1:
+                                bgColor = "bg-pastel-green-1";
+                                break;
+                            case 2:
+                                bgColor = "bg-pastel-green-2";
+                                break;
+                            case 3:
+                                bgColor = "bg-pastel-green-2";
+                                break;
+                            case 4:
+                                bgColor = "bg-pastel-green-2";
+                                break;
                         }
 
                         return (
                             <div key={index}>
-                                <div className={"text-center font-semibold bg-lightBlue py-1 rounded-t-lg"}>{index + 10}</div>
+                                <div
+                                    className={"text-center font-semibold bg-lightBlue py-1 rounded-t-lg"}>{index + 1}</div>
                                 <div className={"grid grid-cols-2 grow"}>
-                                    <div className={"py-1 bg-grey-1 rounded-bl-lg  flex items-center justify-center text-center"}>{parValue}</div>
-                                    <div className={`py-1 ${bgColor} rounded-br-lg text-black flex items-center justify-center text-center`}>{strokeValue}</div>
+                                    <div
+                                        className={"py-1 bg-grey-1 rounded-bl-lg flex items-center justify-center text-center"}>{parValue}</div>
+                                    <div
+                                        className={`py-1 ${bgColor} rounded-br-lg text-black flex items-center justify-center text-center`}>{strokeValue}</div>
                                 </div>
                             </div>
                         );
                     })}
 
                     <div>
-                        <div className={"text-center font-semibold bg-blue py-1 rounded-t-lg"}>In</div>
+                        <div className={"text-center font-semibold bg-blue py-1 rounded-t-lg"}>Out</div>
                         <div className={"flex"}>
-                            <div className={"py-1 bg-grey-2 text-black font-semibold text-xl rounded-bl-lg rounded-br-lg w-28 flex items-center justify-center text-center"}>{BackNineScore}</div>
+                            <div
+                                className={"py-1 bg-grey-2 text-black font-semibold text-xl rounded-bl-lg rounded-br-lg w-28 flex items-center justify-center text-center"}>{FrontNineScore}</div>
                         </div>
                     </div>
 
                 </div>
-            )}
 
-            <div className="flex justify-end w-full pr-8 mt-2 text-base"><span className="mr-4">Total Score : </span><span className="font-semibold">{TotalPlayerScore}</span></div>
-        </section>
+                {isFullRound && (
+                    <div className={"grid grid-cols-10 gap-2"}>
+                        {BackNine.map((score, index) => {
+                            const parValue = testGame.Holes[index].Par;
+                            const strokeValue = score.Stroke;
+                            let bgColor = "bg-pastel-red-2";
+                            switch (parValue - strokeValue) {
+                                case -2:
+                                    bgColor = "bg-pastel-red-2";
+                                    break;
+                                case -1:
+                                    bgColor = "bg-pastel-red-1";
+                                    break;
+                                case 0:
+                                    bgColor = "bg-grey-2";
+                                    break;
+                                case 1:
+                                    bgColor = "bg-pastel-green-1";
+                                    break;
+                                case 2:
+                                    bgColor = "bg-pastel-green-2";
+                                    break;
+                                case 3:
+                                    bgColor = "bg-pastel-green-2";
+                                    break;
+                                case 4:
+                                    bgColor = "bg-pastel-green-2";
+                                    break;
+                            }
+
+                            return (
+                                <div key={index}>
+                                    <div
+                                        className={"text-center font-semibold bg-lightBlue py-1 rounded-t-lg"}>{index + 10}</div>
+                                    <div className={"grid grid-cols-2 grow"}>
+                                        <div
+                                            className={"py-1 bg-grey-1 rounded-bl-lg  flex items-center justify-center text-center"}>{parValue}</div>
+                                        <div
+                                            className={`py-1 ${bgColor} rounded-br-lg text-black flex items-center justify-center text-center`}>{strokeValue}</div>
+                                    </div>
+                                </div>
+                            );
+                        })}
+
+                        <div>
+                            <div className={"text-center font-semibold bg-blue py-1 rounded-t-lg"}>In</div>
+                            <div className={"flex"}>
+                                <div
+                                    className={"py-1 bg-grey-2 text-black font-semibold text-xl rounded-bl-lg rounded-br-lg w-28 flex items-center justify-center text-center"}>{BackNineScore}</div>
+                            </div>
+                        </div>
+
+                    </div>
+                )}
+
+                <div className="flex justify-end w-full pr-8 mt-2 text-base"><span
+                    className="mr-4">Total Score : </span><span className="font-semibold">{TotalPlayerScore}</span>
+                </div>
+            </section>
+        </div>
     );
 
 };
