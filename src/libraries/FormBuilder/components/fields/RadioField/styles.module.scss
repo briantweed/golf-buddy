@@ -8,7 +8,7 @@
     .contents {
 
         .inputs{
-            @apply flex items-center gap-2 flex-wrap justify-end;
+            @apply flex items-center gap-2 flex-wrap justify-start;
         }
 
         @screen md {
