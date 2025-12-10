@@ -73,7 +73,7 @@ const Page = () => {
                             "content": <div className={"flex flex-col gap-2"}>
                                 <button type="button">- Wipe all Player scores</button>
                                 <button type="button">- Remove all Players</button>
-                                <button type="button">- Clear all data</button>
+                                <button type="button">- Reset</button>
                             </div>
                         }
                     ]}
