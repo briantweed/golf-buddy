@@ -4,6 +4,7 @@ import form from "@files/forms/setup";
 import validationRules from "@files/validation/setup.zod";
 import useFormBuilder from "@libraries/FormBuilder/useFormBuilder";
 import AccordionWidget from "@components/widgets/AccordionWidget";
+import Leaderboard from "@components/Leaderboard";
 
 
 const Page = () => {
@@ -55,13 +56,13 @@ const Page = () => {
                 <h1 className={"text-4xl font-semibold pt-4 pb-2 text-center"}>Golf Buddy</h1>
                 <h2 className={"text-2xl italic pt-0 text-center"}>ScoreCard</h2>
                 <AccordionWidget
+                    id={"setup"}
+                    defaultValue={["setup_0"]}
                     tabs={[
                         {
                             "label": "Leaderboard",
                             "content": (
-                                <div>
-                                    Coming Soon
-                                </div>
+                                <Leaderboard/>
                             )
                         },
                         {

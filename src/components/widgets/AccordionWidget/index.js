@@ -5,17 +5,19 @@ import styles from "./styles.module.scss";
 const AccordionWidget = (props) => {
 
     const {
-        tabs = []
+        id = "accordion",
+        tabs = [],
+        defaultValue = []
     } = props;
 
 
     return (
-        <Accordion.Root className={styles.contents}>
+        <Accordion.Root defaultValue={defaultValue} className={styles.contents}>
             {tabs.map((tab, index) => {
                 return (
                     <Accordion.Item
                         key={index}
-                        value={`accordion_${index}`}
+                        value={`${id}_${index}`}
                         className={styles.item}
                     >
                         <Accordion.Header

@@ -1,0 +1,29 @@
+.contents {
+    @apply text-left;
+
+    .heading, .standings {
+        @apply grid grid-cols-4 gap-4;
+        grid-template-columns: 10px 1fr 1fr 1fr;
+    }
+
+    .heading {
+        @apply mb-4 border-b pb-2;
+    }
+
+    .standings {
+
+        .total {
+            @apply text-center;
+        }
+        .par {
+            @apply flex justify-end;
+
+            > div {
+                @apply flex items-center justify-center w-16 text-right p-2 rounded-lg bg-red-2;
+            }
+
+        }
+
+    }
+
+}
