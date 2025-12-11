@@ -72,7 +72,7 @@ const Page = () => {
                         {
                             "label": "Scorecard",
                             "content": (
-                                <div>Rotate your phone to Landscape</div>
+                                <div className={"text-sm italic"}>rotate your phone</div>
                             )
                         },
                         {
