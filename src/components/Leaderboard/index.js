@@ -43,7 +43,7 @@ const Leaderboard = () => {
                 <div>#</div>
                 <div>Name</div>
                 <div className={"text-center"}>Total</div>
-                <div className={"text-right"}>Score</div>
+                <div className={"text-right pr-1"}>Score</div>
             </div>
             <div className={styles.standings}>
                 {leaderboardResults.map((player, index) => {
