@@ -1,6 +1,6 @@
 .contents {
     @apply text-left text-xs;
-        @apply overflow-auto relative;
+        @apply overflow-auto relative pb-4;
 
     .heading, .standings {
         @apply grid gap-4 items-center text-center;
