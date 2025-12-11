@@ -45,6 +45,7 @@ const Leaderboard = () => {
                 <div>#</div>
                 <div>Name</div>
                 <div className={"text-center"}>Total</div>
+                <div className={"text-right pr-1"}>Score</div>
                 <div>1</div>
                 <div>2</div>
                 <div>3</div>
@@ -63,7 +64,6 @@ const Leaderboard = () => {
                 <div>16</div>
                 <div>17</div>
                 <div>18</div>
-                <div className={"text-right pr-1"}>Score</div>
             </div>
             <div className={styles.standings}>
                 {leaderboardData.map((player, index) => {
@@ -72,10 +72,10 @@ const Leaderboard = () => {
                             <div><i>{index+1}</i></div>
                             <div className={"font-semibold"}>{player.Name}</div>
                             <div className={styles.total}>{player.Total}</div>
+                            <div className={styles.par}><div>{player.RelativeToPar}</div></div>
                             {player.Scores.map((score, index) => {
                                 return <div key={index}>{score}</div>;
                             })}
-                            <div className={styles.par}><div>{player.RelativeToPar}</div></div>
                         </Fragment>
                     );
                 })}
