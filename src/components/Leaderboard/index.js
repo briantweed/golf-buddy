@@ -36,7 +36,6 @@ const Leaderboard = () => {
     }
 
     const leaderboardResults = rankGolfScores(players);
-    console.log(leaderboardResults);
 
     return (
         <div className={styles.contents}>
