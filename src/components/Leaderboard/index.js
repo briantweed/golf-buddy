@@ -50,7 +50,7 @@ const Leaderboard = () => {
                     return (
                         <Fragment key={index}>
                             <div><i>{index+1}</i></div>
-                            <div>{player.Name}</div>
+                            <div className={"font-semibold"}>{player.Name}</div>
                             <div className={styles.total}>{player.Total}</div>
                             <div className={styles.par}><div>{player.RelativeToPar}</div></div>
                         </Fragment>
