@@ -1,13 +1,14 @@
 .contents {
     @apply text-left text-xs;
+        @apply overflow-auto relative;
 
     .heading, .standings {
-        @apply grid grid-cols-4 gap-4 items-center;
-        grid-template-columns: 10px 1fr 1fr 60px;
+        @apply grid gap-4 items-center text-center;
+        grid-template-columns: 10px 1fr 1fr repeat(18, 20px) 60px;
     }
 
     .heading {
-        @apply mb-4 border-b pb-2;
+        @apply w-fit mb-4 border-b pb-2;
     }
 
     .standings {
