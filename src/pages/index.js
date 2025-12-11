@@ -32,7 +32,7 @@ const Page = () => {
         <main className={"min-h-screen w-screen text-xl text-grey-6 bg-grey-7"}>
 
             <div className="portrait:hidden min-h-screen flex flex-col justify-between">
-                <section className={"flex justify-between px-4 pt-8"}>
+                <section className={"flex justify-between px-4 pt-4"}>
                     <h1 className={"text-2xl font-medium"}>{testGame.CourseName} </h1>
                     <div className="flex justify-end gap-6 pr-4">
                         <h2 className={"text-base mt-1"}>
