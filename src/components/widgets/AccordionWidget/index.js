@@ -24,7 +24,7 @@ const AccordionWidget = (props) => {
                             className={styles.header}
                         >
                             <Accordion.Trigger>
-                                <span className={"mr-2"}>&gt;&gt;</span> {tab.label}
+                                <span className={"mr-2"}>&gt;</span> {tab.label}
                             </Accordion.Trigger>
                         </Accordion.Header>
                         <Accordion.Panel className={styles.panel}>

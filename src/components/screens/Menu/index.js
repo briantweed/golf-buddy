@@ -16,7 +16,6 @@ const Menu = () => {
 
             <AccordionWidget
                 id={"setup"}
-                defaultValue={["setup_0"]}
                 tabs={[
                     {
                         "label": "Leaderboard",
