@@ -29,7 +29,7 @@ const Page = () => {
     const courseTotalYards = testGame.Holes.reduce((sum, item) => sum + item.Yards, 0);
 
     return (
-        <main className={"min-h-screen w-screen text-xl text-grey-6 bg-grey-7"}>
+        <main className={"min-h-screen w-screen text-xl text-grey-6 bg-green-9"}>
 
             <div className="portrait:hidden min-h-screen flex flex-col justify-between">
                 <section className={"flex justify-between px-4 pt-4"}>

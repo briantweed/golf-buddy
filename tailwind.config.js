@@ -40,7 +40,7 @@ module.exports = {
                 4: "#E9E9E9",
                 5: "#EFEFEF",
                 6: "#F6F6F6",
-                7: "#2d3d32",
+                7: "#FAFAFA",
                 8: "#F9F9F9"
             },
             pastel: {
