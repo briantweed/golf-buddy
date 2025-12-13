@@ -1,10 +1,10 @@
 import styles from "./styles.module.scss";
-import testGame from "@files/config/test-game";
+import storedGameData from "@files/config/test-game";
 import {Fragment} from "react";
 
 const Leaderboard = () => {
 
-    const players = testGame.Players;
+    const players = storedGameData.Players;
 
 
     function calculateLeaderboardData(players, par = 72) {

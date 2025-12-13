@@ -3,7 +3,7 @@ export const ROUND_TYPE = {
     FULL: 18,
 };
 
-const testGame = {
+const storedGameData = {
 
     CourseName: "Coeur D'Alene",
 
@@ -390,4 +390,4 @@ const testGame = {
 
 };
 
-export default testGame;
+export default storedGameData;

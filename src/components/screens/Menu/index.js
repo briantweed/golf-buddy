@@ -1,4 +1,4 @@
-import testGame from "@files/config/test-game";
+import storedGameData from "@files/config/test-game";
 import form from "@files/forms/setup";
 import validationRules from "@files/validation/setup.zod";
 import useFormBuilder from "@libraries/FormBuilder/useFormBuilder";
@@ -13,7 +13,7 @@ const Menu = () => {
     };
 
     const renderedForm = useFormBuilder(form, validationRules, handleSubmit, {
-        defaultValues: testGame
+        defaultValues: storedGameData
     });
 
 

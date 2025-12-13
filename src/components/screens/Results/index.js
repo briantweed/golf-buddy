@@ -1,37 +1,22 @@
 import TabWidget from "@components/widgets/TabWidget";
-import testGame, {ROUND_TYPE} from "@files/config/test-game";
+import storedGameData, {ROUND_TYPE} from "@files/config/test-game";
+import Navigation from "./Navigation";
 
 
 const Results = () => {
-
-    const courseParScore = testGame.Holes.reduce((sum, item) => sum + item.Par, 0);
-
-    const courseTotalYards = testGame.Holes.reduce((sum, item) => sum + item.Yards, 0);
-
-    const tabs = testGame.Players.map((Player, index) => {
+    
+    const tabs = storedGameData.Players.map((Player, index) => {
         return {
             "label": Player.Name,
             "content": <ScoreCard key={index} id={index}/>
         };
     });
 
+    
     return (
         <div className="portrait:hidden min-h-screen flex flex-col justify-between">
-            <section className={"flex justify-between px-4 pt-4"}>
-                <h1 className={"text-2xl font-medium"}>{testGame.CourseName}</h1>
-                <div className="flex justify-end gap-6 pr-4">
-                    <h2 className={"text-base mt-1"}>
-                        Holes: {testGame.RoundType}
-                    </h2>
-                    <span className="text-darkGreen">|</span>
-                    <h2 className={"text-base mt-1"}>
-                        <i>Par: <span className={"ml-2"}>{courseParScore}</span></i>
-                    </h2>
-                    <span className="text-darkGreen">|</span>
-                    <h2 className={"text-base mt-1"}><i>Yards:<span className={"ml-2"}> {courseTotalYards}</span></i>
-                    </h2>
-                </div>
-            </section>
+            
+            <Navigation/>
 
             <section className={"px-4"}>
                 <TabWidget tabs={tabs}/>
@@ -46,10 +31,10 @@ const ScoreCard = (props) => {
 
     const {id} = props;
 
-    const isFullRound = testGame.RoundType === ROUND_TYPE.FULL;
+    const isFullRound = storedGameData.RoundType === ROUND_TYPE.FULL;
 
-    const FrontNine = testGame.Players[id].Scores.slice(0, 9);
-    const BackNine = testGame.Players[id].Scores.slice(9, 18);
+    const FrontNine = storedGameData.Players[id].Scores.slice(0, 9);
+    const BackNine = storedGameData.Players[id].Scores.slice(9, 18);
 
 
     const FrontNineScore = BackNine.reduce((sum, item) => sum + item.Stroke, 0);
@@ -125,7 +110,7 @@ const Direction = (props) => {
     return (
         <div className={"grid grid-cols-10 gap-2"}>
             {holes.map((score, index) => {
-                const parValue = testGame.Holes[index].Par;
+                const parValue = storedGameData.Holes[index].Par;
                 const strokeValue = score.Stroke;
                 const bgColor = getBgColor(parValue - strokeValue);
                 return (
