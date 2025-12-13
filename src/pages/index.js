@@ -4,7 +4,7 @@ import form from "@files/forms/setup";
 import validationRules from "@files/validation/setup.zod";
 import useFormBuilder from "@libraries/FormBuilder/useFormBuilder";
 import AccordionWidget from "@components/widgets/AccordionWidget";
-import Leaderboard from "@components/Leaderboard";
+import Leaderboard from "@components/screens/Menu/Leaderboard";
 
 
 const Page = () => {
