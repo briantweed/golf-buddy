@@ -1,5 +1,5 @@
 import Navigation from "./Navigation";
-import Scorecards from "@components/screens/Results/Scorecards";
+import Scorecards from "./Scorecards";
 
 
 const Results = () => {

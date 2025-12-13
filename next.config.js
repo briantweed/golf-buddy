@@ -13,6 +13,7 @@ const moduleExports = {
     env: {
         VERSION: "0.0.1",
         TITLE: "Golf Buddy",
+        SUBTITLE: "Scorecard",
         LOCALE_STRING: "en-GB",
         DEFAULT_TIMEZONE: "Europe/London"
     },

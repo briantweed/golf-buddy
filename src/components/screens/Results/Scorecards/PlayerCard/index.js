@@ -1,5 +1,5 @@
 import storedGameData, {ROUND_TYPE} from "@files/config/test-game";
-import Row from "@components/screens/Results/PlayerCard/Row";
+import Row from "./Row";
 
 
 const PlayerCard = (props) => {

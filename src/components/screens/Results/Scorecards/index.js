@@ -1,7 +1,7 @@
 import storedGameData from "@files/config/test-game";
 
 import TabWidget from "@components/widgets/TabWidget";
-import PlayerCard from "@components/screens/Results/PlayerCard";
+import PlayerCard from "./PlayerCard";
 
 
 const Scorecards = () => {

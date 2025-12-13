@@ -1,7 +1,6 @@
-
-import Results from "@components/screens/Results";
-import Menu from "@components/screens/Menu";
 import Template from "@components/layout/Template.index";
+import Menu from "@components/screens/Menu";
+import Results from ".";
 
 
 const Page = () => {
@@ -9,9 +8,9 @@ const Page = () => {
     return (
         <Template>
 
-            <Results/>
-
             <Menu/>
+
+            <Results/>
 
         </Template>
     );
