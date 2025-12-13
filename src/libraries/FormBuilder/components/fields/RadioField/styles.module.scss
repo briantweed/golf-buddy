@@ -21,9 +21,8 @@
         label {
             @apply flex items-center justify-center gap-2;
             @apply p-3 min-w-[48px];
-            @apply border border-grey-3 rounded-md;
+            @apply border border-grey-1 rounded-md;
             @apply text-center text-xs;
-            @apply hover:bg-grey-6;
             @apply transition-colors duration-300 ease-in-out;
             @apply cursor-pointer;
 
@@ -31,6 +30,9 @@
                 @apply h-0 w-0 p-0 m-0 opacity-0 absolute;
             }
 
+            &:hover {
+                @apply bg-lightBlue;
+            }
             &:has(input:checked) {
                 @apply bg-blue border-blue text-white;
             }

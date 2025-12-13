@@ -1,5 +1,5 @@
 .contents {
-    @apply text-left text-xs;
+    @apply text-left text-xs bg-darkestGreen p-4 rounded-md ;
         @apply overflow-auto relative pb-4;
 
     .heading, .standings {

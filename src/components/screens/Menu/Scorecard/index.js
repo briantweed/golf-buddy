@@ -1,7 +1,8 @@
 const Scorecard = () => {
 
     return (
-        <div className={"text-sm italic"}>rotate your phone</div>
+        <div className={"flex justify-center gap-4 text-base text-center italic bg-darkestGreen p-4 rounded-md"}>
+            <img width={24} height={24} src={"rotate.svg"} alt=""/>rotate your phone</div>
     );
 
 };

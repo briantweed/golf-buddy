@@ -17,7 +17,7 @@ const Settings = () => {
 
 
     return (
-        <div>{renderedForm}</div>
+        <div className={"bg-darkestGreen p-4 rounded-md"}>{renderedForm}</div>
     );
 
 };

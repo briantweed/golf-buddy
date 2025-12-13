@@ -2,14 +2,14 @@
     @apply p-8;
 
     .item {
-        @apply my-2 border-b border-b-darkGreen pb-2;
+        @apply my-2 border-b border-b-darkGreen pb-2 text-base;
 
         .header {
             @apply py-4;
         }
 
         .panel {
-            @apply p-2 pl-5;
+            @apply pt-2 pb-4;
         }
     }
 

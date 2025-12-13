@@ -64,7 +64,8 @@ module.exports = {
             highlightYellow: "#FFFCDD",
             darkYellow: "#C45C00",
             darkGreen: "#0E700E",
-            darkerGreen: "#2d3d32"
+            darkerGreen: "#2d3d32",
+            darkestGreen: "#232b26",
         }),
         spacing: {
             px: "1px",
