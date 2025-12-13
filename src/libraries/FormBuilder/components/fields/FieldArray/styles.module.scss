@@ -8,7 +8,7 @@
 
             > div {
                 @apply grid gap-4 items-center w-full;
-                grid-template-columns: minmax(200px, 1fr) 100px auto;
+                grid-template-columns: 1fr 80px 50px;
 
                 div.deleteContainer {
                     @apply mt-2;

@@ -88,7 +88,7 @@ const setupForm = {
                     deleteText: <span className="px-3 flex items-center h-40 m-10">-</span>,
                     canDeleteInitial: true,
                     maximumEntries: 6,
-                    incrementFields: true
+                    incrementFields: false
                 },
 
             ]
