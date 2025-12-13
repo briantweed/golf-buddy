@@ -21,10 +21,10 @@ const MetaTags = () => {
             <link rel="manifest" href={"/site.webmanifest"}/>
             <link rel="apple-touch-icon" sizes="144x144" href={"/apple-touch-icon.png"}/>
             <link rel="icon" type="image/png" sizes="96x96" href={"/favicon-96x96.png"}/>
-            <link rel="icon" type="image/png" sizes="192x192" href={"/favicon-192x192.png"}/>
+            <link rel="icon" type="image/png" sizes="192x192" href={"/web-app-manifest-192x192.png"}/>
 
-            <meta name="msapplication-TileColor" content="#002C5B"/>
-            <meta name="theme-color" content="#002C5B"/>
+            <meta name="msapplication-TileColor" content="#2d3d32"/>
+            <meta name="theme-color" content="#2d3d32"/>
             <meta name="apple-mobile-web-app-title" content={process.env.TITLE}/>
             <meta name="application-name" content={process.env.TITLE}/>
 
@@ -34,7 +34,6 @@ const MetaTags = () => {
             <link rel="preload" href={`${FONTS_PATH}Poppins-SemiBold.ttf`} as={"font"} crossOrigin="anonymous"/>
             <link rel="preload" href={`${FONTS_PATH}Poppins-Bold.ttf`} as={"font"} crossOrigin="anonymous"/>
 
-            <link rel="preconnect" href={"https://ak-prod.s3.amazonaws.com"}/>
         </>
     );
 

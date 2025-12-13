@@ -1,6 +1,6 @@
 {
   "name": "Golf Buddy",
-  "short_name": "Golf",
+  "short_name": "Golf Buddy",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -15,7 +15,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#2d3d32",
+  "background_color": "#2d3d32",
   "display": "standalone"
 }
