@@ -76,7 +76,7 @@ const setupForm = {
                             component: FIELD_TYPES.INPUT_FIELD,
                             required: false,
                             label: {
-                                content: "H'cap"
+                                content: "Hcap"
                             },
                             input: {
                                 type: "tel"

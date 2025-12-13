@@ -9,7 +9,6 @@
             "@hooks/*": ["src/hooks/*"],
             "@libraries/*": ["src/libraries/*"],
             "@public/*": ["public/*"],
-            "@storage/*": ["src/storage/*"],
             "@methods/*": ["src/methods/*"]
         }
     },
