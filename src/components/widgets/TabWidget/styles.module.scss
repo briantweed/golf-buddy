@@ -8,10 +8,10 @@
         .tab {
             @apply relative flex items-center justify-center;
             @apply font-medium text-sm;
-            @apply p-4;
+            @apply px-4 pb-2;
             @apply rounded-tl-md rounded-tr-md;
             @apply transition duration-300 ease-in-out;
-            min-width: 100px;
+            min-width: 85px;
 
             &:after {
                 content: "";
