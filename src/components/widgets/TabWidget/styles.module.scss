@@ -11,6 +11,7 @@
             @apply p-4;
             @apply rounded-tl-md rounded-tr-md;
             @apply transition duration-300 ease-in-out;
+            min-width: 100px;
 
             &:after {
                 content: "";
