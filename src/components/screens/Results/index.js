@@ -5,7 +5,7 @@ import Scorecards from "./Scorecards";
 const Results = () => {
 
     return (
-        <div className="portrait:hidden min-h-screen flex flex-col gap-16">
+        <div className="portrait:hidden min-h-screen flex flex-col justify-between max-h-screen">
             
             <Navigation/>
 
