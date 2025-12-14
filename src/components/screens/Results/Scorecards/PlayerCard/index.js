@@ -18,7 +18,7 @@ const PlayerCard = (props) => {
 
 
     return (
-        <section className={"flex flex-col gap-2 justify-center items-start pb-4 mt-6"}>
+        <div className={"flex flex-col gap-2 justify-center items-start pb-4 mt-6"}>
 
             <Row
                 type={"Out"}
@@ -36,7 +36,7 @@ const PlayerCard = (props) => {
                 className="mr-4">Total Score : </span><span className="font-semibold">{TotalPlayerScore}</span>
             </div>
 
-        </section>
+        </div>
     );
 
 };

@@ -1,3 +1,6 @@
+import {useMemo} from "react";
+
+import Headings from "./Headings";
 import AccordionWidget from "@components/widgets/AccordionWidget";
 import Leaderboard from "./Leaderboard";
 import Scorecard from "./Scorecard";
@@ -7,37 +10,38 @@ import DangerZone from "./DangerZone";
 
 const Menu = () => {
 
+    const tabs = useMemo(() => [
+        {
+            "label": "Leaderboard",
+            "content": <Leaderboard/>
+
+        },
+        {
+            "label": "Setup",
+            "content": <Settings/>
+        },
+        {
+            "label": "Scorecard",
+            "content": <Scorecard/>
+        },
+        {
+            "label": "Danger Zone",
+            "content": <DangerZone/>
+        }
+    ], []);
+
+
     return (
-        <div className="landscape:hidden">
+        <section className="landscape:hidden">
 
-            <h1 className={"text-4xl font-semibold pt-4 pb-2 text-center"}>{process.env.TITLE}</h1>
-
-            <h2 className={"text-2xl italic pt-0 text-center"}>{process.env.SUBTITLE}</h2>
+            <Headings/>
 
             <AccordionWidget
-                id={"setup"}
-                tabs={[
-                    {
-                        "label": "Leaderboard",
-                        "content": <Leaderboard/>
-
-                    },
-                    {
-                        "label": "Setup",
-                        "content": <Settings/>
-                    },
-                    {
-                        "label": "Scorecard",
-                        "content": <Scorecard/>
-                    },
-                    {
-                        "label": "Danger Zone",
-                        "content": <DangerZone/>
-                    }
-                ]}
+                id={"menu"}
+                tabs={tabs}
             />
 
-        </div>
+        </section>
     );
 
 };

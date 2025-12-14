@@ -5,13 +5,13 @@ import Scorecards from "./Scorecards";
 const Results = () => {
 
     return (
-        <div className="portrait:hidden min-h-screen flex flex-col justify-between max-h-screen">
+        <section className="portrait:hidden min-h-screen flex flex-col justify-between max-h-screen">
             
             <Navigation/>
 
             <Scorecards/>
 
-        </div>
+        </section>
     );
 
 };

@@ -17,9 +17,12 @@ const Scorecards = () => {
 
 
     return (
-        <section className={"px-4"}>
-            <TabWidget tabs={tabs}/>
-        </section>
+        <div className={"px-4"}>
+            <TabWidget
+                tabs={tabs}
+                handleChange={(d) => console.log(d)}
+            />
+        </div>
     );
 
 };
