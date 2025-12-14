@@ -16,15 +16,11 @@
             "items": {
                 "type": "object",
                 "required": [
-                    "Name",
-                    "Handicap"
+                    "Name"
                 ],
                 "additionalProperties": false,
                 "properties": {
                     "Name": {
-                        "type": "string"
-                    },
-                    "Handicap": {
                         "type": "string"
                     }
                 }

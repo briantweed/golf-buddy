@@ -70,21 +70,10 @@ const setupForm = {
                             input: {
                                 type: "text"
                             }
-                        },
-                        {
-                            id: "Handicap",
-                            component: FIELD_TYPES.INPUT_FIELD,
-                            required: false,
-                            label: {
-                                content: "Hcap"
-                            },
-                            input: {
-                                type: "tel"
-                            }
                         }
                     ],
 
-                    appendText: "+ Add Player",
+                    appendText: <span className="px-1">+</span>,
                     deleteText: <span className="px-3 flex items-center h-40 m-10">-</span>,
                     canDeleteInitial: true,
                     maximumEntries: 6,
