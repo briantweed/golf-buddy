@@ -46,7 +46,7 @@ const Leaderboard = () => {
         <div className={styles.contents}>
             <div className={styles.heading}>
                 <div>#</div>
-                <div>Name</div>
+                <div className={"text-left"}>Name</div>
                 <div className={"text-center"}>Total</div>
                 <div className={"text-right pr-1"}>Score</div>
                 <div>1</div>
@@ -73,7 +73,7 @@ const Leaderboard = () => {
                     return (
                         <Fragment key={index}>
                             <div><i>{index + 1}</i></div>
-                            <div className={"font-semibold"}>{player.Name}</div>
+                            <div className={"text-left font-semibold"}>{player.Name}</div>
                             <div className={styles.total}>{player.Total}</div>
                             <div className={styles.par}>
                                 <div>{player.RelativeToPar}</div>

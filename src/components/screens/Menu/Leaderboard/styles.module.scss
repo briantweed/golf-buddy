@@ -4,7 +4,7 @@
 
     .heading, .standings {
         @apply grid gap-4 items-center text-center;
-        grid-template-columns: 10px 1fr 1fr 60px repeat(18, 20px);
+        grid-template-columns: 10px 50px 30px 50px repeat(18, 25px);
     }
 
     .heading {
@@ -16,6 +16,7 @@
         .total {
             @apply text-center;
         }
+
         .par {
             @apply flex justify-end;
 
