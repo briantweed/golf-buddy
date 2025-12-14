@@ -4,17 +4,17 @@
     ul {
 
         li {
-            @apply mb-2 w-full;
+            @apply mb-6 w-full;
 
             > div {
                 @apply grid gap-4 items-center w-full;
                 grid-template-columns: 1fr 40px;
-
-                div.deleteContainer {
-                    @apply mt-2;
-                }
-
             }
+
+            &:first-of-type {
+                @apply mt-2;
+            }
+
 
             &:last-of-type {
                 @apply mb-4;
@@ -31,7 +31,7 @@
     button.add {
         @apply flex gap-2.5;
         @apply p-3.5;
-        @apply bg-lightBlue font-semibold text-xs;
+        @apply bg-blue font-semibold text-xs;
         @apply rounded-md;
         @apply transition duration-300 ease-in-out;
         @apply hover:transition hover:duration-300 hover:ease-in-out;
@@ -41,7 +41,7 @@
             svg {
 
                 path {
-                    @apply stroke-lightBlue;
+                    @apply stroke-blue;
                 }
 
             }
@@ -52,8 +52,8 @@
 
     button.delete {
         @apply flex gap-2.5 justify-center items-center;
-        @apply text-xs bg-red px-4 py-2 mt-6;
-        @apply cursor-pointer rounded-full;
+        @apply text-xs bg-red px-3 py-2;
+        @apply cursor-pointer rounded-md;
         @apply transition duration-300 ease-in-out;
         @apply hover:transition hover:duration-300 hover:ease-in-out;
 

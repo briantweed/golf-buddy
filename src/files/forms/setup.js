@@ -64,9 +64,7 @@ const setupForm = {
                             id: "Name",
                             component: FIELD_TYPES.INPUT_FIELD,
                             required: true,
-                            label: {
-                                content: "Name"
-                            },
+                            label: {},
                             input: {
                                 type: "text"
                             }

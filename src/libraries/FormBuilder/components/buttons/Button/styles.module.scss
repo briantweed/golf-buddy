@@ -1,6 +1,6 @@
 .contents {
     @apply flex gap-2.5;
-    @apply p-3.5 bg-amber rounded-md text-white text-xs font-medium;
+    @apply p-3.5 bg-darkGreen rounded-md text-white text-xs font-medium;
     @apply transition duration-300 ease-in-out;
     @apply hover:transition hover:duration-300 hover:ease-in-out;
 }
