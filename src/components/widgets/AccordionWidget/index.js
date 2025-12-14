@@ -35,10 +35,7 @@ const AccordionWidget = (props) => {
                             className={styles.header}
                         >
                             <Accordion.Trigger>
-                                <span className={"mr-2"}>
-                                    {itemId} {JSON.stringify(selected)}
-
-                                    {selected.includes(itemId) ? "*" : <>&gt;</>}</span> {tab.label}
+                                <span className={`inline-block transition duration-150 ease-in-out mr-2 ${selected.includes(itemId) ? "rotate-90" : ""}`}>&gt;</span> {tab.label}
                             </Accordion.Trigger>
                         </Accordion.Header>
                         <Accordion.Panel className={styles.panel}>
