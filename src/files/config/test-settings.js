@@ -86,24 +86,19 @@ const storedGameData = {
 
     Players: [
         {
-            Name: "Amy",
-            Handicap: 12
+            Name: "Amy"
         },
         {
-            Name: "Ben",
-            Handicap: 12
+            Name: "Ben"
         },
         {
-            Name: "Clara",
-            Handicap: 20
+            Name: "Clara"
         },
         {
-            Name: "David",
-            Handicap: 8
+            Name: "David"
         },
         {
-            Name: "Joshua",
-            Handicap: 14
+            Name: "Joshua"
         }
     ]
 

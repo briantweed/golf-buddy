@@ -27,7 +27,6 @@ const Leaderboard = () => {
 
             return {
                 Name: player.Name,
-                Handicap: player.Handicap,
                 Scores: player.Scores.map((hole) => hole.Stroke),
                 Total: total,
                 RelativeToPar: relativeToPar

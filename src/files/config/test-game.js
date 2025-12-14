@@ -87,7 +87,6 @@ const storedGameData = {
     Players: [
         {
             Name: "Alice",
-            Handicap: 2,
             Scores: [
                 {
                     Stroke: 3 
@@ -148,7 +147,6 @@ const storedGameData = {
         },
         {
             Name: "Ben",
-            Handicap: 12,
             Scores: [
                 {
                     Stroke: 4 
@@ -208,7 +206,6 @@ const storedGameData = {
         },
         {
             Name: "Clara",
-            Handicap: 20,
             Scores: [
                 {
                     Stroke: 4
@@ -268,7 +265,6 @@ const storedGameData = {
         },
         {
             Name: "David",
-            Handicap: 8,
             Scores: [
                 {
                     Stroke: 3
@@ -328,7 +324,6 @@ const storedGameData = {
         },
         {
             Name: "Joshua",
-            Handicap: 14,
             Scores: [
                 {
                     Stroke: 3
