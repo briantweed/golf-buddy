@@ -4,11 +4,11 @@
     ul {
 
         li {
-            @apply mb-6 w-full;
+            @apply mb-6 w-full border-b pb-6 border-b-darkerGreen;
 
             > div {
-                @apply grid gap-4 items-center w-full;
-                grid-template-columns: 1fr 40px;
+                @apply grid gap-3 items-center w-full;
+                grid-template-columns: 1fr 35px;
             }
 
             &:first-of-type {

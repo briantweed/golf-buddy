@@ -120,7 +120,7 @@ const FieldArray = (props) => {
                                         })}
 
                                         {showDeleteButton && (
-                                            <div className={styles.deleteContainer}>
+                                            <div className={"flex justify-end"}>
                                                 <button
                                                     type="button"
                                                     className={styles.delete}
