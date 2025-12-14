@@ -4,7 +4,7 @@
     ul {
 
         li {
-            @apply mb-6 w-full border-b pb-6 border-b-darkerGreen;
+            @apply mb-4 w-full border-b pb-4 border-b-darkerGreen;
 
             > div {
                 @apply grid gap-3 items-center w-full;
@@ -17,7 +17,7 @@
 
 
             &:last-of-type {
-                @apply mb-4;
+                @apply mb-4 border-0 pb-2;
             }
 
         }
@@ -33,8 +33,6 @@
         @apply p-3.5;
         @apply bg-blue font-semibold text-xs;
         @apply rounded-md;
-        @apply transition duration-300 ease-in-out;
-        @apply hover:transition hover:duration-300 hover:ease-in-out;
 
         &:hover {
 
@@ -54,8 +52,6 @@
         @apply flex gap-2.5 justify-center items-center;
         @apply text-xs bg-red px-3 py-2;
         @apply cursor-pointer rounded-md;
-        @apply transition duration-300 ease-in-out;
-        @apply hover:transition hover:duration-300 hover:ease-in-out;
 
         svg {
             @apply w-6 h-6 p-1.5;
