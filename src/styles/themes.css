@@ -28,6 +28,7 @@ html, body {
     transition: var(--transition);
     font-variant-ligatures: no-common-ligatures;
     font-family: "Poppins", serif;
+    overscroll-behavior: none;
 }
 
 html.dark, html.dark body {
