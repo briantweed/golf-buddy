@@ -14,7 +14,6 @@ const Menu = () => {
         {
             "label": "Leaderboard",
             "content": <Leaderboard/>
-
         },
         {
             "label": "Setup",
@@ -40,7 +39,6 @@ const Menu = () => {
                 id={"menu"}
                 tabs={tabs}
             />
-
 
         </section>
     );
