@@ -1,5 +1,5 @@
 import {FIELD_TYPES} from "@libraries/FormBuilder/files/config";
-import {ROUND_TYPE} from "@files/config/test-game";
+
 
 const setupForm = {
 
@@ -9,7 +9,7 @@ const setupForm = {
         {
             "fields": [
 
-                // CONTACT NAME
+                // COURSE NAME
                 {
                     id: "CourseName",
                     component: FIELD_TYPES.INPUT_FIELD,
@@ -27,7 +27,7 @@ const setupForm = {
                 },
 
 
-                // TITLE
+                // ROUND LENGTH
                 {
                     id: "RoundLength",
                     component: FIELD_TYPES.RADIO_FIELD,
@@ -35,7 +35,6 @@ const setupForm = {
                     styling: {
                         variant: "inline"
                     },
-                    defaultValue: ROUND_TYPE.FULL,
                     label: {
                         content: "Round Length"
                     },
@@ -54,6 +53,7 @@ const setupForm = {
                     }
                 },
 
+                // PLAYERS
                 {
                     id: "Players",
                     component: FIELD_TYPES.FIELD_ARRAY,
@@ -77,7 +77,7 @@ const setupForm = {
                     canDeleteInitial: true,
                     maximumEntries: 6,
                     incrementFields: false
-                },
+                }
 
             ]
         }
