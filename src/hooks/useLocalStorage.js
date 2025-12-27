@@ -49,7 +49,7 @@ const useLocalStorage = () => {
         localStorage.setItem("data", JSON.stringify({
             ...currentData,
             ...rest,
-            Players: currentData.Players.map((player, index) => {
+            Players: currentData?.Players?.map((player, index) => {
                 return {
                     ...player,
                     ...Players[index]
