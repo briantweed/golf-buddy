@@ -1,4 +1,5 @@
 import {FIELD_TYPES} from "@libraries/FormBuilder/files/config";
+import {ROUND_TYPE} from "@files/config/test-game";
 
 const setupForm = {
 
@@ -34,7 +35,7 @@ const setupForm = {
                     styling: {
                         variant: "inline"
                     },
-                    defaultValue: "18",
+                    defaultValue: ROUND_TYPE.FULL,
                     label: {
                         content: "Round Length"
                     },
