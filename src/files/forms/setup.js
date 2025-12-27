@@ -1,4 +1,4 @@
-import {BUTTON_TYPES, FIELD_TYPES} from "@libraries/FormBuilder/files/config";
+import {FIELD_TYPES} from "@libraries/FormBuilder/files/config";
 
 const setupForm = {
 
@@ -80,24 +80,7 @@ const setupForm = {
 
             ]
         }
-    ],
-
-    footer: {
-        styling: {
-            className: "justify-end"
-        },
-        content: [
-            {
-                id: "LoginSubmit",
-                component: BUTTON_TYPES.SUBMIT_BUTTON,
-                text: "Save Changes",
-                styling: {
-                    color: "success"
-                }
-            }
-        ]
-    }
-
+    ]
 };
 
 

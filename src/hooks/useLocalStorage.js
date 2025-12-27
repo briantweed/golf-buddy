@@ -58,13 +58,15 @@ const useLocalStorage = () => {
         }));
     };
 
+    const settings = JSON.parse(localStorage.getItem("data"));
 
     return {
         resetEverything,
         resetPlayers,
         resetPlayerScores,
         updatePlayerScore,
-        updateSettings
+        updateSettings,
+        settings
     };
 
 };

@@ -1,5 +1,3 @@
-import {useMemo} from "react";
-
 import Headings from "./Headings";
 import AccordionWidget from "@components/widgets/AccordionWidget";
 import Leaderboard from "./Leaderboard";
@@ -10,7 +8,7 @@ import DangerZone from "./DangerZone";
 
 const Menu = () => {
 
-    const tabs = useMemo(() => [
+    const tabs =  [
         {
             "label": "Leaderboard",
             "content": <Leaderboard/>
@@ -27,7 +25,7 @@ const Menu = () => {
             "label": "Danger Zone",
             "content": <DangerZone/>
         }
-    ], []);
+    ];
 
 
     return (
