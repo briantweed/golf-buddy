@@ -14,7 +14,7 @@ const Settings = () => {
 
     const renderedForm = useFormBuilder(form, validationRules, null, {
         defaultValues: settings,
-        handleWatch: handleSubmit
+        handleSubmit: handleSubmit
     });
 
 
