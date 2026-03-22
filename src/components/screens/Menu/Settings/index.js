@@ -12,9 +12,8 @@ const Settings = () => {
         updateSettings(data);
     };
 
-    const renderedForm = useFormBuilder(form, validationRules, null, {
-        defaultValues: settings,
-        handleSubmit: handleSubmit
+    const renderedForm = useFormBuilder(form, validationRules, handleSubmit, {
+        defaultValues: settings
     });
 
 
