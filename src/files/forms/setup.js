@@ -56,6 +56,9 @@ const setupForm = {
                 {
                     id: "Players",
                     component: FIELD_TYPES.FIELD_ARRAY,
+                    styling: {
+                        variant: "slim"
+                    },
                     legend: {
                         content: "Players"
                     },
@@ -64,7 +67,9 @@ const setupForm = {
                             id: "Name",
                             component: FIELD_TYPES.INPUT_FIELD,
                             required: true,
-                            label: {},
+                            label: {
+                                content: "",
+                            },
                             input: {
                                 type: "text"
                             }
@@ -74,7 +79,51 @@ const setupForm = {
                     deleteText: <span className="px-3 flex items-center h-40 m-10">-</span>,
                     canDeleteInitial: true,
                     maximumEntries: 6,
-                    incrementFields: false
+                    incrementFields: true
+                },
+
+                // Holes
+                {
+                    id: "Holes",
+                    component: FIELD_TYPES.FIELD_ARRAY,
+                    legend: {
+                        content: "Holes"
+                    },
+                    subfields: [
+                        {
+                            id: "Hole",
+                            component: FIELD_TYPES.RADIO_FIELD,
+                            required: true,
+                            styling: {
+                                variant: "slim"
+                            },
+                            label: {
+                                content: "Hole"
+                            },
+                            input: {
+                                type: "text",
+                                options: [
+                                    {
+                                        value: "3",
+                                        label: "3"
+                                    },
+                                    {
+                                        value: "4",
+                                        label: "4"
+                                    },
+                                    {
+                                        value: "5",
+                                        label: "5"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    appendText: <span className="px-1">+</span>,
+                    deleteText: <span className="px-3 flex items-center h-40 m-10">-</span>,
+                    canDeleteInitial: true,
+                    maximumEntries: 18,
+                    incrementFields: true
                 }
 
             ]

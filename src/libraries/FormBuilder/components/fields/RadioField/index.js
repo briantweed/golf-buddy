@@ -35,7 +35,7 @@ const RadioField = (props) => {
         color: error ? "warning" : ""
     };
 
-    const className = useStyling(styles, styling);
+    const className = useStyling(styles, updatedStyles);
 
 
     return (

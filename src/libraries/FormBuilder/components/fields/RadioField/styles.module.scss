@@ -1,11 +1,16 @@
 .formField {
     @apply mt-5 pb-5;
 
+    &:has(.slim) {
+        @apply mt-0 pb-0;
+    }
+
     .contents {
 
         .inputs{
             @apply flex items-center gap-2 flex-wrap justify-start;
         }
+
 
         label {
             @apply flex items-center justify-center gap-2;

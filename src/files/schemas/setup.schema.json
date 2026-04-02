@@ -1,30 +1,45 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "schemas/setup.schema.json",
-    "title": "Setup Form Schema",
-    "type": "object",
-    "additionalProperties": false,
-    "properties": {
-        "CourseName": {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/setup.schema.json",
+  "title": "Setup Form Schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "CourseName": {
+      "type": "string"
+    },
+    "RoundLength": {
+      "type": "string"
+    },
+    "Players": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "Name"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "Name": {
             "type": "string"
-        },
-        "RoundLength": {
-            "type": "string"
-        },
-        "Players": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "required": [
-                    "Name"
-                ],
-                "additionalProperties": false,
-                "properties": {
-                    "Name": {
-                        "type": "string"
-                    }
-                }
-            }
+          }
         }
+      }
+    },
+    "Holes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "Hole"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "Hole": {
+            "type": "string"
+          }
+        }
+      }
     }
+  }
 }
