@@ -1,8 +1,12 @@
+import {useEffect, useState} from "react";
+
 const useLocalStorage = () => {
+
+    const [settings, setSettings] = useState(null);
 
     const initialState = {
         CourseName: "",
-        RoundType: "",
+        RoundLength: "",
         Holes: [],
         Players: []
     };
@@ -58,7 +62,10 @@ const useLocalStorage = () => {
         }));
     };
 
-    const settings = JSON.parse(localStorage.getItem("data"));
+    useEffect(() => {
+        setSettings(JSON.parse(localStorage.getItem("data")));
+    }, []);
+
 
     return {
         resetEverything,

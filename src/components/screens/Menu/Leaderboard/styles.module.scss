@@ -1,6 +1,6 @@
 .contents {
     @apply text-left text-xs bg-darkestGreen p-4 rounded-md ;
-        @apply overflow-auto relative pb-4;
+    @apply overflow-auto relative pb-4;
 
     .heading, .standings {
         @apply grid gap-4 items-center text-center;

@@ -1,10 +1,9 @@
 import gsap from "gsap";
-import {GSAP_MODAL, GSAP_MODAL_CONTAINER} from "@files/config/gsap-data-tags";
 
 
 const fadeOutSlideDownModalAnimation = () => {
 
-    gsap.fromTo(`[data-gsap="${GSAP_MODAL_CONTAINER}"] [data-gsap="${GSAP_MODAL}"]`, {
+    gsap.fromTo(`[data-gsap="GSAP_MODAL_CONTAINER"] [data-gsap="GSAP_MODAL"]`, {
         opacity: 1,
         y: 0
     }, {
@@ -14,7 +13,7 @@ const fadeOutSlideDownModalAnimation = () => {
         ease: "sine.out"
     });
 
-    gsap.fromTo(`[data-gsap="${GSAP_MODAL_CONTAINER}"]`, {
+    gsap.fromTo(`[data-gsap="GSAP_MODAL_CONTAINER"]`, {
         opacity: 1
     }, {
         opacity: 0,

@@ -4,8 +4,8 @@
     .item {
         @apply my-2 border-b border-b-darkGreen pb-2 text-base;
 
-        .header {
-            @apply py-4;
+        .header button {
+            @apply py-4 w-full text-left;
         }
 
         .panel {

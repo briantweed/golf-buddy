@@ -1,4 +1,6 @@
 import storedGameData from "@files/config/test-game";
+import {useState} from "react";
+import Modal from "@components/utility/Modal";
 
 
 const Row = (props) => {
@@ -38,6 +40,14 @@ const Row = (props) => {
         return bgColor;
     };
 
+    const [display, setDisplay] = useState(false);
+    const [index, setIndex] = useState(null);
+
+    const handleDisplay = (bool, index = null) => {
+        setDisplay(bool);
+        setIndex(index)
+    }
+
 
     return (
         <div className={"grid grid-cols-10 gap-2"}>
@@ -47,7 +57,7 @@ const Row = (props) => {
                 const strokeValue = score.Stroke;
                 const bgColor = getBgColor(parValue - strokeValue);
                 return (
-                    <div key={index}>
+                    <div key={index} onClick={() => handleDisplay(true, index)}>
                         <div
                             className={"text-center font-semibold bg-lightBlue py-1 rounded-t-lg"}>{index + 1}</div>
                         <div className={"grid grid-cols-2 grow"}>
@@ -66,6 +76,13 @@ const Row = (props) => {
                     <div className={"py-1 bg-grey-2 text-black font-semibold text-xl rounded-bl-lg rounded-br-lg w-28 flex items-center justify-center text-center"}>{score}</div>
                 </div>
             </div>
+
+            {display && (
+                <Modal
+                    display={display}
+                    handleClose={() => handleDisplay(false)}
+                    >Hole {index + 1}</Modal>
+            )}
 
         </div>
     );
