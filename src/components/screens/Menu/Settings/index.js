@@ -16,23 +16,22 @@ const Settings = () => {
         setDisplay(true);
     };
 
-    const renderedForm = useFormBuilder(form, validationRules, handleSubmit, {
-        defaultValues: settings
-    });
-
-
     useEffect(() => {
         if (display) {
             setTimeout(() => {
                 setDisplay(false);
             }, 1000)
         }
-    })
+    }, [])
 
 
     return (
         <div className={"bg-darkestGreen p-4 rounded-md relative"}>
-            {renderedForm}
+            <FormBuilder
+                key={settings?.CourseName || "new"}
+                handleSubmit={handleSubmit}
+                settings={settings}
+            />
             {display && (
                 <div className="absolute right-5 bottom-1.5 text-sm text-pastel-green-1  italic">&#10003; updated</div>
             )}
@@ -40,6 +39,19 @@ const Settings = () => {
     );
 
 };
+
+
+const FormBuilder = (props) => {
+
+    const renderedForm = useFormBuilder(form, validationRules, props.handleSubmit, {
+        defaultValues: props.settings
+    });
+
+    return (
+        <div>{renderedForm}</div>
+    );
+
+}
 
 
 export default Settings;
