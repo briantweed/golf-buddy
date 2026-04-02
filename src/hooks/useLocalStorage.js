@@ -49,16 +49,9 @@ const useLocalStorage = () => {
 
     const updateSettings = (data) => {
         const currentData = JSON.parse(localStorage.getItem("data"));
-        const {Players, ...rest} = data;
         localStorage.setItem("data", JSON.stringify({
             ...currentData,
-            ...rest,
-            Players: currentData?.Players?.map((player, index) => {
-                return {
-                    ...player,
-                    ...Players[index]
-                };
-            })
+            ...data
         }));
     };
 
