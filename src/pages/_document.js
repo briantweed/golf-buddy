@@ -13,7 +13,7 @@ export default function Document() {
             </Head>
 
             <body>
-                <div className="root">
+                <div className="root bg-darkerGreen">
                     <Main/>
                     <Portal/>
                     <NextScript/>

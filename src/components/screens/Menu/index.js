@@ -29,7 +29,7 @@ const Menu = () => {
 
 
     return (
-        <section className="landscape:hidden">
+        <section className="landscape:hidden bg-darkerGreen">
 
             <Headings/>
 

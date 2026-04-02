@@ -1,15 +1,17 @@
 import Template from "@components/layout/Template";
 import Menu from "@components/screens/Menu";
 import Results from "@components/screens/Results";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 
 
 const Page = () => {
 
+    const [key, setKey] = useState(1);
+
     useEffect(() => {
         const scrollContainer = window;
         if (scrollContainer) {
-            scrollContainer.addEventListener("orientationchange", () => window.location.reload());
+            scrollContainer.addEventListener("orientationchange", () => setKey((key) => ++key));
         }
 
         return () => {
@@ -18,15 +20,15 @@ const Page = () => {
                 scrollContainer.removeEventListener("orientationchange");
             }
         };
-    });
+    },[]);
 
 
     return (
         <Template>
 
             <Menu/>
-
-            <Results/>
+            
+            <Results key={key}/>
 
         </Template>
     );
