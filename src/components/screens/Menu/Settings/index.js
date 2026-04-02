@@ -22,7 +22,7 @@ const Settings = () => {
                 setDisplay(false);
             }, 1000)
         }
-    }, [])
+    }, [display])
 
 
     return (
