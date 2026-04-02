@@ -26,7 +26,6 @@ const setupForm = {
                     }
                 },
 
-
                 // ROUND LENGTH
                 {
                     id: "RoundLength",
@@ -71,7 +70,6 @@ const setupForm = {
                             }
                         }
                     ],
-
                     appendText: <span className="px-1">+</span>,
                     deleteText: <span className="px-3 flex items-center h-40 m-10">-</span>,
                     canDeleteInitial: true,
