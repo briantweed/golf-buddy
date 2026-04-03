@@ -1,29 +1,34 @@
-import storedGameData from "@files/config/test-game";
-
 import TabWidget from "@components/widgets/TabWidget";
 import PlayerCard from "./PlayerCard";
+import useLocalStorage from "@hooks/useLocalStorage";
 
 
 const Scorecards = () => {
 
-    const {Players} = storedGameData;
+    const {settings} = useLocalStorage();
 
-    const tabs = Players.map((Player, index) => {
-        return {
-            "label": Player.Name,
-            "content": <PlayerCard key={index} id={index}/>
-        };
-    });
+    if (settings) {
+
+        const {Players = []} = settings;
 
 
-    return (
-        <div className={"px-4"}>
-            <TabWidget
-                tabs={tabs}
-                handleChange={(d) => console.log(d)}
-            />
-        </div>
-    );
+        const tabs = Players.map((Player, index) => {
+            return {
+                "label": Player.Name,
+                "content": <PlayerCard key={index} id={index}/>
+            };
+        });
+
+
+        return (
+            <div className={"px-4"}>
+                <TabWidget tabs={tabs}/>
+            </div>
+        );
+
+    }
+
+    return null;
 
 };
 
