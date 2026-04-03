@@ -4,7 +4,6 @@
   "short_name": "GolfBuddy",
   "display": "standalone",
   "start_url": "https://golf-buddy-scorecard.vercel.app/",
-  "orientation": "portrait-primary",
   "theme_color": "#2d3d32",
   "background_color": "#2d3d32",
   "icons": [
