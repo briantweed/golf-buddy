@@ -43,10 +43,11 @@ const Row = (props) => {
     const [display, setDisplay] = useState(false);
     const [index, setIndex] = useState(null);
 
+
     const handleDisplay = (bool, index = null) => {
         setDisplay(bool);
-        setIndex(index)
-    }
+        setIndex(index);
+    };
 
 
     return (
@@ -57,7 +58,11 @@ const Row = (props) => {
                 const strokeValue = score.Stroke;
                 const bgColor = getBgColor(parValue - strokeValue);
                 return (
-                    <div key={index} onClick={() => handleDisplay(true, index)}>
+                    <div
+                        key={index}
+                        onClick={() => handleDisplay(true, index)}
+                        onKeyDown={() => {}}
+                    >
                         <div
                             className={"text-center font-semibold bg-lightBlue py-1 rounded-t-lg"}>{index + 1}</div>
                         <div className={"grid grid-cols-2 grow"}>
@@ -81,7 +86,7 @@ const Row = (props) => {
                 <Modal
                     display={display}
                     handleClose={() => handleDisplay(false)}
-                    >Hole {index + 1}</Modal>
+                >Hole {index + 1}</Modal>
             )}
 
         </div>
