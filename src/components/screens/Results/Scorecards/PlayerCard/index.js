@@ -38,7 +38,7 @@ const PlayerCard = (props) => {
                 />
             )}
 
-            <div className="flex justify-end w-full pr-4 mt-2 text-base"><span
+            <div className="flex justify-end w-full pr-8 mt-2 text-base"><span
                 className="mr-4">Total Score : </span><span className="font-semibold">{PlayerTotalScore}</span>
             </div>
 

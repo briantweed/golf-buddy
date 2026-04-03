@@ -10,7 +10,6 @@ const Leaderboard = () => {
     if (settings) {
 
         const players = settings.Players;
-
         const numberOfHoles = [...Array(Number(settings.RoundLength)).keys()].map((x) => ++x) || [];
 
 
