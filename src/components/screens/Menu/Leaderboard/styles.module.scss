@@ -7,7 +7,7 @@
     }
 
     .heading, .standings, .fakeHeading, .fakeStandings {
-        @apply grid gap-4 gap-x-2 items-center text-center;
+        @apply grid gap-4 gap-x-3 items-center text-center;
         > div {
             @apply flex items-center justify-center;
             min-height: 30px;
