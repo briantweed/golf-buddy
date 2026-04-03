@@ -4,11 +4,11 @@ const validationRules = z.object({
 
     "CourseName": z
         .string({
-            required_error: "Course Name is required"
+            required_error: "Course is required"
         })
         .trim()
         .min(1, {
-            message: "Course Name is required"
+            message: "Course is required"
         }),
 
     "RoundLength": z
