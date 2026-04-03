@@ -19,6 +19,8 @@ const FieldArray = (props) => {
             subfields,
             appendText,
             deleteText,
+            canAppend = true,
+            canDelete = true,
             canDeleteInitial,
             incrementFields,
             maximumEntries
@@ -48,7 +50,7 @@ const FieldArray = (props) => {
 
     const {content, ...rest} = legend;
 
-    const showAppendButton = (maximumEntries === undefined) || (maximumEntries > fields.length);
+    const showAppendButton = canAppend && (maximumEntries === undefined || maximumEntries > fields.length);
 
 
     return (
@@ -73,7 +75,7 @@ const FieldArray = (props) => {
                         });
 
 
-                        const showDeleteButton = (canDeleteInitial || index > 0);
+                        const showDeleteButton = canDelete && (canDeleteInitial || index > 0);
 
                         return (
                             <Fragment key={item.id}>

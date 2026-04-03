@@ -1,4 +1,5 @@
-import storedGameData, {ROUND_TYPE} from "@files/config/test-game";
+import storedGameData from "@files/config/test-game";
+import {ROUND_TYPE} from "@files/config";
 import Row from "./Row";
 
 

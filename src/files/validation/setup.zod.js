@@ -29,19 +29,7 @@ const validationRules = z.object({
             .min(1, {
                 message: "Name is required"
             })
-    }).array(),
-
-
-    "Holes": z.object({
-        "Hole": z
-            .string({
-                required_error: "Hole is required"
-            }).trim()
-            .min(1, {
-                message: "Hole is required"
-            })
     }).array()
-
 
 });
 

@@ -1,5 +1,4 @@
 .contents {
-    @apply mt-5 pb-5;
 
     ul {
 
@@ -7,8 +6,12 @@
             @apply mb-4 w-full border-b pb-4 border-b-darkerGreen;
 
             > div {
-                @apply grid gap-3 items-center w-full;
+                @apply grid gap-3 items-end w-full;
                 grid-template-columns: 1fr 35px;
+
+                button {
+                    @apply mb-1;
+                }
             }
 
             &:first-of-type {

@@ -15,7 +15,6 @@ module.exports = {
         INPUT_FIELD: "InputField",
         MARKDOWN_FIELD: "MarkdownField",
         RADIO_FIELD: "RadioField",
-        SELECT_FIELD: "SelectField",
         TYPEAHEAD_FIELD: "TypeAheadField",
         FIELD_ARRAY: "FieldArray",
         NESTED_FORM: "NestedForm"

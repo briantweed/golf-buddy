@@ -27,6 +27,11 @@ module.exports = {
 
     SCROLL_TO_ID: "scrollToHere",
 
-    ANIMATION_TIMEOUT_DELAY: 450
+    ANIMATION_TIMEOUT_DELAY: 450,
+
+    ROUND_TYPE: {
+        HALF: 9,
+        FULL: 18
+    }
 
 };

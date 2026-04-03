@@ -1,7 +1,5 @@
-export const ROUND_TYPE = {
-    HALF: 9,
-    FULL: 18,
-};
+import {ROUND_TYPE} from "@files/config";
+
 
 const storedGameData = {
 
