@@ -32,7 +32,8 @@ const setupForm = {
                         autoComplete: "off",
                         options: courseOptions,
                         isSearchable: false
-                    }
+                    },
+                    defaultValue: ""
                 },
 
                 // ROUND LENGTH
@@ -58,7 +59,8 @@ const setupForm = {
                                 label: "18"
                             }
                         ]
-                    }
+                    },
+                    defaultValue: ""
                 },
 
                 // PLAYERS

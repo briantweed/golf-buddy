@@ -22,7 +22,7 @@ const useFormBuilder = (config, validationRules, callback, settings = {}) => {
         handleWatch = null,
         validationMode = "onSubmit",
         devtools = false,
-        scroll = false,
+        scroll = true,
         scrollId = null,
         debug = false
     } = settings;
