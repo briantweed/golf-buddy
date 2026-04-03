@@ -1,7 +1,7 @@
 {
   "id": "GolfBuddy",
   "name": "Golf Buddy",
-  "short_name": "Golf Buddy",
+  "short_name": "GolfBuddy",
   "display": "standalone",
   "start_url": "https://golf-buddy-scorecard.vercel.app/",
   "orientation": "portrait-primary",
