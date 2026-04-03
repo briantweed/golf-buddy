@@ -22,7 +22,9 @@ const nextConfig = {
         SUBTITLE: "Scorecard",
         LOCALE_STRING: "en-GB",
         DEFAULT_TIMEZONE: "Europe/London"
-    }
+    },
+    turbopack: {
+    },
 };
 
 export default withPWA(nextConfig);
