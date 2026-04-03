@@ -1,5 +1,9 @@
-import * as pwa from "@ducanh2912/next-pwa";
+const {withSentryConfig} = require("@sentry/nextjs");
 const {join} = require("path");
+
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+    enabled: process.env.ANALYZE === "true"
+});
 
 
 const moduleExports = {
@@ -34,16 +38,17 @@ const moduleExports = {
     }
 };
 
-const withPWA = pwa.default({
-    dest: 'public',
-    cacheOnFrontEndNav: true,
-    aggressiveFrontEndNavCaching: true,
-    reloadOnOnline: true,
-    swcMinify: true,
-    fallback: {
-        document: "/offline"
-    }
-});
+
+const sentryConfigSettings = {
+    authToken: process.env.SENTRY_AUTH_TOKEN,
+    org: "simplyioa",
+    project: "pc-toolbox",
+    silent: true,
+    widenClientFileUpload: true,
+    hideSourceMaps: false,
+    disableLogger: true,
+    automaticVercelMonitors: true,
+};
 
 
-module.exports = withPWA(moduleExports);
+module.exports = withSentryConfig(withBundleAnalyzer(moduleExports), sentryConfigSettings);
