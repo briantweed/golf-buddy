@@ -50,5 +50,15 @@ const sentryConfigSettings = {
     automaticVercelMonitors: true,
 };
 
+const withPWA = require("@ducanh2912/next-pwa").default({
+    dest: 'public',
+    cacheOnFrontEndNav: true,
+    aggressiveFrontEndNavCaching: true,
+    reloadOnOnline: true,
+    swcMinify: true,
+    fallback: {
+        document: "/offline"
+    }
+});
 
-module.exports = withSentryConfig(withBundleAnalyzer(moduleExports), sentryConfigSettings);
+module.exports = withSentryConfig(withBundleAnalyzer(withPWA(moduleExports)), sentryConfigSettings);
