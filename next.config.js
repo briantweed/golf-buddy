@@ -1,12 +1,18 @@
-const {withSentryConfig} = require("@sentry/nextjs");
-const {join} = require("path");
+import * as pwa from "@ducanh2912/next-pwa";
 
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
-    enabled: process.env.ANALYZE === "true"
+const withPWA = pwa.default({
+    dest: 'public',
+    cacheOnFrontEndNav: true,
+    aggressiveFrontEndNavCaching: true,
+    reloadOnOnline: true,
+    swcMinify: true,
+    fallback: {
+        document: "/offline"
+    }
 });
 
 
-const moduleExports = {
+const nextConfig = {
     reactStrictMode: true,
     devIndicators: false,
     output: "standalone",
@@ -16,39 +22,7 @@ const moduleExports = {
         SUBTITLE: "Scorecard",
         LOCALE_STRING: "en-GB",
         DEFAULT_TIMEZONE: "Europe/London"
-    },
-    sassOptions: {
-        includePaths: [join(__dirname, "styles")],
-        implementation: "sass-embedded",
-        quietDeps: true,
-        silenceDeprecations: ["legacy-js-api"]
-    },
-    images: {
-        loader: "custom",
-        loaderFile: "./imageLoader.js"
-    },
-    webpack: (config) => {
-        config.module.rules.push(
-            {
-                test: /\.md$/,
-                type: "asset/source",
-            }
-        );
-        return config;
     }
 };
 
-
-const sentryConfigSettings = {
-    authToken: process.env.SENTRY_AUTH_TOKEN,
-    org: "simplyioa",
-    project: "pc-toolbox",
-    silent: true,
-    widenClientFileUpload: true,
-    hideSourceMaps: false,
-    disableLogger: true,
-    automaticVercelMonitors: true,
-};
-
-
-module.exports = withSentryConfig(withBundleAnalyzer(moduleExports), sentryConfigSettings);
+export default withPWA(nextConfig);
