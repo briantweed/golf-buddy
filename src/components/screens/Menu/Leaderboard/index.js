@@ -47,31 +47,48 @@ const Leaderboard = () => {
 
         return (
             <div className={`${styles.contents} ${styles["grid" + settings.RoundLength]}`}>
-                <div className={styles.heading}>
-                    <div>#</div>
-                    <div className={"text-left"}>Name</div>
-                    <div className={"text-center"}>Score</div>
-                    {numberOfHoles.map((hole, index) => (
-                        <div key={index}>{hole}</div>
-                    ))}
-                    <div className={"text-center"}>Total</div>
-                </div>
-                <div className={styles.standings}>
-                    {leaderboardData.map((player, index) => {
-                        return (
-                            <Fragment key={index}>
-                                <div><i>{index + 1}</i></div>
-                                <div className={"text-left font-semibold"}>{player.Name}</div>
-                                <div className={styles.par}>
-                                    <div>{player.RelativeToPar}</div>
-                                </div>
-                                {numberOfHoles.map((hole) => {
-                                    return <div key={hole}>{player.Scores ? player.Scores[index] : 0}</div>;
-                                })}
-                                <div className={styles.total}>{player.Total}</div>
-                            </Fragment>
-                        );
-                    })}
+                <div className={styles.contentsContainer}>
+                    <div>
+                        <div className={styles.fakeHeading}>
+                            <div>#</div>
+                            <div className={"text-left"}>Name</div>
+                            <div className={"text-center"}>Score</div>
+                        </div>
+                        <div className={styles.fakeStandings}>
+                            {leaderboardData.map((player, index) => {
+                                return (
+                                    <Fragment key={index}>
+                                        <div><i>{index + 1}</i></div>
+                                        <div className={"text-left font-semibold"}>{player.Name}</div>
+                                        <div className={styles.par}>
+                                            <div>{player.RelativeToPar}</div>
+                                        </div>
+                                    </Fragment>
+                                );
+                            })}
+                        </div>
+                    </div>
+                    <div className={"overflow-auto"}>
+
+                        <div className={styles.heading}>
+                            {numberOfHoles.map((hole, index) => (
+                                <div key={index}>{hole}</div>
+                            ))}
+                            <div className={"text-center"}>Total</div>
+                        </div>
+                        <div className={styles.standings}>
+                            {leaderboardData.map((player, index) => {
+                                return (
+                                    <Fragment key={index}>
+                                        {numberOfHoles.map((hole) => {
+                                            return <div key={hole}>{player.Scores ? player.Scores[index] : 0}</div>;
+                                        })}
+                                        <div className={styles.total}>{player.Total}</div>
+                                    </Fragment>
+                                );
+                            })}
+                        </div>
+                    </div>
                 </div>
             </div>
         );

@@ -1,35 +1,54 @@
 .contents {
-    @apply text-left text-xs bg-darkestGreen p-4 rounded-md ;
-    @apply overflow-auto relative pb-4;
+    @apply text-left text-xs bg-darkestGreen p-4 rounded-md;
+    @apply  relative pb-4;
 
-    .heading, .standings {
-        @apply grid gap-4 items-center text-center;
+    .contentsContainer {
+        @apply relative flex justify-start items-center pl-40;
     }
 
+    .heading, .standings, .fakeHeading, .fakeStandings {
+        @apply grid gap-4 items-center text-center;
+        > div {
+            @apply flex items-center justify-center;
+            min-height: 30px;
+        }
+    }
+
+    .fakeHeading, .fakeStandings {
+        @apply top-0 left-0;
+        position: absolute;
+        grid-template-columns: 10px 50px 67px;
+    }
+
+    .fakeStandings {
+        @apply top-12 mt-1.5;
+    }
     &.grid9 {
         .heading, .standings {
-            grid-template-columns: 10px 50px 50px repeat(9, 30px) 50px;
+            grid-template-columns: repeat(9, 30px) 50px;
         }
+
+
     }
 
     &.grid18 {
         .heading, .standings {
-            grid-template-columns: 10px 50px 50px repeat(18, 30px) 50px;
+            grid-template-columns: repeat(18, 30px) 50px;
         }
     }
 
-    .heading {
+    .heading, .fakeHeading {
         @apply w-fit mb-4 border-b pb-2;
     }
 
-    .standings {
+    .fakeStandings {
 
         .total {
             @apply text-center;
         }
 
         .par {
-            @apply flex justify-center;
+            @apply flex justify-center items-center;
 
             > div {
                 @apply text-xs flex items-center justify-center w-10 text-right p-1 px-1 rounded-lg bg-red-2;
