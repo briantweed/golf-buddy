@@ -1,4 +1,3 @@
-import storedGameData from "@files/config/test-game";
 import {useState} from "react";
 import Modal from "@components/utility/Modal";
 
@@ -7,11 +6,10 @@ const Row = (props) => {
 
     const {
         type,
-        holes,
-        score
+        scores,
+        totalScore,
+        holes
     } = props;
-
-    const {Holes} = storedGameData;
 
 
     const getBgColor = (underPar) => {
@@ -54,8 +52,8 @@ const Row = (props) => {
         <div className={"grid grid-cols-10 gap-2"}>
 
             {holes.map((score, index) => {
-                const parValue = Holes[index].Par;
-                const strokeValue = score.Stroke;
+                const parValue = score;
+                const strokeValue = scores[index]?.Stroke || "-";
                 const bgColor = getBgColor(parValue - strokeValue);
                 return (
                     <div
@@ -78,7 +76,7 @@ const Row = (props) => {
             <div>
                 <div className={"text-center font-semibold bg-blue py-1 rounded-t-lg"}>{type}</div>
                 <div className={"flex"}>
-                    <div className={"py-1 bg-grey-2 text-black font-semibold text-xl rounded-bl-lg rounded-br-lg w-28 flex items-center justify-center text-center"}>{score}</div>
+                    <div className={"py-1 bg-grey-2 text-black font-semibold text-xl rounded-bl-lg rounded-br-lg w-28 flex items-center justify-center text-center"}>{totalScore}</div>
                 </div>
             </div>
 

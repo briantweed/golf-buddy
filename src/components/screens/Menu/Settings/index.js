@@ -20,9 +20,9 @@ const Settings = () => {
         if (display) {
             setTimeout(() => {
                 setDisplay(false);
-            }, 1000)
+            }, 1000);
         }
-    }, [display])
+    }, [display]);
 
 
     return (
@@ -51,7 +51,7 @@ const FormBuilder = (props) => {
         <div>{renderedForm}</div>
     );
 
-}
+};
 
 
 export default Settings;

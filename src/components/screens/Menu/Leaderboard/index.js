@@ -10,7 +10,7 @@ const Leaderboard = () => {
     if (settings) {
 
         const players = settings.Players;
-        const numberOfHoles = [...Array(Number(settings.RoundLength)).keys()].map((x) => ++x);
+        const numberOfHoles = [...Array(Number(settings.RoundLength)).keys()].map((x) => ++x) || [];
 
 
         const calculateLeaderboardData = (players, par = 72) => {
@@ -65,8 +65,8 @@ const Leaderboard = () => {
                                 <div className={styles.par}>
                                     <div>{player.RelativeToPar}</div>
                                 </div>
-                                {numberOfHoles.map((index) => {
-                                    return <div key={index}>{player.Scores ? player.Scores[index] : 0}</div>;
+                                {numberOfHoles.map((hole) => {
+                                    return <div key={hole}>{player.Scores ? player.Scores[index] : 0}</div>;
                                 })}
                                 <div className={styles.total}>{player.Total}</div>
                             </Fragment>

@@ -1,5 +1,6 @@
 import {ROUND_TYPE} from "@files/config";
 import Row from "./Row";
+import courses from "@files/config/courses";
 
 
 const PlayerCard = (props) => {
@@ -8,13 +9,14 @@ const PlayerCard = (props) => {
 
     const isFullRound = settings.RoundLength === ROUND_TYPE.FULL;
 
-    const FrontNine = settings.Players[id].Scores?.slice(0, 9) || [];
-    const BackNine = settings.Players[id].Scores?.slice(9, 18) || [];
+    const FrontNineScores = settings.Players[id].Scores?.slice(0, 9) || [];
+    const BackNineScores = settings.Players[id].Scores?.slice(9, 18) || [];
 
+    const holes = courses.find((course) => course.value === settings.CourseName).Holes;
 
-    const FrontNineScore = BackNine.reduce((sum, item) => sum + item.Stroke, 0);
-    const BackNineScore = BackNine.reduce((sum, item) => sum + item.Stroke, 0);
-    const TotalPlayerScore = FrontNineScore + (isFullRound ? BackNineScore : 0);
+    const FrontNineTotalScore = FrontNineScores.reduce((sum, item) => sum + item.Stroke, 0);
+    const BackNineTotalScore = BackNineScores.reduce((sum, item) => sum + item.Stroke, 0);
+    const PlayerTotalScore = FrontNineTotalScore + (isFullRound ? BackNineTotalScore : 0);
 
 
     return (
@@ -22,18 +24,22 @@ const PlayerCard = (props) => {
 
             <Row
                 type={"Out"}
-                holes={FrontNine}
-                score={FrontNineScore}
+                scores={FrontNineScores}
+                totalScore={FrontNineTotalScore}
+                holes={holes.slice(0,9)}
             />
 
-            <Row
-                type={"In"}
-                holes={BackNine}
-                score={BackNineScore}
-            />
+            {settings.RoundLength === ROUND_TYPE.FULL && (
+                <Row
+                    type={"In"}
+                    scores={BackNineScores}
+                    totalScore={BackNineTotalScore}
+                    holes={holes.slice(9,18)}
+                />
+            )}
 
             <div className="flex justify-end w-full pr-8 mt-2 text-base"><span
-                className="mr-4">Total Score : </span><span className="font-semibold">{TotalPlayerScore}</span>
+                className="mr-4">Total Score : </span><span className="font-semibold">{PlayerTotalScore}</span>
             </div>
 
         </div>

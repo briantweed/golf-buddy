@@ -19,7 +19,7 @@ const setupForm = {
                         variant: "inline"
                     },
                     label: {
-                        content: "Course Name"
+                        content: "Course"
                     },
                     input: {
                         type: "text",
@@ -34,7 +34,7 @@ const setupForm = {
                 {
                     id: "RoundLength",
                     component: FIELD_TYPES.RADIO_FIELD,
-                    required: false,
+                    required: true,
                     styling: {
                         variant: "inline"
                     },

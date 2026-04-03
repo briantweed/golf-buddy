@@ -30,8 +30,8 @@ module.exports = {
     ANIMATION_TIMEOUT_DELAY: 450,
 
     ROUND_TYPE: {
-        HALF: 9,
-        FULL: 18
+        HALF: "9",
+        FULL: "18"
     }
 
 };
