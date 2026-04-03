@@ -1,9 +1,4 @@
-const {withSentryConfig} = require("@sentry/nextjs");
 const {join} = require("path");
-
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
-    enabled: process.env.ANALYZE === "true"
-});
 
 
 const moduleExports = {
@@ -17,6 +12,7 @@ const moduleExports = {
         LOCALE_STRING: "en-GB",
         DEFAULT_TIMEZONE: "Europe/London"
     },
+    turbopack: {},
     sassOptions: {
         includePaths: [join(__dirname, "styles")],
         implementation: "sass-embedded",
@@ -39,17 +35,6 @@ const moduleExports = {
 };
 
 
-const sentryConfigSettings = {
-    authToken: process.env.SENTRY_AUTH_TOKEN,
-    org: "simplyioa",
-    project: "pc-toolbox",
-    silent: true,
-    widenClientFileUpload: true,
-    hideSourceMaps: false,
-    disableLogger: true,
-    automaticVercelMonitors: true,
-};
-
 const withPWA = require("@ducanh2912/next-pwa").default({
     dest: 'public',
     cacheOnFrontEndNav: true,
@@ -61,4 +46,4 @@ const withPWA = require("@ducanh2912/next-pwa").default({
     }
 });
 
-module.exports = withSentryConfig(withBundleAnalyzer(withPWA(moduleExports)), sentryConfigSettings);
+module.exports = withPWA(moduleExports);

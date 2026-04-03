@@ -18,7 +18,7 @@ const MetaTags = () => {
             <meta name="MobileOptimized" content="345"/>
             <meta name="revised" content="Thursday, June 26th, 2025, 12:00pm"/>
 
-            <link rel="manifest" href={"/site.webmanifest"}/>
+            <link rel="manifest" href={"/manifest.json"}/>
             <link rel="apple-touch-icon" sizes="144x144" href={"/apple-touch-icon.png"}/>
             <link rel="icon" type="image/png" sizes="96x96" href={"/favicon-96x96.png"}/>
             <link rel="icon" type="image/png" sizes="192x192" href={"/web-app-manifest-192x192.png"}/>
