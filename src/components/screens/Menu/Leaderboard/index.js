@@ -48,7 +48,7 @@ const Leaderboard = () => {
         return (
             <div className={`${styles.contents} ${styles["grid" + settings.RoundLength]}`}>
                 <div className={styles.contentsContainer}>
-                    <div className={'bg-black'}>
+                    <div>
                         <div className={styles.fakeHeading}>
                             <div>#</div>
                             <div className={"text-left"}>Name</div>
