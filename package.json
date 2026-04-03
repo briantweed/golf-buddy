@@ -1,13 +1,13 @@
 {
-  "name": "marketing_hub",
-  "description": "Marketing Hub",
+  "name": "golf_buddy",
+  "description": "Golf Buddy",
   "version": "1.0.0",
-  "port": "3001",
+  "port": "3000",
   "private": true,
   "scripts": {
-    "dev": "next dev --port=3001",
+    "dev": "next dev",
     "build": "next build",
-    "start": "next start --port=3001",
+    "start": "next start",
     "updates": "ncu -u --reject open --reject glob --reject tailwindcss"
   },
   "dependencies": {
