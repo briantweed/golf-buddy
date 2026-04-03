@@ -3,7 +3,7 @@
     @apply  relative pb-4;
 
     .contentsContainer {
-        @apply relative flex justify-start items-center pl-40;
+        @apply relative flex justify-start items-center pl-36;
     }
 
     .heading, .standings, .fakeHeading, .fakeStandings {
@@ -17,7 +17,7 @@
     .fakeHeading, .fakeStandings {
         @apply top-0 left-0;
         position: absolute;
-        grid-template-columns: 10px 50px 67px;
+        grid-template-columns: 10px 50px 50px;
     }
 
     .fakeStandings {
