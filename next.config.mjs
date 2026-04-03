@@ -14,15 +14,6 @@ const withPWA = pwa.default({
 
 const nextConfig = {
     reactStrictMode: true,
-    devIndicators: false,
-    output: "standalone",
-    env: {
-        VERSION: "0.0.1",
-        TITLE: "Golf Buddy",
-        SUBTITLE: "Scorecard",
-        LOCALE_STRING: "en-GB",
-        DEFAULT_TIMEZONE: "Europe/London"
-    }
 };
 
 export default withPWA(nextConfig);
