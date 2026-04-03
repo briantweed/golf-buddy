@@ -1,12 +1,14 @@
 const courses = [
 
     {
-        CourseName: "Kilrea",
+        label: "Kilrea",
+        value: "Kilrea",
         Holes: [4,3,4,4,3,4,3,4,5,4,3,4,4,3,4,3,4,5]
     },
 
     {
-        CourseName: "Castlerock",
+        label: "Castlerock",
+        value: "Castlerock",
         Holes: [3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3]
     },
 

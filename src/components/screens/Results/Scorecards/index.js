@@ -15,7 +15,7 @@ const Scorecards = () => {
         const tabs = Players.map((Player, index) => {
             return {
                 "label": Player.Name,
-                "content": <PlayerCard key={index} id={index}/>
+                "content": <PlayerCard key={index} id={index} settings={settings}/>
             };
         });
 

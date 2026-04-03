@@ -1,12 +1,6 @@
 import {BUTTON_TYPES, FIELD_TYPES} from "@libraries/FormBuilder/files/config";
 import courses from "@files/config/courses";
 
-const courseOptions = courses.map((course) => {
-    return {
-        value: course.CourseName,
-        label: course.CourseName
-    }
-});
 
 const setupForm = {
 
@@ -30,7 +24,7 @@ const setupForm = {
                     input: {
                         type: "text",
                         autoComplete: "off",
-                        options: courseOptions,
+                        options: courses,
                         isSearchable: false
                     },
                     defaultValue: ""

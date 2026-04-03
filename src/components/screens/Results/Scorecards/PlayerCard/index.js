@@ -1,16 +1,15 @@
-import storedGameData from "@files/config/test-game";
 import {ROUND_TYPE} from "@files/config";
 import Row from "./Row";
 
 
 const PlayerCard = (props) => {
 
-    const {id} = props;
+    const {id, settings} = props;
 
-    const isFullRound = storedGameData.RoundType === ROUND_TYPE.FULL;
+    const isFullRound = settings.RoundLength === ROUND_TYPE.FULL;
 
-    const FrontNine = storedGameData.Players[id].Scores.slice(0, 9);
-    const BackNine = storedGameData.Players[id].Scores.slice(9, 18);
+    const FrontNine = settings.Players[id].Scores?.slice(0, 9) || [];
+    const BackNine = settings.Players[id].Scores?.slice(9, 18) || [];
 
 
     const FrontNineScore = BackNine.reduce((sum, item) => sum + item.Stroke, 0);

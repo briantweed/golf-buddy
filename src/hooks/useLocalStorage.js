@@ -7,7 +7,6 @@ const useLocalStorage = () => {
     const initialState = {
         CourseName: "",
         RoundLength: "",
-        Holes: [],
         Players: []
     };
 
