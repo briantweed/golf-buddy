@@ -30,7 +30,8 @@ const setupForm = {
                     input: {
                         type: "text",
                         autoComplete: "off",
-                        options: courseOptions
+                        options: courseOptions,
+                        isSearchable: false
                     }
                 },
 
