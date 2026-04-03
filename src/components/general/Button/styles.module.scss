@@ -1,0 +1,12 @@
+.contents {
+    @apply p-2 px-4 pr-5 text-sm rounded-xl flex items-center gap-2;
+
+    &.warning {
+        @apply bg-darkYellow;
+    }
+
+    &.danger {
+        @apply bg-red-2;
+    }
+
+}

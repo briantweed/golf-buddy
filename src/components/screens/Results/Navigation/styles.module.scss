@@ -1,0 +1,17 @@
+.contents {
+    @apply flex justify-between px-4 pt-4;
+
+    .title {
+        @apply text-2xl font-medium;
+    }
+
+    .banner {
+        @apply flex justify-end gap-6 pr-4;
+
+        .subtitle {
+            @apply text-base mt-1;
+        }
+
+    }
+
+}

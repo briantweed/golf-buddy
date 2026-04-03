@@ -5,12 +5,6 @@
     "type": "object",
     "additionalProperties": false,
     "properties": {
-        "CourseName": {
-            "type": "string"
-        },
-        "RoundLength": {
-            "type": "string"
-        },
         "Players": {
             "type": "array",
             "items": {

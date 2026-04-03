@@ -18,19 +18,7 @@ const validationRules = z.object({
         .trim()
         .min(1, {
             message: "Round Type is required"
-        }),
-
-
-    "Players": z.object({
-        "Name": z
-            .string({
-                required_error: "Name is required"
-            }).trim()
-            .min(1, {
-                message: "Name is required"
-            })
-    }).array()
-
+        })
 });
 
 

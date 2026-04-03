@@ -1,24 +1,28 @@
 import useLocalStorage from "@hooks/useLocalStorage";
+import styles from "./styles.module.scss";
+import courses from "@files/config/courses";
 
 
 const Navigation = () => {
 
     const {settings} = useLocalStorage();
 
+
     if (settings) {
-        const {
-            CourseName = "",
-            RoundLength = "",
-        } = settings;
+
+        const {RoundLength = "18"} = settings;
+
+        const course = courses.find((course) => course.value === settings.CourseName);
+
 
         return (
-            <nav className={"flex justify-between px-4 pt-4"}>
+            <nav className={styles.contents}>
 
-                <h1 className={"text-2xl font-medium"}>{CourseName}</h1>
+                <h1 className={styles.title}>{course.label}</h1>
 
-                <div className="flex justify-end gap-6 pr-4">
+                <div className={styles.banner}>
 
-                    <h2 className={"text-base mt-1"}>Holes: {RoundLength}</h2>
+                    <h2 className={styles.subtitle}>Holes: {RoundLength}</h2>
 
                 </div>
 
@@ -27,7 +31,7 @@ const Navigation = () => {
     }
 
     return (
-        <nav className={"flex justify-between px-4 pt-4"}/>
+        <nav className={styles.contents}/>
     );
 
 };

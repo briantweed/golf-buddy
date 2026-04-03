@@ -1,8 +1,9 @@
 import Headings from "./Headings";
 import AccordionWidget from "@components/widgets/AccordionWidget";
 import Leaderboard from "./Leaderboard";
+import Course from "./Course";
+import Players from "./Players";
 import Scorecard from "./Scorecard";
-import Settings from "./Settings";
 import DangerZone from "./DangerZone";
 
 
@@ -14,8 +15,12 @@ const Menu = () => {
             "content": <Leaderboard/>
         },
         {
-            "label": "Setup",
-            "content": <Settings/>
+            "label": "Course",
+            "content": <Course/>
+        },
+        {
+            "label": "Players",
+            "content": <Players/>
         },
         {
             "label": "Scorecard",
