@@ -1,6 +1,6 @@
 .contents {
     @apply text-left text-xs bg-darkestGreen p-4 rounded-md;
-    @apply  relative pb-4;
+    @apply relative;
 
     .contentsContainer {
         @apply relative flex justify-start items-center pl-40;
@@ -8,33 +8,38 @@
 
     .heading, .standings, .fakeHeading, .fakeStandings {
         @apply grid gap-4 gap-x-3 items-center text-center;
+
         > div {
             @apply flex items-center justify-center;
             min-height: 30px;
         }
+
     }
 
     .fakeHeading, .fakeStandings {
-        @apply top-0 left-0;
-        position: absolute;
-        grid-template-columns: 10px 61px 50px;
+        @apply absolute top-0 left-0;
+        grid-template-columns: 10px 65px 60px;
     }
 
     .fakeStandings {
         @apply top-12 mt-1.5;
     }
+
     &.grid9 {
+
         .heading, .standings {
             grid-template-columns: repeat(9, 25px) 50px;
         }
 
-
     }
 
     &.grid18 {
+
         .heading, .standings {
             grid-template-columns: repeat(18, 25px) 50px;
+            @apply pl-3;
         }
+
     }
 
     .heading, .fakeHeading {
