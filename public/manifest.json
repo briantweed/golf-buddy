@@ -15,6 +15,16 @@
       "type": "image/png"
     }
   ],
+  "screenshots": [
+    {
+
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512X512",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Application"
+    }
+  ],
   "theme_color": "#2d3d32",
   "background_color": "#2d3d32",
   "display": "standalone"
