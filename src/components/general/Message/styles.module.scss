@@ -1,4 +1,4 @@
 .contents {
-    @apply fixed right-2 bottom-2 animate-bounce;
-    @apply text-sm bg-blue px-3 py-1.5 italic rounded-md text-white shadow-lg;
+    @apply fixed right-2 bottom-2 animate-bounce flex gap-2;
+    @apply text-sm bg-pastel-green-default px-3 py-1.5 italic rounded-md text-default shadow-lg;
 }

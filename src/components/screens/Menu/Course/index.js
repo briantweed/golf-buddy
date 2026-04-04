@@ -26,7 +26,7 @@ const Course = () => {
             />
 
             {display && (
-                <Message>&#10003; updated</Message>
+                <Message><div className="text-darkGreen font-bold">&#10003;</div> updated</Message>
             )}
 
         </FormContainer>
