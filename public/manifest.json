@@ -2,12 +2,12 @@
   "id": "golf_buddy",
   "name": "Golf Buddy",
   "short_name": "Golf Buddy",
-  "start_url": "https://golf-buddy-scorecard.vercel.app/",
+  "start_url": "https://www.golf-buddy-scorecard.vercel.app/",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
       "sizes": "192x192",
-      "type": "image/png
+      "type": "image/png"
     },
     {
       "src": "/web-app-manifest-512x512.png",
