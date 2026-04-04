@@ -105,7 +105,7 @@ const Leaderboard = () => {
         );
     }
 
-    return <div className={`${styles.contents}`}>No players added</div>;
+    return <div className={styles.contents}>No players added</div>;
 
 };
 
