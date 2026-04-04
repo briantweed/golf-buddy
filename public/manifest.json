@@ -3,6 +3,7 @@
   "name": "Golf Buddy",
   "short_name": "Golf Buddy",
   "description": "Golfing scorecard for up to 6 players",
+  "orientation": "any",
   "start_url": "https://golf-buddy-scorecard.vercel.app/",
   "icons": [
     {
