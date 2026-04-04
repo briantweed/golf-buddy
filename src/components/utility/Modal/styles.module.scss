@@ -14,7 +14,7 @@
             @apply absolute top-2.5 right-2.5;
 
             button {
-                @apply cursor-pointer border border-grey-3 p-3 rounded-full;
+                @apply cursor-pointer border border-grey-3 w-6 h-6 text-xs rounded-full;
 
                 &:focus-visible {
                     @apply outline-amber outline-3;
