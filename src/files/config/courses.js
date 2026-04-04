@@ -1,7 +1,7 @@
 const courses = [
 
     {
-        label: "Castlerock Golf Club",
+        label: "Benone",
         value: "Castlerock",
         Holes: [3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3]
     },
@@ -17,7 +17,7 @@ const courses = [
     },
     {
         label: "The Manor",
-        value: "TheManor",
+        value: "Manor",
         Holes: [3,4,4,4,3,5,4,4,5,4,5,3,4,3,5,3,4,5]
     }
 
