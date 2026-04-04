@@ -12,7 +12,11 @@ const PlayerCard = (props) => {
     const FrontNineScores = settings.Players[id].Scores?.slice(0, 9) || [];
     const BackNineScores = settings.Players[id].Scores?.slice(9, 18) || [];
 
-    const holes = courses.find((course) => course.value === settings.CourseName).Holes;
+    const course = courses.find((course) => course.value === settings.CourseName) || {};
+
+    const {
+        Holes = []
+    } = course;
 
     const FrontNineTotalScore = FrontNineScores.reduce((sum, item) => sum + item.Stroke, 0);
     const BackNineTotalScore = BackNineScores.reduce((sum, item) => sum + item.Stroke, 0);
@@ -26,7 +30,7 @@ const PlayerCard = (props) => {
                 type={"Out"}
                 scores={FrontNineScores}
                 totalScore={FrontNineTotalScore}
-                holes={holes.slice(0,9)}
+                holes={Holes.slice(0,9)}
             />
 
             {settings.RoundLength === ROUND_TYPE.FULL && (
@@ -34,7 +38,7 @@ const PlayerCard = (props) => {
                     type={"In"}
                     scores={BackNineScores}
                     totalScore={BackNineTotalScore}
-                    holes={holes.slice(9,18)}
+                    holes={Holes.slice(9,18)}
                 />
             )}
 

@@ -12,13 +12,16 @@ const Navigation = () => {
 
         const {RoundLength = "18"} = settings;
 
-        const course = courses.find((course) => course.value === settings.CourseName);
+        const course = courses.find((course) => course.value === settings.CourseName) || {};
 
+        const {
+            label = ""
+        } = course;
 
         return (
             <nav className={styles.contents}>
 
-                <h1 className={styles.title}>{course.label}</h1>
+                <h1 className={styles.title}>{label}</h1>
 
                 <div className={styles.banner}>
 
