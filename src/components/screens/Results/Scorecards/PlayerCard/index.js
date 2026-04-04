@@ -1,4 +1,4 @@
-import {ROUND_TYPE} from "@files/config";
+import {ROUND_LENGTH} from "@files/config";
 import Row from "./Row";
 import courses from "@files/config/courses";
 
@@ -7,7 +7,7 @@ const PlayerCard = (props) => {
 
     const {id, settings} = props;
 
-    const isFullRound = settings.RoundLength === ROUND_TYPE.FULL;
+    const isFullRound = settings.RoundLength === ROUND_LENGTH.FULL;
 
     const FrontNineScores = settings.Players[id].Scores?.slice(0, 9) || [];
     const BackNineScores = settings.Players[id].Scores?.slice(9, 18) || [];
@@ -33,7 +33,7 @@ const PlayerCard = (props) => {
                 holes={Holes.slice(0,9)}
             />
 
-            {settings.RoundLength === ROUND_TYPE.FULL && (
+            {settings.RoundLength === ROUND_LENGTH.FULL && (
                 <Row
                     type={"In"}
                     scores={BackNineScores}
@@ -42,7 +42,7 @@ const PlayerCard = (props) => {
                 />
             )}
 
-            <div className="flex justify-end w-full pr-8 mt-2 text-base"><span
+            <div className="flex justify-end w-full mt-2 text-base"><span
                 className="mr-4">Total Score : </span><span className="font-semibold">{PlayerTotalScore}</span>
             </div>
 

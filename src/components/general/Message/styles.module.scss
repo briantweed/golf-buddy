@@ -1,4 +1,4 @@
 .contents {
-    @apply absolute right-5 bottom-1.5;
-    @apply text-sm text-pastel-green-1 italic;
+    @apply fixed right-2 bottom-2 animate-bounce;
+    @apply text-sm bg-blue px-3 py-1.5 italic rounded-md text-white shadow-lg;
 }

@@ -6,7 +6,7 @@
         @apply relative flex justify-start items-center pl-40;
     }
 
-    .heading, .standings, .fakeHeading, .fakeStandings {
+    .heading, .standings, .staticHeading, .staticStandings {
         @apply grid gap-4 gap-x-3 items-center text-center;
 
         > div {
@@ -16,12 +16,12 @@
 
     }
 
-    .fakeHeading, .fakeStandings {
+    .staticHeading, .staticStandings {
         @apply absolute top-0 left-0;
         grid-template-columns: 10px 65px 60px;
     }
 
-    .fakeStandings {
+    .staticStandings {
         @apply top-12 mt-1.5;
     }
 
@@ -42,11 +42,11 @@
 
     }
 
-    .heading, .fakeHeading {
+    .heading, .staticHeading {
         @apply w-fit mb-4 border-b pb-2;
     }
 
-    .fakeStandings {
+    .staticStandings {
 
         .total {
             @apply text-center;

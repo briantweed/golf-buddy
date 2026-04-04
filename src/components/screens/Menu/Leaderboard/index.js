@@ -1,6 +1,8 @@
 import {Fragment} from "react";
 import useLocalStorage from "@hooks/useLocalStorage";
 import styles from "./styles.module.scss";
+import courses from "@files/config/courses";
+import {ROUND_LENGTH} from "@files/config";
 
 
 const Leaderboard = () => {
@@ -8,12 +10,11 @@ const Leaderboard = () => {
     const {settings} = useLocalStorage();
 
     if (settings) {
+
         const {
             Players = [],
-            RoundLength = 9
+            RoundLength = "9"
         } = settings;
-
-        const numberOfHoles = [...Array(Number(RoundLength)).keys()].map((x) => ++x) || [];
 
 
         const calculateLeaderboardData = (players, par = 72) => {
@@ -49,7 +50,16 @@ const Leaderboard = () => {
         };
 
 
-        const leaderboardData = calculateLeaderboardData(Players);
+        const numberOfHoles = [...Array(Number(RoundLength)).keys()].map((x) => ++x) || [];
+
+        const course = courses.find((course) => course.value === settings.CourseName) || {};
+
+        const currentGameHoles = RoundLength === ROUND_LENGTH.FULL ? course.Holes : course.Holes.slice(0,9);
+
+        const currentGamePar = currentGameHoles.reduce((sum, item) => sum + item, 0);
+
+
+        const leaderboardData = calculateLeaderboardData(Players, currentGamePar);
 
 
         return (
@@ -57,12 +67,12 @@ const Leaderboard = () => {
                 {leaderboardData.length !== 0 ? (
                     <div className={styles.contentsContainer}>
                         <div>
-                            <div className={styles.fakeHeading}>
+                            <div className={styles.staticHeading}>
                                 <div>#</div>
                                 <div className={"text-left"}>Name</div>
                                 <div className={"text-center"}>Score</div>
                             </div>
-                            <div className={styles.fakeStandings}>
+                            <div className={styles.staticStandings}>
                                 {leaderboardData.map((player, index) => {
                                     return (
                                         <Fragment key={index}>
@@ -77,7 +87,6 @@ const Leaderboard = () => {
                             </div>
                         </div>
                         <div className={"overflow-auto"}>
-
                             <div className={styles.heading}>
                                 {numberOfHoles.map((hole, index) => (
                                     <div key={index}>{hole}</div>
