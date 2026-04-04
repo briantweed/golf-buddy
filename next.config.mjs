@@ -15,15 +15,13 @@ const withPWA = pwa.default({
 const nextConfig = {
     reactStrictMode: true,
     devIndicators: false,
-    output: "standalone",
     env: {
         VERSION: "0.0.1",
         TITLE: "Golf Buddy",
         SUBTITLE: "Main Menu",
         LOCALE_STRING: "en-GB",
         DEFAULT_TIMEZONE: "Europe/London"
-    },
-    turbopack: {}
+    }
 };
 
 export default withPWA(nextConfig);

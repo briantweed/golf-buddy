@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "next dev --webpack",
     "build": "next build --webpack",
-    "start": "next start --webpack",
+    "start": "next start",
     "updates": "ncu -u --reject open --reject glob --reject tailwindcss"
   },
   "dependencies": {
