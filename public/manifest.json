@@ -21,6 +21,13 @@
       "src": "/web-app-manifest-512x512.png",
       "sizes": "512X512",
       "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Application"
+    },{
+
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512X512",
+      "type": "image/png",
       "form_factor": "wide",
       "label": "Application"
     }
