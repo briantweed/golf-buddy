@@ -6,7 +6,7 @@ const MetaTags = () => {
     return (
         <>
             <meta charSet="UTF-8"/>
-            <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0" />
+            <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0"/>
             <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
 
             <title>{`${process.env.TITLE}`}</title>
@@ -17,7 +17,8 @@ const MetaTags = () => {
             <meta name="rating" content="General"/>
             <meta name="MobileOptimized" content="345"/>
             <meta name="revised" content="Thursday, June 26th, 2025, 12:00pm"/>
-
+            <meta name="url" content="https://golf-buddy-scorecard.vercel.app"/>
+            <meta name="identifier-URL" content="https://golf-buddy-scorecard.vercel.app"/>
             <link rel="manifest" href={"/manifest.json"}/>
             <link rel="apple-touch-icon" sizes="144x144" href={"/apple-touch-icon.png"}/>
             <link rel="icon" type="image/png" sizes="96x96" href={"/favicon-96x96.png"}/>
