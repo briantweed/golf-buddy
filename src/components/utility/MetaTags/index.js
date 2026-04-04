@@ -19,7 +19,7 @@ const MetaTags = () => {
             <meta name="revised" content="Thursday, June 26th, 2025, 12:00pm"/>
             <meta name="url" content="https://golf-buddy-scorecard.vercel.app"/>
             <meta name="identifier-URL" content="https://golf-buddy-scorecard.vercel.app"/>
-            <link rel="manifest" href={"/manifest.json"}/>
+            <link rel="manifest" href="/manifest.json"/>
             <link rel="apple-touch-icon" sizes="144x144" href={"/apple-touch-icon.png"}/>
             <link rel="icon" type="image/png" sizes="96x96" href={"/favicon-96x96.png"}/>
             <link rel="icon" type="image/png" sizes="192x192" href={"/web-app-manifest-192x192.png"}/>
