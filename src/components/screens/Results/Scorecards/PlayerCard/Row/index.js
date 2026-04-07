@@ -73,8 +73,8 @@ const Row = (props) => {
                     >
                         <div className={"text-center font-semibold bg-lightBlue py-1 rounded-t-lg"}>{type === "In" ? index + 10 : index + 1}</div>
                         <div className={"grid grid-cols-2 grow"}>
-                            <div className={"py-1 bg-grey-1 rounded-bl-lg flex items-center justify-center text-center"}>{parValue}</div>
-                            <div className={`py-1 ${bgColor} rounded-br-lg text-black flex items-center justify-center text-center`}>{strokeValue}</div>
+                            <div className={"py-1 bg-grey-1 rounded-bl-lg text-[18px] flex items-center justify-center text-center"}>{parValue}</div>
+                            <div className={`py-1 ${bgColor} rounded-br-lg font-medium text-black flex items-center justify-center text-center`}>{strokeValue}</div>
                         </div>
                     </div>
                 );
