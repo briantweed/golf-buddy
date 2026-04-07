@@ -1,21 +1,26 @@
+import useLocalStorage from "@hooks/useLocalStorage";
+
 import TabWidget from "@components/widgets/TabWidget";
 import PlayerCard from "./PlayerCard";
-import useLocalStorage from "@hooks/useLocalStorage";
 
 
 const Scorecards = () => {
 
-    const {settings} = useLocalStorage();
+    const storage = useLocalStorage();
+
+    const {settings} = storage;
 
     if (settings) {
 
         const {Players = []} = settings;
 
-
         const tabs = Players.map((Player, index) => {
             return {
                 "label": Player.Name,
-                "content": <PlayerCard key={index} id={index} settings={settings}/>
+                "content": <PlayerCard
+                    id={index}
+                    storage={storage}
+                />
             };
         });
 

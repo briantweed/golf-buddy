@@ -5,9 +5,15 @@ import courses from "@files/config/courses";
 
 const PlayerCard = (props) => {
 
-    const {id, settings} = props;
+    const {
+        id,
+        storage
+    } = props;
+
+    const {settings, updatePlayerScore} = storage;
 
     const isFullRound = settings.RoundLength === ROUND_LENGTH.FULL;
+
 
     const FrontNineScores = settings.Players[id].Scores?.slice(0, 9) || [];
     const BackNineScores = settings.Players[id].Scores?.slice(9, 18) || [];
@@ -18,8 +24,8 @@ const PlayerCard = (props) => {
         Holes = []
     } = course;
 
-    const FrontNineTotalScore = FrontNineScores.reduce((sum, item) => sum + item.Stroke, 0);
-    const BackNineTotalScore = BackNineScores.reduce((sum, item) => sum + item.Stroke, 0);
+    const FrontNineTotalScore = FrontNineScores.reduce((sum, item) => sum + item, 0);
+    const BackNineTotalScore = BackNineScores.reduce((sum, item) => sum + item, 0);
     const PlayerTotalScore = FrontNineTotalScore + (isFullRound ? BackNineTotalScore : 0);
 
 
@@ -27,18 +33,22 @@ const PlayerCard = (props) => {
         <div className={"flex flex-col gap-2 justify-center items-start pb-4 mt-6"}>
 
             <Row
+                id={id}
                 type={"Out"}
                 scores={FrontNineScores}
                 totalScore={FrontNineTotalScore}
                 holes={Holes.slice(0,9)}
+                updatePlayerScore={updatePlayerScore}
             />
 
             {settings.RoundLength === ROUND_LENGTH.FULL && (
                 <Row
+                    id={id}
                     type={"In"}
                     scores={BackNineScores}
                     totalScore={BackNineTotalScore}
                     holes={Holes.slice(9,18)}
+                    updatePlayerScore={updatePlayerScore}
                 />
             )}
 

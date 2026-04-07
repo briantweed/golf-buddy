@@ -5,10 +5,12 @@ import Modal from "@components/utility/Modal";
 const Row = (props) => {
 
     const {
+        id,
         type,
         scores,
         totalScore,
-        holes
+        holes,
+        updatePlayerScore
     } = props;
 
 
@@ -47,13 +49,14 @@ const Row = (props) => {
         setIndex(index);
     };
 
+    let num = Math.ceil(Math.random() * 3) + Math.ceil(Math.random() * 2);
 
     return (
         <div className={"grid grid-cols-10 gap-2"}>
 
             {holes.map((score, index) => {
                 const parValue = score;
-                const strokeValue = scores[index]?.Stroke || "-";
+                const strokeValue = scores[index] || "-";
                 const bgColor = getBgColor(parValue - strokeValue);
                 return (
                     <div
@@ -80,8 +83,12 @@ const Row = (props) => {
             {display && (
                 <Modal
                     display={display}
-                    handleClose={() => handleDisplay(false)}
-                >Hole {index + 1}</Modal>
+                    handleClose={() => {
+                        handleDisplay(false);
+                        updatePlayerScore(id, type === "In" ? index + 9 : index, num);
+                    }}
+                >Hole {type === "In" ? index + 10 : index + 1} will be given the score of {num} when this modal is closed
+                </Modal>
             )}
 
         </div>

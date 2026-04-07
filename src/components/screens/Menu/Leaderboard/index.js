@@ -26,7 +26,7 @@ const Leaderboard = () => {
             const EVEN = "E";
 
             return players.map((player) => {
-                const total = player.Scores?.reduce((sum, hole) => sum + hole.Stroke, 0) || 0;
+                const total = player.Scores?.reduce((sum, hole) => sum + hole, 0) || 0;
                 const diff = total - par;
 
                 let relativeToPar = diff;
@@ -39,7 +39,7 @@ const Leaderboard = () => {
 
                 return {
                     Name: player.Name,
-                    Scores: player.Scores?.map((hole) => hole.Stroke),
+                    Scores: player.Scores,
                     Total: total,
                     RelativeToPar: relativeToPar
                 };
@@ -94,11 +94,11 @@ const Leaderboard = () => {
                                 <div className={"text-center"}>Total</div>
                             </div>
                             <div className={styles.standings}>
-                                {leaderboardData.map((player, index) => {
+                                {leaderboardData.map((player, playerIndex) => {
                                     return (
-                                        <Fragment key={index}>
-                                            {numberOfHoles.map((hole) => {
-                                                return <div key={hole}>{player.Scores ? player.Scores[index] : 0}</div>;
+                                        <Fragment key={playerIndex}>
+                                            {numberOfHoles.map((hole, holeIndex) => {
+                                                return <div key={hole}>{player.Scores ? String(player.Scores[holeIndex]) : 0}</div>;
                                             })}
                                             <div className={styles.total}>{player.Total}</div>
                                         </Fragment>

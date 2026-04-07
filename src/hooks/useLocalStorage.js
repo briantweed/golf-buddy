@@ -38,11 +38,27 @@ const useLocalStorage = () => {
 
 
     const updatePlayerScore = (playerIndex, holeIndex, newStroke) => {
-        const currentData = JSON.parse(localStorage.getItem("data"));
-        if (currentData.Players[playerIndex]) {
-            currentData.Players[playerIndex].Scores[holeIndex].Stroke = newStroke;
-            localStorage.setItem("data", JSON.stringify(currentData));
-        }
+
+        const updatedPlayers = settings.Players.map((player, id) => {
+            const safeScores = Array.isArray(player.Scores)
+                ? [...player.Scores]
+                : Array(Number(settings.RoundLength)).fill(0);
+
+            return {
+                ...player,
+                Scores: id === playerIndex
+                    ? safeScores.map((s, i) => i === holeIndex ? newStroke : s)
+                    : safeScores
+            };
+        });
+
+        const updatedData = {
+            ...settings,
+            Players: updatedPlayers
+        };
+
+        localStorage.setItem("data", JSON.stringify(updatedData));
+        setSettings(updatedData);
     };
 
 
@@ -54,8 +70,14 @@ const useLocalStorage = () => {
         }));
     };
 
-    useEffect(() => {
+
+    const handleSettings = () => {
         setSettings(JSON.parse(localStorage.getItem("data")));
+    };
+
+
+    useEffect(() => {
+        handleSettings();
     }, []);
 
 
