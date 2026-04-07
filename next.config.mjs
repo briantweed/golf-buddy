@@ -1,10 +1,15 @@
 import * as pwa from "@ducanh2912/next-pwa";
 
 const withPWA = pwa.default({
-    dest: "public",
+    dest: 'public',
+    cacheOnFrontEndNav: true,
+    aggressiveFrontEndNavCaching: true,
+    reloadOnOnline: true,
     exclude: [/dynamic-css-manifest/],
-    disable: process.env.NODE_ENV === "development",
-    reloadOnOnline: false
+    swcMinify: true,
+    fallback: {
+        document: "/offline"
+    }
 });
 
 
