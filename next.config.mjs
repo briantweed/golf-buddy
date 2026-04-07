@@ -5,7 +5,7 @@ const withPWA = pwa.default({
     cacheOnFrontEndNav: true,
     aggressiveFrontEndNavCaching: true,
     reloadOnOnline: true,
-    exclude:[/dynamic-css-manifest/],
+    exclude:["https://golf-buddy-scorecard.vercel.app/_next/dynamic-css-manifest.json"],
     swcMinify: true,
     fallback: {
         document: "/offline"
