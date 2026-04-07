@@ -43,3 +43,6 @@ cypress/screenshots/*
 storybook-static/*
 *storybook.log
 sentryclirc
+
+public/sw*
+public/swe-worker*

@@ -1,15 +1,10 @@
-import * as pwa from "@ducanh2912/next-pwa";
+import withSerwistInit from "@serwist/next";
 
-const withPWA = pwa.default({
-    dest: 'public',
-    cacheOnFrontEndNav: true,
-    aggressiveFrontEndNavCaching: true,
+const withSerwist = withSerwistInit({
+    cacheOnNavigation: true,
     reloadOnOnline: true,
-    exclude: [/dynamic-css-manifest/],
-    swcMinify: true,
-    fallback: {
-        document: "/offline"
-    }
+    swSrc: "sw.ts",
+    swDest: "public/sw.js",
 });
 
 
@@ -25,4 +20,4 @@ const nextConfig = {
     }
 };
 
-export default withPWA(nextConfig);
+export default withSerwist(nextConfig);
