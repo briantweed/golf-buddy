@@ -1,11 +1,15 @@
 import {useState} from "react";
+
 import Modal from "@components/utility/Modal";
+import {ANIMATION_TIMEOUT_DELAY} from "@files/config";
+import fadeOutSlideDownModalAnimation from "@files/animations/fadeOut-slideDown-modal-animation";
 
 
 const Row = (props) => {
 
     const {
         id,
+        player,
         type,
         scores,
         totalScore,
@@ -49,7 +53,7 @@ const Row = (props) => {
         setIndex(index);
     };
 
-    let num = Math.ceil(Math.random() * 3) + Math.ceil(Math.random() * 2);
+    const values = [1,2,3,4,5,6,7,8,9,10];
 
     return (
         <div className={"grid grid-cols-10 gap-2"}>
@@ -83,11 +87,42 @@ const Row = (props) => {
             {display && (
                 <Modal
                     display={display}
-                    handleClose={() => {
-                        handleDisplay(false);
-                        updatePlayerScore(id, type === "In" ? index + 9 : index, num);
-                    }}
-                >Hole {type === "In" ? index + 10 : index + 1} will be given the score of {num} when this modal is closed
+                    handleClose={() => handleDisplay(false)}
+                ><h2 className={"font-medium text-2xl"}>{player.Name}</h2>
+                    <hr/>
+                    <br/>
+                    <div className="flex justify-between">
+                        <div>Hole {type === "In" ? index + 10 : index + 1}</div>
+                        <div>Stroke: {scores[index]}</div>
+                    </div>
+                    <br/>
+                    <br/>
+                    <div className="flex justify-center gap-2 w-full">
+                        {values.map((value, key) => {
+                            return (
+                                <button
+                                    key={key}
+                                    type={"button"}
+                                    className={`p-4 flex-1 h-[50px] flex justify-center items-center text-white rounded-md  ${scores[index] === value ? "bg-newBlue" : "bg-blue"}`}
+                                    onClick={() => {
+                                        updatePlayerScore(id, type === "In" ? index + 9 : index, value);
+                                    }}
+                                >{value}</button>
+                            );
+                        })}
+                    </div>
+                    <div className="mt-8">
+                        <button
+                            type={"button"}
+                            className={`px-4 py-2 flex justify-center items-center text-white rounded-md bg-darkGreen`}
+                            onClick={() => {
+                                fadeOutSlideDownModalAnimation();
+                                setTimeout(() => {
+                                    handleDisplay(false);
+                                }, ANIMATION_TIMEOUT_DELAY);
+                            }}
+                        >close</button>
+                    </div>
                 </Modal>
             )}
 

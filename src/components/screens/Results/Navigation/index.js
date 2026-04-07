@@ -1,12 +1,11 @@
 import useLocalStorage from "@hooks/useLocalStorage";
-import styles from "./styles.module.scss";
 import courses from "@files/config/courses";
+import styles from "./styles.module.scss";
 
 
 const Navigation = () => {
 
     const {settings} = useLocalStorage();
-
 
     if (settings) {
 
@@ -14,9 +13,8 @@ const Navigation = () => {
 
         const course = courses.find((course) => course.value === settings.CourseName) || {};
 
-        const {
-            label = ""
-        } = course;
+        const {label = ""} = course;
+
 
         return (
             <nav className={styles.contents}>

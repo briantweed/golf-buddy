@@ -20,6 +20,7 @@ const Scorecards = () => {
                 "content": <PlayerCard
                     id={index}
                     storage={storage}
+                    player={Player}
                 />
             };
         });
