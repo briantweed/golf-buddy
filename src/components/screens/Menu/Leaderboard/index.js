@@ -54,9 +54,9 @@ const Leaderboard = () => {
 
         const course = courses.find((course) => course.value === settings.CourseName) || {};
 
-        const currentGameHoles = RoundLength === ROUND_LENGTH.FULL ? course.Holes : course.Holes.slice(0,9);
+        const currentGameHoles = RoundLength === ROUND_LENGTH.FULL ? course.Holes : course?.Holes?.slice(0,9);
 
-        const currentGamePar = currentGameHoles.reduce((sum, item) => sum + item, 0);
+        const currentGamePar = currentGameHoles?.reduce((sum, item) => sum + item, 0);
 
 
         const leaderboardData = calculateLeaderboardData(Players, currentGamePar);

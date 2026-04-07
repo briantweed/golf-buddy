@@ -40,7 +40,7 @@ const useLocalStorage = () => {
     const updatePlayerScore = (playerIndex, holeIndex, newStroke) => {
 
         const updatedPlayers = settings.Players.map((player, id) => {
-            const safeScores = Array.isArray(player.Scores)
+            const safeScores = Array.isArray(player.Scores) && player.Scores.length > 0
                 ? [...player.Scores]
                 : Array(Number(settings.RoundLength)).fill(0);
 
