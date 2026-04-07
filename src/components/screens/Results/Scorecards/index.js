@@ -27,9 +27,14 @@ const Scorecards = () => {
 
 
         return (
-            <div className={"px-4"}>
-                <TabWidget tabs={tabs}/>
-            </div>
+            tabs.length > 0 ? (
+                <div className={"px-4"}>
+                    <TabWidget tabs={tabs}/>
+                </div>
+            ) : (
+                <div className="h-screen flex justify-center items-center "><img
+                    className="rounded-full overflow-hidden" src="/web-app-manifest-192x192.png" alt="golf buddy"/></div>
+            )
         );
 
     }
