@@ -2,13 +2,13 @@
     @apply flex justify-center;
 
     .modal {
-        @apply fixed top-12;
+        @apply fixed top-4;
         @apply flex justify-center items-center;
-        @apply w-modal max-w-modal h-fit max-h-modal;
-        @apply p-15 mx-8;
+        @apply w-modal min-w-modal min-h-modal;
+        @apply p-8 mx-4;
         @apply bg-black text-white;
         @apply rounded-md;
-        @apply z-modal shadow-inverse;
+        @apply z-modal shadow-inverse overflow-auto;
 
         .close {
             @apply absolute top-2.5 right-2.5;

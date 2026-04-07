@@ -18,8 +18,10 @@ const Row = (props) => {
     } = props;
 
 
-    const getBgColor = (underPar) => {
+    const getBgColor = (par, stroke) => {
+
         let bgColor = "bg-pastel-red-2";
+        const underPar = isNaN(stroke) ? 0 : par - stroke;
 
         switch (underPar) {
             case -1:
@@ -27,6 +29,7 @@ const Row = (props) => {
                 break;
 
             case 0:
+            case "NaN":
                 bgColor = "bg-grey-2";
                 break;
 
@@ -61,7 +64,7 @@ const Row = (props) => {
             {holes.map((score, index) => {
                 const parValue = score;
                 const strokeValue = scores[index] || "-";
-                const bgColor = getBgColor(parValue - strokeValue);
+                const bgColor = getBgColor(parValue, strokeValue);
                 return (
                     <div
                         key={index}
@@ -88,41 +91,48 @@ const Row = (props) => {
                 <Modal
                     display={display}
                     handleClose={() => handleDisplay(false)}
-                ><h2 className={"font-medium text-2xl"}>{player.Name}</h2>
-                    <hr/>
-                    <br/>
-                    <div className="flex justify-between">
-                        <div>Hole {type === "In" ? index + 10 : index + 1}</div>
-                        <div>Stroke: {scores[index]}</div>
+                >
+                    <div className="flex gap-4 flex-col justify-between">
+
+                        <div>
+                            <h2 className={"font-medium text-2xl mb-2"}>{player.Name}</h2>
+                            <hr className={"mb-2"} />
+                            <div className="flex text-sm justify-between text-grey-3">
+                                <div>Hole: {type === "In" ? index + 10 : index + 1}</div>
+                                <div>Stroke: {scores[index]}</div>
+                            </div>
+                        </div>
+
+                        <div className="flex justify-center gap-2 w-full my-8">
+                            {values.map((value, key) => {
+                                return (
+                                    <button
+                                        key={key}
+                                        type={"button"}
+                                        className={`p-4 flex-1 h-[50px] flex justify-center items-center text-white rounded-md  ${scores[index] === value ? "bg-newBlue" : "bg-blue"}`}
+                                        onClick={() => {
+                                            updatePlayerScore(id, type === "In" ? index + 9 : index, value);
+                                        }}
+                                    >{value}</button>
+                                );
+                            })}
+                        </div>
+
+                        <div className="flex justify-end">
+                            <button
+                                type={"button"}
+                                className={`px-3 py-1.5 text-sm flex justify-center items-center text-white rounded-lg bg-darkGreen`}
+                                onClick={() => {
+                                    fadeOutSlideDownModalAnimation();
+                                    setTimeout(() => {
+                                        handleDisplay(false);
+                                    }, ANIMATION_TIMEOUT_DELAY);
+                                }}
+                            >close</button>
+                        </div>
+
                     </div>
-                    <br/>
-                    <br/>
-                    <div className="flex justify-center gap-2 w-full">
-                        {values.map((value, key) => {
-                            return (
-                                <button
-                                    key={key}
-                                    type={"button"}
-                                    className={`p-4 flex-1 h-[50px] flex justify-center items-center text-white rounded-md  ${scores[index] === value ? "bg-newBlue" : "bg-blue"}`}
-                                    onClick={() => {
-                                        updatePlayerScore(id, type === "In" ? index + 9 : index, value);
-                                    }}
-                                >{value}</button>
-                            );
-                        })}
-                    </div>
-                    <div className="mt-8">
-                        <button
-                            type={"button"}
-                            className={`px-4 py-2 flex justify-center items-center text-white rounded-md bg-darkGreen`}
-                            onClick={() => {
-                                fadeOutSlideDownModalAnimation();
-                                setTimeout(() => {
-                                    handleDisplay(false);
-                                }, ANIMATION_TIMEOUT_DELAY);
-                            }}
-                        >close</button>
-                    </div>
+
                 </Modal>
             )}
 
