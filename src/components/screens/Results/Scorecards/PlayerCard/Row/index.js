@@ -96,9 +96,9 @@ const Row = (props) => {
                     <div className="flex gap-4 flex-col justify-between">
 
                         <div>
-                            <h2 className={"font-medium text-3xl mb-2"}>{player.Name}</h2>
+                            <h2 className={"font-medium text-2xl mb-2"}>{player.Name}</h2>
                             <hr className={"mb-2"} />
-                            <div className="flex justify-between text-lg ">
+                            <div className="flex justify-between text-base">
                                 <div className="flex justify-start gap-12">
                                     <div><span className="font-medium text-grey-3 mr-1">Course : </span>{settings.CourseName}</div>
                                     <div><span className="font-medium text-grey-3">Hole : </span>{type === "In" ? index + 10 : index + 1}</div>
@@ -108,7 +108,7 @@ const Row = (props) => {
                             </div>
                         </div>
 
-                        <div className="flex justify-center gap-4 w-full my-8">
+                        <div className="flex justify-center gap-3 w-full mt-4 mb-8">
                             {values.map((value, key) => {
                                 const bgColor = getBgColor(holes[index], value);
                                 return (
