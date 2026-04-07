@@ -23,7 +23,7 @@ const Navigation = () => {
 
                 <div className={styles.banner}>
 
-                    <h2 className={styles.subtitle}>Holes: {RoundLength}</h2>
+                    {RoundLength && <h2 className={styles.subtitle}>Holes: {RoundLength}</h2>}
 
                 </div>
 
