@@ -66,6 +66,7 @@ module.exports = {
             darkGreen: "#0E700E",
             darkerGreen: "#2d3d32",
             darkestGreen: "#232b26",
+            midnightGreen: "#0f1a14",
         }),
         spacing: {
             px: "1px",
@@ -532,7 +533,7 @@ module.exports = {
             min: "min-content",
             max: "max-content",
             fit: "fit-content",
-            modal: "calc(100vh - 32px)",
+            modal: "calc(100vh - 64px)",
             body: "calc(100vh - 120px)",
             search: "650px",
             select: "300px",
@@ -555,7 +556,7 @@ module.exports = {
             min: "min-content",
             max: "max-content",
             fit: "fit-content",
-            modal: "calc(100vw - 32px)",
+            modal: "calc(100vw - 64px)",
             search: "650px",
             promotion: "224px",
             ...breakpoints(theme("screens")),
@@ -568,7 +569,7 @@ module.exports = {
             min: "min-content",
             max: "max-content",
             fit: "fit-content",
-            modal: "calc(100vh - 32px)",
+            modal: "calc(100vh - 64px)",
             search: "650px",
             select: "400px",
         },
@@ -580,7 +581,7 @@ module.exports = {
             fit: "fit-content",
             screen: "100vw",
             sm: "555px",
-            modal: "calc(100vh - 32px)",
+            modal: "calc(100vh - 64px)",
             search: "650px"
         },
         opacity: {
@@ -802,7 +803,7 @@ module.exports = {
             min: "min-content",
             max: "max-content",
             fit: "fit-content",
-            modal: "calc(100vw - 40px)",
+            modal: "calc(100vw - 64px)",
             search: "650px"
         }),
         willChange: {

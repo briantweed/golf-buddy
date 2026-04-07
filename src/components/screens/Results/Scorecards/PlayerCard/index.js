@@ -35,6 +35,7 @@ const PlayerCard = (props) => {
             <Row
                 id={id}
                 player={player}
+                settings={settings}
                 type={"Out"}
                 scores={FrontNineScores}
                 totalScore={FrontNineTotalScore}
@@ -46,6 +47,7 @@ const PlayerCard = (props) => {
                 <Row
                     id={id}
                     player={player}
+                    settings={settings}
                     type={"In"}
                     scores={BackNineScores}
                     totalScore={BackNineTotalScore}

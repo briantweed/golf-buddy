@@ -2,19 +2,19 @@
     @apply flex justify-center;
 
     .modal {
-        @apply fixed top-4;
+        @apply fixed top-8;
         @apply flex justify-center items-center;
         @apply w-modal min-w-modal min-h-modal;
-        @apply p-8 mx-4;
-        @apply bg-black text-white;
+        @apply p-8 mx-8;
+        @apply bg-midnightGreen text-white;
         @apply rounded-md;
         @apply z-modal shadow-inverse overflow-auto;
 
         .close {
-            @apply absolute top-2.5 right-2.5;
+            @apply absolute top-4 right-4;
 
             button {
-                @apply cursor-pointer border border-grey-3 w-6 h-6 text-xs rounded-full;
+                @apply cursor-pointer border border-grey-3 w-12 h-12 font-bold rounded-full;
 
                 &:focus-visible {
                     @apply outline-amber outline-3;

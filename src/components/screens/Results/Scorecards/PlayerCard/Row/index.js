@@ -10,6 +10,7 @@ const Row = (props) => {
     const {
         id,
         player,
+        settings,
         type,
         scores,
         totalScore,
@@ -95,40 +96,36 @@ const Row = (props) => {
                     <div className="flex gap-4 flex-col justify-between">
 
                         <div>
-                            <h2 className={"font-medium text-2xl mb-2"}>{player.Name}</h2>
+                            <h2 className={"font-medium text-3xl mb-2"}>{player.Name}</h2>
                             <hr className={"mb-2"} />
-                            <div className="flex text-sm justify-between text-grey-3">
-                                <div>Hole: {type === "In" ? index + 10 : index + 1}</div>
-                                <div>Stroke: {scores[index]}</div>
+                            <div className="flex justify-between text-lg ">
+                                <div className="flex justify-start gap-12">
+                                    <div><span className="font-medium text-grey-3 mr-1">Course : </span>{settings.CourseName}</div>
+                                    <div><span className="font-medium text-grey-3">Hole : </span>{type === "In" ? index + 10 : index + 1}</div>
+                                    <div><span className="font-medium text-grey-3">Par : </span> {holes[index]}</div>
+                                </div>
+                                {scores[index] > 0 && <div><span className="font-medium text-grey-3">Stroke : </span>{scores[index]}</div>}
                             </div>
                         </div>
 
-                        <div className="flex justify-center gap-2 w-full my-8">
+                        <div className="flex justify-center gap-4 w-full my-8">
                             {values.map((value, key) => {
+                                const bgColor = getBgColor(holes[index], value);
                                 return (
                                     <button
                                         key={key}
                                         type={"button"}
-                                        className={`p-4 flex-1 h-[50px] flex justify-center items-center text-white rounded-md  ${scores[index] === value ? "bg-newBlue" : "bg-blue"}`}
+                                        className={`p-4 relative flex-1 h-[60px] flex justify-center items-center text-white rounded-md  ${scores[index] === value ? "bg-newBlue" : "bg-blue"}`}
                                         onClick={() => {
                                             updatePlayerScore(id, type === "In" ? index + 9 : index, value);
+                                            fadeOutSlideDownModalAnimation();
+                                            setTimeout(() => {
+                                                handleDisplay(false);
+                                            }, ANIMATION_TIMEOUT_DELAY);
                                         }}
-                                    >{value}</button>
+                                    >{value} <span className={`${bgColor} absolute w-2 rounded-full h-2 -bottom-5 left-[calc(50%-4px)]`}/></button>
                                 );
                             })}
-                        </div>
-
-                        <div className="flex justify-end">
-                            <button
-                                type={"button"}
-                                className={`px-3 py-1.5 text-sm flex justify-center items-center text-white rounded-lg bg-darkGreen`}
-                                onClick={() => {
-                                    fadeOutSlideDownModalAnimation();
-                                    setTimeout(() => {
-                                        handleDisplay(false);
-                                    }, ANIMATION_TIMEOUT_DELAY);
-                                }}
-                            >close</button>
                         </div>
 
                     </div>
