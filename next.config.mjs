@@ -5,6 +5,7 @@ const withPWA = pwa.default({
     cacheOnFrontEndNav: true,
     aggressiveFrontEndNavCaching: true,
     reloadOnOnline: true,
+    exclude: [/public\/sw.js/, /dynamic-css-manifest.json/],
     swcMinify: true,
     fallback: {
         document: "/offline"
