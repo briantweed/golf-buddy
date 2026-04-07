@@ -5,8 +5,8 @@
   "port": "3000",
   "private": true,
   "scripts": {
-    "dev": "next dev --webpack",
-    "build": "next build --webpack",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
     "updates": "ncu -u --reject open --reject glob --reject tailwindcss"
   },
@@ -38,6 +38,7 @@
     "@babel/core": "^7.29.0",
     "@next/bundle-analyzer": "16.2.1",
     "@next/eslint-plugin-next": "^16.2.1",
+    "@serwist/turbopack": "^9.5.7",
     "@testing-library/cypress": "^10.1.0",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
@@ -46,6 +47,7 @@
     "cross-env": "^10.1.0",
     "css-loader": "^7.1.4",
     "cypress": "^15.12.0",
+    "esbuild": "^0.28.0",
     "eslint": "^9.39.4",
     "eslint-config-next": "^16.2.1",
     "identity-obj-proxy": "^3.0.0",

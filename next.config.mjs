@@ -1,11 +1,4 @@
-import withSerwistInit from "@serwist/next";
-
-const withSerwist = withSerwistInit({
-    cacheOnNavigation: true,
-    reloadOnOnline: true,
-    swSrc: "sw.ts",
-    swDest: "public/sw.js",
-});
+import { withSerwist } from "@serwist/turbopack";
 
 
 const nextConfig = {
