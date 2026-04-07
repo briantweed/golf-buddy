@@ -2,7 +2,7 @@ import * as pwa from "@ducanh2912/next-pwa";
 
 const withPWA = pwa.default({
     dest: "public",
-    exclude: ["/_next/dynamic-css-manifest.json"],
+    exclude: [/dynamic-css-manifest/],
     disable: process.env.NODE_ENV === "development",
     reloadOnOnline: false
 });
