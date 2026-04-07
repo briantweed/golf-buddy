@@ -1,4 +1,16 @@
-import { withSerwist } from "@serwist/turbopack";
+import * as pwa from "@ducanh2912/next-pwa";
+
+const withPWA = pwa.default({
+    dest: 'public',
+    cacheOnFrontEndNav: true,
+    aggressiveFrontEndNavCaching: true,
+    reloadOnOnline: true,
+    exclude:[/dynamic-css-manifest/],
+    swcMinify: true,
+    fallback: {
+        document: "/offline"
+    }
+});
 
 
 const nextConfig = {
@@ -13,4 +25,4 @@ const nextConfig = {
     }
 };
 
-export default withSerwist(nextConfig);
+export default withPWA(nextConfig);
