@@ -25,6 +25,8 @@ const Players = () => {
                 }}
             />
 
+            <p className="text-xs text-pastel-red-2 text-right mt-6">* Updating Player data will wipe all existing scores</p>
+
             {display && (
                 <Message><div className="text-darkGreen font-bold">&#10003;</div> updated</Message>
             )}
