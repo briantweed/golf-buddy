@@ -19,6 +19,11 @@ const courses = [
         label: "The Manor",
         value: "Manor",
         Holes: [3,4,4,4,3,5,4,4,5,4,5,3,4,3,5,3,4,5]
+    },
+    {
+        label: "Augusta National",
+        value: "Augusta",
+        Holes: [4,5,4,3,4,3,4,5,4,4,4,3,5,4,5,3,4,4]
     }
 
 ];
