@@ -15,6 +15,7 @@ const Row = (props) => {
         scores,
         totalScore,
         holes,
+        currentHole,
         updatePlayerScore
     } = props;
 
@@ -64,12 +65,15 @@ const Row = (props) => {
 
             {holes.map((score, index) => {
                 const parValue = score;
-                const strokeValue = scores[index] || "-";
-                const bgColor = getBgColor(parValue, strokeValue);
+                const thisHole = (type === "In" ? index + 9 : index);
+                const activeHole = thisHole <= currentHole;
+                const strokeValue = scores[index] || (thisHole === currentHole ? "-" : "");
+                const bgColor = activeHole ? getBgColor(parValue, strokeValue) : "bg-blue";
+
                 return (
                     <div
                         key={index}
-                        onClick={() => handleDisplay(true, index)}
+                        onClick={() => activeHole ? handleDisplay(true, index) : null}
                         onKeyDown={() => {}}
                     >
                         <div className={"text-center font-semibold bg-lightBlue py-1 rounded-t-lg"}>{type === "In" ? index + 10 : index + 1}</div>
