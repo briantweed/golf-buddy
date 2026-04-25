@@ -17,7 +17,7 @@ const Leaderboard = () => {
         } = settings;
 
 
-        const calculateLeaderboardData = (players, par = 72) => {
+        const calculateLeaderboardData = (players, holes = []) => {
 
             if (!players.length) {
                 return [];
@@ -26,8 +26,10 @@ const Leaderboard = () => {
             const EVEN = "E";
 
             return players.map((player) => {
-                const total = player.Scores?.reduce((sum, hole) => sum + hole, 0) || 0;
-                const diff = total - par;
+                const holesPlayed = player.Scores?.reduce((sum, hole) => hole > 0 ? ++sum : sum, 0) || 0;
+                const shotsForHolesPlayed = player.Scores?.slice(0, holesPlayed).reduce((sum, hole) => sum + hole, 0) || 0;
+                const parForHolesPlayed = holes.slice(0, holesPlayed).reduce((sum, item) => sum + item, 0);
+                const diff = shotsForHolesPlayed - parForHolesPlayed;
 
                 let relativeToPar = diff;
 
@@ -40,7 +42,7 @@ const Leaderboard = () => {
                 return {
                     Name: player.Name,
                     Scores: player.Scores,
-                    Total: total,
+                    Total: shotsForHolesPlayed,
                     RelativeToPar: relativeToPar
                 };
             }).sort((a, b) => {
@@ -56,10 +58,7 @@ const Leaderboard = () => {
 
         const currentGameHoles = RoundLength === ROUND_LENGTH.FULL ? course.Holes : course?.Holes?.slice(0,9);
 
-        const currentGamePar = currentGameHoles?.reduce((sum, item) => sum + item, 0);
-
-
-        const leaderboardData = calculateLeaderboardData(Players, currentGamePar);
+        const leaderboardData = calculateLeaderboardData(Players, currentGameHoles);
 
 
         return (

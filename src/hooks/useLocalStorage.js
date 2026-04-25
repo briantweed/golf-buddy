@@ -1,4 +1,5 @@
-import {useEffect, useState} from "react";
+import {useEffect, useEffectEvent, useState} from "react";
+
 
 const useLocalStorage = () => {
 
@@ -31,7 +32,7 @@ const useLocalStorage = () => {
             ...currentData,
             Players: currentData.Players.map((player) => ({
                 ...player,
-                Scores: []
+                Scores: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
             }))
         }));
     };
@@ -71,9 +72,9 @@ const useLocalStorage = () => {
     };
 
 
-    const handleSettings = () => {
+    const handleSettings = useEffectEvent(() => {
         setSettings(JSON.parse(localStorage.getItem("data")));
-    };
+    });
 
 
     useEffect(() => {
