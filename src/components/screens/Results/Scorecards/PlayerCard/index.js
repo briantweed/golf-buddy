@@ -20,7 +20,6 @@ const PlayerCard = (props) => {
     const isFullRound = settings.RoundLength === ROUND_LENGTH.FULL;
     const FrontNineScores = player.Scores?.slice(0, 9) || [];
     const BackNineScores = player.Scores?.slice(9, 18) || [];
-    const currentHole = player.Scores?.findIndex((score) => score === 0);
     const course = courses.find((course) => course.value === settings.CourseName) || {};
     const {Holes = []} = course;
 
@@ -40,7 +39,6 @@ const PlayerCard = (props) => {
                 scores={FrontNineScores}
                 totalScore={FrontNineTotalScore}
                 holes={Holes.slice(0,9)}
-                currentHole={currentHole}
                 updatePlayerScore={updatePlayerScore}
             />
 
@@ -53,7 +51,6 @@ const PlayerCard = (props) => {
                     scores={BackNineScores}
                     totalScore={BackNineTotalScore}
                     holes={Holes.slice(9,18)}
-                    currentHole={currentHole}
                     updatePlayerScore={updatePlayerScore}
                 />
             )}
